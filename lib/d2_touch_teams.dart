@@ -4,11 +4,15 @@ import 'package:d2_touch_teams/modules/auth/user/user.module.dart';
 import 'package:d2_touch_teams/modules/data/aggregate/aggregate.module.dart';
 import 'package:d2_touch_teams/modules/data/tracker/tracked_entity_instance.module.dart';
 import 'package:d2_touch_teams/modules/file_resource/file_resource.module.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/activity.module.dart';
 import 'package:d2_touch_teams/modules/metadata/dataset/data_set.module.dart';
 import 'package:d2_touch_teams/modules/metadata/option_set/option_set.module.dart';
 import 'package:d2_touch_teams/modules/metadata/organisation_unit/organisation_unit.module.dart';
 import 'package:d2_touch_teams/modules/metadata/program/program.module.dart';
+import 'package:d2_touch_teams/modules/metadata/project/project.module.dart';
 import 'package:d2_touch_teams/modules/notification/notification.module.dart';
+import 'package:d2_touch_teams/modules/user_enrollment/assignment/assignment.module.dart';
+import 'package:d2_touch_teams/modules/user_enrollment/team/team.module.dart';
 import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,6 +45,10 @@ class D2TouchTeams {
       await DataElementModule.createTables();
       await DataSetModule.createTables();
       await ProgramModule.createTables();
+      await ProjectModule.createTables();
+      await ActivityModule.createTables();
+      await TeamModule.createTables();
+      await AssignmentModule.createTables();
       await DashboardModule.createTables();
       await TrackedEntityInstanceModule.createTables();
       await AggregateModule.createTables();
@@ -229,6 +237,14 @@ class D2TouchTeams {
   static DataElementModule dataElementModule = DataElementModule();
 
   static DataSetModule dataSetModule = DataSetModule();
+
+  static ProjectModule projectModule = ProjectModule();
+
+  static ActivityModule activityModule = ActivityModule();
+
+  static AssignmentModule assignmentModule = AssignmentModule();
+
+  static TeamModule teamModule = TeamModule();
 
   static ProgramModule programModule = ProgramModule();
 

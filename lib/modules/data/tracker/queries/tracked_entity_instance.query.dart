@@ -13,6 +13,8 @@ import 'package:d2_touch_teams/modules/data/tracker/models/tracked_entity_instan
 import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/enrollment.query.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/event.query.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/queries/activity.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
@@ -30,6 +32,7 @@ import 'package:reflectable/mirrors.dart';
 import 'package:sqflite/sqflite.dart';
 
 class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
+  String? activity;
   String? orgUnit;
   String? program;
   bool? useUserOrgUnit;
@@ -120,6 +123,11 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
     return this;
   }
 
+  TrackedEntityInstanceQuery byActivity(String activity) {
+    this.activity = activity;
+    return this;
+  }
+
   TrackedEntityInstanceQuery byProgram(String program) {
     this.program = program;
     return this;
@@ -141,6 +149,10 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
       EnrollmentQuery enrollmentQuery = EnrollmentQuery();
 
       enrollmentQuery.where(attribute: 'program', value: this.program);
+
+      if (this.activity != null) {
+        enrollmentQuery.where(attribute: 'activity', value: this.activity);
+      }
 
       if (this.orgUnit != null) {
         enrollmentQuery.where(attribute: 'orgUnit', value: this.orgUnit);
@@ -201,6 +213,10 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
         .withAttributes()
         .getOne();
 
+    final Activity activity = await ActivityQuery()
+        .byId(this.activity as String)
+        .getOne();
+
     TrackedEntityInstance trackedEntityInstance = TrackedEntityInstance(
       orgUnit: this.orgUnit as String,
       dirty: false,
@@ -209,6 +225,7 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
 
     Enrollment enrollment = Enrollment(
         trackedEntityType: program.trackedEntityType as String,
+        activity: activity.id,
         orgUnit: this.orgUnit as String,
         program: program.id as String,
         trackedEntityInstance: trackedEntityInstance.trackedEntityInstance,
@@ -287,7 +304,7 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
     }
 
     String url =
-        'trackedEntityInstances.json?ou=${this.orgUnit}&$orgUnitMode&program=${this.program}&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*${this.attributeFilters?.length == 0 ? "" : "&" + (this.attributeFilters?.map((queryFilterItem) {
+        'trackedEntityInstances.json?ou=${this.orgUnit}&$orgUnitMode${this.activity != null ? '&activity=${this.activity}' : ''}&program=${this.program}&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*${this.attributeFilters?.length == 0 ? "" : "&" + (this.attributeFilters?.map((queryFilterItem) {
               return "filter=" +
                   queryFilterItem.attribute +
                   (queryFilterItem.condition == QueryCondition.In
@@ -355,12 +372,20 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
 
     List<String> eventIds = [];
     List<String> eventProgramStageIds = [];
+    List<String> eventActivityIds = [];
+
     events.forEach((event) {
       eventIds.add(event.id as String);
+
+      eventActivityIds.removeWhere((id) => id == event.activity);
+      eventActivityIds.add(event.activity);
 
       eventProgramStageIds.removeWhere((id) => id == event.programStage);
       eventProgramStageIds.add(event.programStage);
     });
+
+    List<Activity> activities =
+        await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();
@@ -369,6 +394,10 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
       if (programStages.length > 0) {
         event.programStage = programStages
             .lastWhere((programStage) => programStage.id == event.programStage)
+            .toJson();
+
+        event.activity = activities
+            .lastWhere((activity) => activity.id == event.activity)
             .toJson();
       }
       return event;

@@ -6,12 +6,15 @@ import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.enti
 import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
+import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import '../sample/current_user.sample.dart';
 import '../sample/program.sample.dart';
 import '../sample/reserved_values.sample.dart';
+import '../sample/project.sample.dart';
 import 'generate_tracked_entity_instance_test.reflectable.dart';
 
 void main() async {
@@ -42,6 +45,15 @@ void main() async {
 
   await ProgramQuery().setData(programs).save();
 
+  // NMCP /////////
+  List<Project> projects = [];
+  sampleProjects['projects'].forEach((project) {
+    projects.add(Project.fromJson({...project, 'dirty': false}));
+  });
+
+  await ProjectQuery().setData(projects).save();
+  //////////////////
+
   List<AttributeReservedValue> attributeResrvedValues = [];
   sampleReservedValues.forEach((reservedValue) {
     attributeResrvedValues.add(
@@ -52,6 +64,7 @@ void main() async {
 
   final TrackedEntityInstance trackedEntityInstance = await D2TouchTeams
       .trackerModule.trackedEntityInstance
+      .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();

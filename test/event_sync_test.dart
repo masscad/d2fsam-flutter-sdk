@@ -6,6 +6,7 @@ import 'package:d2_touch_teams/modules/data/tracker/queries/event.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
+
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
@@ -34,7 +35,7 @@ void main() async {
   final dioAdapter = DioAdapter(dio: dio);
 
   dioAdapter.onGet(
-    'https://play.dhis2.org/2.35.11/api/events.json?fields=event,eventDate,dueDate,program,programStage,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&orgUnit=DiszpKrYNg8&program=IpHINAT79UW&programStage=ZzYYXq4fJie&order=eventDate:desc&pageSize=100&page=1',
+    'https://play.dhis2.org/2.35.11/api/events.json?fields=event,eventDate,dueDate,program,programStage,project,activity,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&project=ProzpKrYNg8&activity=ActzpKrYNg8&orgUnit=DiszpKrYNg8&program=IpHINAT79UW&programStage=ZzYYXq4fJie&order=eventDate:desc&pageSize=100&page=1',
     (server) => server.reply(200, sampleEvents),
   );
 
@@ -47,6 +48,8 @@ void main() async {
   final eventQuery = EventQuery(database: db);
 
   await eventQuery
+      .byProject('ProzpKrYNg8')
+      .byActivity('ActzpKrYNg8')
       .byOrgUnit('DiszpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byProgramStage('ZzYYXq4fJie')

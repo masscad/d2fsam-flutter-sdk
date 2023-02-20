@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/enrollment_import_summary.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/geometry.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
 import 'event.entity.dart';
@@ -11,6 +12,9 @@ import 'tracked-entity.entity.dart';
 @AnnotationReflectable
 @Entity(tableName: 'enrollment', apiResourceName: 'enrollments')
 class Enrollment extends IdentifiableEntity {
+  @ManyToOne(joinColumnName: 'activity', table: Activity)
+  dynamic activity;
+
   @Column()
   String? enrollment;
 
@@ -63,6 +67,7 @@ class Enrollment extends IdentifiableEntity {
       this.incidentDate,
       this.enrollmentDate,
       required this.trackedEntityType,
+      required this.activity,
       required this.orgUnit,
       required this.program,
       required bool dirty,
@@ -106,6 +111,7 @@ class Enrollment extends IdentifiableEntity {
         incidentDate: json['incidentDate'],
         enrollmentDate: json['enrollmentDate'],
         trackedEntityType: json['trackedEntityType'],
+        activity: json['activity'],
         orgUnit: json['orgUnit'],
         program: json['program'],
         status: json['status'],
@@ -133,6 +139,7 @@ class Enrollment extends IdentifiableEntity {
     data['incidentDate'] = this.incidentDate;
     data['enrollmentDate'] = this.enrollmentDate;
     data['trackedEntityType'] = this.trackedEntityType;
+    data['activity'] = this.activity;
     data['orgUnit'] = this.orgUnit;
     data['program'] = this.program;
     data['status'] = this.status;
@@ -158,16 +165,40 @@ class Enrollment extends IdentifiableEntity {
   static toUpload(Enrollment enrollment, List<Event>? events) {
     final filteredEvents =
         (events ?? []).where((event) => event.enrollment == enrollment.id);
-    return {
+
+    // NMCP
+    Map<String, dynamic> enrollmentToUpload = {
+      "activity": enrollment.activity,
       "enrollment": enrollment.enrollment,
       "trackedEntityInstance": enrollment.trackedEntityInstance,
       "geometry":
-          enrollment.geometry != null ? enrollment.geometry?.toJson() : null,
+      enrollment.geometry != null ? enrollment.geometry?.toJson() : null,
       "orgUnit": enrollment.orgUnit,
       "program": enrollment.program,
       "enrollmentDate": enrollment.enrollmentDate,
       "incidentDate": enrollment.incidentDate,
       "events": (filteredEvents).map((event) => Event.toUpload(event)).toList()
     };
+
+    if (enrollment.activity != null &&
+        enrollment.activity.runtimeType != String) {
+      enrollmentToUpload['activity'] = enrollment.activity['id'];
+    }
+
+    return enrollmentToUpload;
+    //////////////
+    // return {
+    //   "enrollment": enrollment.enrollment,
+    //   "trackedEntityInstance": enrollment.trackedEntityInstance,
+    //   "geometry":
+    //       enrollment.geometry != null ? enrollment.geometry?.toJson() : null,
+    //   "project": enrollment.project,
+    //   "activity": enrollment.activity,
+    //   "orgUnit": enrollment.orgUnit,
+    //   "program": enrollment.program,
+    //   "enrollmentDate": enrollment.enrollmentDate,
+    //   "incidentDate": enrollment.incidentDate,
+    //   "events": (filteredEvents).map((event) => Event.toUpload(event)).toList()
+    // };
   }
 }

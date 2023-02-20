@@ -9,5 +9,5 @@ class TeamModule {
 
   TeamQuery get team => TeamQuery();
 
-  TeamUserQuery userTeam = TeamUserQuery();
+  TeamUserQuery teamUser = TeamUserQuery();
 }

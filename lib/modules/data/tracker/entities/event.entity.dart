@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/event_import_summary.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
@@ -13,6 +14,9 @@ import 'event_data_value.entity.dart';
 class Event extends IdentifiableEntity {
   @Column()
   String? event;
+
+  @ManyToOne(joinColumnName: 'activity', table: Activity)
+  dynamic activity;
 
   @Column()
   String orgUnit;
@@ -77,6 +81,7 @@ class Event extends IdentifiableEntity {
       String? created,
       String? lastUpdated,
       this.event,
+      required this.activity,
       required this.orgUnit,
       required this.status,
       required dirty,
@@ -115,6 +120,7 @@ class Event extends IdentifiableEntity {
         id: json['event'],
         name: json['event'],
         event: json['event'],
+        activity: json['activity'],
         orgUnit: json['orgUnit'],
         status: json['status'],
         eventDate: json['eventDate'],
@@ -149,6 +155,7 @@ class Event extends IdentifiableEntity {
     data['id'] = this.id;
     data['name'] = this.name;
     data['event'] = this.event;
+    data['activity'] = this.activity;
     data['orgUnit'] = this.orgUnit;
     data['status'] = this.status;
     data['eventDate'] = this.eventDate;
@@ -181,6 +188,7 @@ class Event extends IdentifiableEntity {
       "event": event.event,
       "programStage": event.programStage,
       "trackedEntityInstance": event.trackedEntityInstance,
+      "activity": event.activity,
       "orgUnit": event.orgUnit,
       "eventDate": event.eventDate,
       "status": event.status,
@@ -190,6 +198,11 @@ class Event extends IdentifiableEntity {
           .map((event) => EventDataValue.toUpload(event))
           .toList()
     };
+
+    if (event.activity != null &&
+        event.activity.runtimeType != String) {
+      eventToUpload['activity'] = event.activity['id'];
+    }
 
     if (event.programStage != null &&
         event.programStage.runtimeType != String) {

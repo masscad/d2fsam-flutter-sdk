@@ -43,7 +43,7 @@ void main() async {
   final dioAdapter = DioAdapter(dio: dio);
 
   dioAdapter.onGet(
-    'https://play.dhis2.org/2.35.11/api/trackedEntityInstances.json?ou=DiszpKrYNg8&ouMode=SELECTED&program=IpHINAT79UW&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*',
+    'https://play.dhis2.org/2.35.11/api/trackedEntityInstances.json?ou=DiszpKrYNg8&ouMode=SELECTED&activity=ActzpKrYNg8&program=IpHINAT79UW&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*',
     (server) => server.reply(200, sampleTrackedEntityInstances),
   );
 
@@ -56,6 +56,7 @@ void main() async {
   final trackedEntityInstanceQuery = TrackedEntityInstanceQuery(database: db);
 
   await trackedEntityInstanceQuery
+      .byActivity('ActzpKrYNg8')
       .byOrgUnit('DiszpKrYNg8')
       .byProgram('IpHINAT79UW')
       .download((progress, complete) {
@@ -94,6 +95,7 @@ void main() async {
   });
 
   await trackedEntityInstanceQuery
+      .byActivity('ActzpKrYNg8')
       .byOrgUnit('DiszpKrYNg8')
       .byProgram('IpHINAT79UW')
       .download((progress, complete) {
@@ -134,6 +136,7 @@ void main() async {
 
   List<TrackedEntityInstance> trackedEntityInstancesByProgram =
       await TrackedEntityInstanceQuery()
+          .byActivity('ActzpKrYNg8')
           .byOrgUnit('DiszpKrYNg8')
           .byProgram('IpHINAT79UW')
           .get();
@@ -157,6 +160,7 @@ void main() async {
       .getOne();
 
   await trackedEntityInstanceQuery
+      .byActivity('ActzpKrYNg8')
       .byOrgUnit('DiszpKrYNg8')
       .byProgram('IpHINAT79UW')
       .download((progress, complete) {
@@ -172,12 +176,13 @@ void main() async {
   });
 
   dioAdapter.onGet(
-    'https://play.dhis2.org/2.35.11/api/trackedEntityInstances.json?ou=ImspTQPwCqd&ouMode=SELECTED&program=IpHINAT79UW&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*',
+    'https://play.dhis2.org/2.35.11/api/trackedEntityInstances.json?ou=ImspTQPwCqd&ouMode=SELECTED&activity=ActzpKrYNg8&program=IpHINAT79UW&programStatus=ACTIVE&pageSize=50&order=created:desc&fields=*',
     (server) => server.reply(200, sampleTrackedEntityInstances),
   );
 
   List<TrackedEntityInstance>? listByOrgUnits =
       await TrackedEntityInstanceQuery()
+          .byActivity('ActzpKrYNg8')
           .byUserOrgUnit()
           .byProgram('IpHINAT79UW')
           .download((progress, complete) {

@@ -4,6 +4,8 @@ import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
 import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.entity.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/tracked_entity_instance.query.dart';
 import 'package:d2_touch_teams/modules/file_resource/entities/file_resource.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,6 +19,7 @@ import '../sample/file_resource.sample.dart';
 import '../sample/tracked_entity_instances.sample.dart';
 import '../sample/tracked_entity_import_summary.sample.dart';
 import '../sample/tracked_entity_instance_upload.sample.dart';
+import '../sample/project.sample.dart';
 import 'tracked_entity_instance_upload_test.reflectable.dart';
 
 void main() async {
@@ -48,6 +51,15 @@ void main() async {
 
   final List<FileResource> savedFileResources =
       await D2TouchTeams.fileResourceModule.fileResource.get();
+
+  // NMCP /////////
+  List<Project> projects = [];
+  sampleProjects['projects'].forEach((project) {
+    projects.add(Project.fromJson({...project, 'dirty': false}));
+  });
+
+  await ProjectQuery().setData(projects).save();
+  //////////////////
 
   final TrackedEntityInstance trackedEntityInstance =
       TrackedEntityInstance.fromJson({

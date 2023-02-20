@@ -21,6 +21,9 @@ class Team extends IdentifiableEntity {
   @OneToMany(table: Assignment)
   List<Assignment>? assignments;
 
+  @Column(nullable: true)
+  bool? synced;
+
   Team(
       {required String id,
       String? created,
@@ -33,6 +36,7 @@ class Team extends IdentifiableEntity {
       this.teamGroup,
       this.users,
       this.assignments,
+      this.synced,
       required dirty})
       : super(
             id: id,
@@ -59,6 +63,7 @@ class Team extends IdentifiableEntity {
             .map<Assignment>((assignment) => Assignment.fromJson(
                 {...assignment, 'team': json['id'], 'dirty': false}))
             .toList(),
+        synced: json['synced'],
         dirty: json['dirty']);
   }
 
@@ -101,6 +106,7 @@ class Team extends IdentifiableEntity {
     data['activity'] = this.activity;
     data['users'] = this.users;
     data['assignments'] = this.assignments;
+    data['synced'] = this.synced;
     data['dirty'] = this.dirty;
     return data;
   }

@@ -65,14 +65,14 @@ class Activity extends IdentifiableEntity {
         startDate: json['startDate'],
         endDate: json['endDate'],
         project: json['project'],
-        inactive: json['inactive'],
+        inactive: json['inactive'] ?? false,
         programs: json['programs']?.toString() ?? null,
         assignments: (json['assignments'] ?? [])
             .map<Assignment>((assignment) => Assignment.fromJson(
                 {...assignment, 'team': json['id'], 'dirty': false}))
             .toList(),
         teams: (json['teams'] ?? [])
-            .map<Assignment>((team) => Team.fromJson(
+            .map<Team>((team) => Team.fromJson(
                 {...team, 'activity': json['id'], 'dirty': false}))
             .toList(),
         dirty: json['dirty']);

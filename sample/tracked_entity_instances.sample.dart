@@ -20,6 +20,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:22.165",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:22.165",
           "program": "IpHINAT79UW",
@@ -46,6 +47,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:22.165",
               "program": "IpHINAT79UW",
               "event": "Tr95hr7sher",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "VYhjy99cyVv",
@@ -171,6 +173,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-03-06T05:49:28.340",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-03-06T05:49:28.340",
           "program": "IpHINAT79UW",
@@ -191,6 +194,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
         },
         {
           "created": "2017-03-28T12:27:48.645",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-03-28T12:27:48.645",
           "program": "ur1Edk5Oe2n",
@@ -221,6 +225,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-03T10:32:13.965",
               "program": "ur1Edk5Oe2n",
               "event": "blZxytttTqq",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZkbAXlQUYJG",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PQfMcpmXeFE",
@@ -260,6 +265,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-02T19:32:23.869",
               "program": "ur1Edk5Oe2n",
               "event": "ZdRPhMckeJk",
+              "activity": "ActzpKrYNg8",
               "programStage": "EPEcjy3FWmI",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PQfMcpmXeFE",
@@ -309,6 +315,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-02T19:32:37.385",
               "program": "ur1Edk5Oe2n",
               "event": "DSKhD4VgQPQ",
+              "activity": "ActzpKrYNg8",
               "programStage": "jdRD35YwbRH",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PQfMcpmXeFE",
@@ -350,6 +357,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-02T19:32:02.853",
               "program": "ur1Edk5Oe2n",
               "event": "diebn6sFaCy",
+              "activity": "ActzpKrYNg8",
               "programStage": "jdRD35YwbRH",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PQfMcpmXeFE",
@@ -463,6 +471,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:49.243",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:49.243",
           "program": "IpHINAT79UW",
@@ -485,6 +494,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.244",
               "program": "IpHINAT79UW",
               "event": "NUE7a9V9dxi",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "cAQnNOXeh8s",
@@ -551,6 +561,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.244",
               "program": "IpHINAT79UW",
               "event": "c7u0GoLfRGw",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "cAQnNOXeh8s",
@@ -699,6 +710,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-01-20T20:01:44.446",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-01-20T20:01:44.446",
           "program": "IpHINAT79UW",
@@ -722,6 +734,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-01-20T20:01:44.450",
               "program": "IpHINAT79UW",
               "event": "FyJ0jgAARNX",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Tm9Lh2J2n1M",
@@ -778,6 +791,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-01-20T20:01:44.453",
               "program": "IpHINAT79UW",
               "event": "oKn0OF5z7Yl",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Tm9Lh2J2n1M",
@@ -904,6 +918,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T17:48:49.100",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T17:48:49.100",
           "program": "IpHINAT79UW",
@@ -926,6 +941,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-04-24T14:34:38.966",
               "program": "IpHINAT79UW",
               "event": "l21haxx6eCR",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "AivS67mcmKY",
@@ -949,6 +965,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T17:48:49.106",
               "program": "IpHINAT79UW",
               "event": "sKejj7LT4em",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "AivS67mcmKY",
@@ -1015,6 +1032,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T17:48:49.521",
               "program": "IpHINAT79UW",
               "event": "Blkvmtqi6x2",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "AivS67mcmKY",
@@ -1163,6 +1181,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T19:51:08.151",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T19:51:08.151",
           "program": "IpHINAT79UW",
@@ -1186,6 +1205,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:51:08.153",
               "program": "IpHINAT79UW",
               "event": "DhwJD1gzgOZ",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "FcA5liuWG0x",
@@ -1255,6 +1275,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:51:08.343",
               "program": "IpHINAT79UW",
               "event": "vdbUbSCFVYS",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "FcA5liuWG0x",
@@ -1405,6 +1426,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:51.174",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:51.174",
           "program": "IpHINAT79UW",
@@ -1427,6 +1449,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.174",
               "program": "IpHINAT79UW",
               "event": "e1kCiXmpMkx",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uzSPnWHV7Ab",
@@ -1528,6 +1551,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.174",
               "program": "IpHINAT79UW",
               "event": "MaNSh2JSvbW",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uzSPnWHV7Ab",
@@ -1641,6 +1665,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:25.959",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:25.959",
           "program": "IpHINAT79UW",
@@ -1664,6 +1689,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:25.959",
               "program": "IpHINAT79UW",
               "event": "V1CerIi3sdL",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "tIJu6iqQxNV",
@@ -1732,6 +1758,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:25.959",
               "program": "IpHINAT79UW",
               "event": "O7IACPx40nQ",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "tIJu6iqQxNV",
@@ -1880,6 +1907,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T18:00:47.814",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T18:00:47.814",
           "program": "IpHINAT79UW",
@@ -1903,6 +1931,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T18:00:47.817",
               "program": "IpHINAT79UW",
               "event": "aO0gvKzIj1k",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "SHnmavBQu72",
@@ -1972,6 +2001,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T18:00:48.008",
               "program": "IpHINAT79UW",
               "event": "qIb7Lu0YDi9",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "SHnmavBQu72",
@@ -2122,6 +2152,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-09-23T20:01:44.946",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-09-23T20:01:44.946",
           "program": "IpHINAT79UW",
@@ -2145,6 +2176,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-09-23T20:01:44.951",
               "program": "IpHINAT79UW",
               "event": "ea2QqDBbvMX",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "mYyHxkNAOr2",
@@ -2213,6 +2245,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-09-23T20:01:45.388",
               "program": "IpHINAT79UW",
               "event": "QHde4ozqiNl",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "mYyHxkNAOr2",
@@ -2282,6 +2315,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:48.686",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:48.686",
           "program": "IpHINAT79UW",
@@ -2304,6 +2338,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:48.686",
               "program": "IpHINAT79UW",
               "event": "RkaIup5F0nL",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "lmcLfONF8rY",
@@ -2405,6 +2440,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:48.686",
               "program": "IpHINAT79UW",
               "event": "W1uHdJEjZUI",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "lmcLfONF8rY",
@@ -2518,6 +2554,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-10-01T12:27:37.810",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-10-01T12:27:37.810",
           "program": "IpHINAT79UW",
@@ -2540,6 +2577,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-10-01T12:27:46.988",
               "program": "IpHINAT79UW",
               "event": "NFKC68Jne6p",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "SBjuNw0Xtkn",
@@ -2645,6 +2683,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T19:13:49.586",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T19:13:49.586",
           "program": "IpHINAT79UW",
@@ -2667,6 +2706,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:13:49.734",
               "program": "IpHINAT79UW",
               "event": "vqGtFaGVnco",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Zm3qS1tFAb0",
@@ -2690,6 +2730,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:13:49.589",
               "program": "IpHINAT79UW",
               "event": "XvVI1eVrqxj",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Zm3qS1tFAb0",
@@ -2846,6 +2887,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-07-23T12:45:49.767",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-07-23T12:45:49.767",
           "program": "IpHINAT79UW",
@@ -2868,6 +2910,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-07-23T12:45:49.774",
               "program": "IpHINAT79UW",
               "event": "zfzS9WeO0uM",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "oi3PMIGYJH8",
@@ -2934,6 +2977,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-07-23T12:45:50.243",
               "program": "IpHINAT79UW",
               "event": "hUQEgo9b5dz",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "oi3PMIGYJH8",
@@ -3089,6 +3133,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:50.551",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:50.551",
           "program": "IpHINAT79UW",
@@ -3111,6 +3156,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:50.551",
               "program": "IpHINAT79UW",
               "event": "h7VhVrJKtYG",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Pqv3LrNECkn",
@@ -3177,6 +3223,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:50.552",
               "program": "IpHINAT79UW",
               "event": "VYS6hFTCniS",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Pqv3LrNECkn",
@@ -3325,6 +3372,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T19:12:23.224",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T19:12:23.224",
           "program": "IpHINAT79UW",
@@ -3348,6 +3396,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:12:23.229",
               "program": "IpHINAT79UW",
               "event": "q0Hcikut16c",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PgkxEogQBnX",
@@ -3416,6 +3465,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T19:12:23.395",
               "program": "IpHINAT79UW",
               "event": "Iqa43dt43Li",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "PgkxEogQBnX",
@@ -3485,6 +3535,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:51.683",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:51.683",
           "program": "IpHINAT79UW",
@@ -3507,6 +3558,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.683",
               "program": "IpHINAT79UW",
               "event": "LBl7TMnTJWG",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "qlffApkBC1o",
@@ -3573,6 +3625,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.684",
               "program": "IpHINAT79UW",
               "event": "gURuo1dsNwE",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "qlffApkBC1o",
@@ -3721,6 +3774,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T21:22:30.290",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T21:22:30.290",
           "program": "IpHINAT79UW",
@@ -3743,6 +3797,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:22:30.431",
               "program": "IpHINAT79UW",
               "event": "F6qCjVSG9SC",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "x2UnW32bNDR",
@@ -3766,6 +3821,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:22:30.293",
               "program": "IpHINAT79UW",
               "event": "YHMjNgw3yQZ",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "x2UnW32bNDR",
@@ -3881,6 +3937,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:24.361",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:24.361",
           "program": "IpHINAT79UW",
@@ -3903,6 +3960,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:24.361",
               "program": "IpHINAT79UW",
               "event": "c0tuHs0y901",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "kfwLSxq7mXk",
@@ -4004,6 +4062,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:24.361",
               "program": "IpHINAT79UW",
               "event": "QQkGR5Q7Arc",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "kfwLSxq7mXk",
@@ -4124,6 +4183,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-16T12:25:30.333",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-16T12:25:30.333",
           "program": "IpHINAT79UW",
@@ -4148,6 +4208,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-16T12:25:30.652",
               "program": "IpHINAT79UW",
               "event": "vF0YkkC3JD3",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uhubxsfLanV",
@@ -4252,6 +4313,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-16T12:25:30.337",
               "program": "IpHINAT79UW",
               "event": "nN7gGLW5Akv",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uhubxsfLanV",
@@ -4319,6 +4381,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
         },
         {
           "created": "2018-05-08T20:54:31.816",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-05-08T20:54:31.816",
           "program": "IpHINAT79UW",
@@ -4341,6 +4404,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-05-08T20:54:32.029",
               "program": "IpHINAT79UW",
               "event": "jh1GKd576CE",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uhubxsfLanV",
@@ -4428,6 +4492,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-05-08T20:54:31.993",
               "program": "IpHINAT79UW",
               "event": "lMADe4YpiEd",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "uhubxsfLanV",
@@ -4506,6 +4571,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T21:20:06.363",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T21:20:06.363",
           "program": "IpHINAT79UW",
@@ -4528,6 +4594,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:20:06.534",
               "program": "IpHINAT79UW",
               "event": "CtZadmFYELU",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "UtDZmrX5lSd",
@@ -4551,6 +4618,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:20:06.367",
               "program": "IpHINAT79UW",
               "event": "DJgiFfCU0zu",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "UtDZmrX5lSd",
@@ -4666,6 +4734,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T17:56:30.882",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T17:56:30.882",
           "program": "IpHINAT79UW",
@@ -4689,6 +4758,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T17:56:30.886",
               "program": "IpHINAT79UW",
               "event": "LctNSYpfdh0",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "cBoQxg16B6R",
@@ -4758,6 +4828,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T17:56:31.124",
               "program": "IpHINAT79UW",
               "event": "zQg7E7SWhKY",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "cBoQxg16B6R",
@@ -4908,6 +4979,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:25.197",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:25.197",
           "program": "IpHINAT79UW",
@@ -4930,6 +5002,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:25.197",
               "program": "IpHINAT79UW",
               "event": "FsDo0TAPHPI",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "q8F2ki7sEQB",
@@ -4996,6 +5069,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:25.197",
               "program": "IpHINAT79UW",
               "event": "bI6CMm9YWCv",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "q8F2ki7sEQB",
@@ -5144,6 +5218,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-16T11:38:23.738",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-16T11:38:23.738",
           "program": "IpHINAT79UW",
@@ -5167,6 +5242,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-16T11:38:23.746",
               "program": "IpHINAT79UW",
               "event": "XGLkLlOXgmE",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "EaOyKGOIGRp",
@@ -5235,6 +5311,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-16T11:38:24.173",
               "program": "IpHINAT79UW",
               "event": "RIrfCcEP8Uu",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "EaOyKGOIGRp",
@@ -5304,6 +5381,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:28.934",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:28.934",
           "program": "IpHINAT79UW",
@@ -5326,6 +5404,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:28.934",
               "program": "IpHINAT79UW",
               "event": "OXEx1mAXxvB",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "r2FEXpX6ize",
@@ -5392,6 +5471,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:28.934",
               "program": "IpHINAT79UW",
               "event": "DtkcpXuRSsc",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "r2FEXpX6ize",
@@ -5540,6 +5620,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-07T15:47:28.581",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-07T15:47:28.581",
           "program": "IpHINAT79UW",
@@ -5562,6 +5643,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:28.581",
               "program": "IpHINAT79UW",
               "event": "L1J3DUtK2hX",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "qx4yw1EuxmW",
@@ -5664,6 +5746,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-07T15:47:28.581",
               "program": "IpHINAT79UW",
               "event": "D8aGzJAhfoT",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "qx4yw1EuxmW",
@@ -5780,6 +5863,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:49.767",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:49.767",
           "program": "IpHINAT79UW",
@@ -5802,6 +5886,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.767",
               "program": "IpHINAT79UW",
               "event": "BP72AZQDB5x",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "iGIUvkCkaTl",
@@ -5903,6 +5988,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.767",
               "program": "IpHINAT79UW",
               "event": "mAM3pFDUnGj",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "iGIUvkCkaTl",
@@ -6023,6 +6109,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:15:41.294",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:15:41.294",
           "program": "IpHINAT79UW",
@@ -6045,6 +6132,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:15:41.294",
               "program": "IpHINAT79UW",
               "event": "KPKFw8hlfNL",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Hal4Eri2SHn",
@@ -6111,6 +6199,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:15:41.295",
               "program": "IpHINAT79UW",
               "event": "gLWn5wCikDq",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "Hal4Eri2SHn",
@@ -6259,6 +6348,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:41.753",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:41.753",
           "program": "IpHINAT79UW",
@@ -6282,6 +6372,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:41.754",
               "program": "IpHINAT79UW",
               "event": "qf2qpuzVOki",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "ebp9zX3uy7m",
@@ -6364,6 +6455,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:41.754",
               "program": "IpHINAT79UW",
               "event": "GItzOYMguup",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "ebp9zX3uy7m",
@@ -6512,6 +6604,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:49.891",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:49.891",
           "program": "IpHINAT79UW",
@@ -6534,6 +6627,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.892",
               "program": "IpHINAT79UW",
               "event": "hZlmjdXtZrY",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "XF7tJoenIpr",
@@ -6600,6 +6694,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:49.892",
               "program": "IpHINAT79UW",
               "event": "Fqxw1sZM0cN",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "XF7tJoenIpr",
@@ -6748,6 +6843,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2018-08-06T21:20:51.008",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2017-08-06T21:20:51.008",
           "program": "IpHINAT79UW",
@@ -6770,6 +6866,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.009",
               "program": "IpHINAT79UW",
               "event": "OWpIzQ4xabC",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "osF4RF4EiqP",
@@ -6871,6 +6968,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2017-08-06T21:20:51.009",
               "program": "IpHINAT79UW",
               "event": "WlT1pjQ4HeZ",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "osF4RF4EiqP",
@@ -6984,6 +7082,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
       "enrollments": [
         {
           "created": "2017-11-15T21:19:09.340",
+          "activity": "ActzpKrYNg8",
           "orgUnit": "DiszpKrYNg8",
           "createdAtClient": "2016-11-15T21:19:09.340",
           "program": "IpHINAT79UW",
@@ -7006,6 +7105,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:19:09.503",
               "program": "IpHINAT79UW",
               "event": "Bu1aSFQ2kEb",
+              "activity": "ActzpKrYNg8",
               "programStage": "ZzYYXq4fJie",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "nRcbpL1q9KL",
@@ -7029,6 +7129,7 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "createdAtClient": "2016-11-15T21:19:09.343",
               "program": "IpHINAT79UW",
               "event": "IeOweNjLXxv",
+              "activity": "ActzpKrYNg8",
               "programStage": "A03MvHHogjR",
               "orgUnit": "DiszpKrYNg8",
               "trackedEntityInstance": "nRcbpL1q9KL",

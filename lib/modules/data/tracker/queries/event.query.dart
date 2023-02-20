@@ -4,6 +4,8 @@ import 'package:d2_touch_teams/modules/data/tracker/entities/event.entity.dart';
 import 'package:d2_touch_teams/modules/data/tracker/entities/event_data_value.entity.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/event_import_summary.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/event_data_value.query.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/queries/activity.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program_stage.query.dart';
 import 'package:d2_touch_teams/shared/models/request_progress.model.dart';
@@ -15,6 +17,8 @@ import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
 class EventQuery extends BaseQuery<Event> {
+  String? project;
+  String? activity;
   String? orgUnit;
   String? program;
   String? programStage;
@@ -47,6 +51,16 @@ class EventQuery extends BaseQuery<Event> {
     return this;
   }
 
+  EventQuery byProject(String project) {
+    this.project = project;
+    return this.where(attribute: 'project', value: project);
+  }
+
+  EventQuery byActivity(String activity) {
+    this.activity = activity;
+    return this.where(attribute: 'activity', value: activity);
+  }
+
   EventQuery byOrgUnit(String orgUnit) {
     this.orgUnit = orgUnit;
     return this.where(attribute: 'orgUnit', value: orgUnit);
@@ -70,12 +84,15 @@ class EventQuery extends BaseQuery<Event> {
   @override
   Future<String> dhisUrl() {
     return Future.value(
-        'events.json?fields=event,eventDate,dueDate,program,programStage,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&orgUnit=${this.orgUnit}&program=${this.program}${this.programStage != null ? '&programStage=${this.programStage}' : ''}&order=eventDate:desc&pageSize=100&page=1');
+        'events.json?fields=event,eventDate,dueDate,program,programStage,project,activity,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]${this.project != null ? '&project=${this.project}' : ''}${this.activity != null ? '&activity=${this.activity}' : ''}&orgUnit=${this.orgUnit}&program=${this.program}${this.programStage != null ? '&programStage=${this.programStage}' : ''}&order=eventDate:desc&pageSize=100&page=1');
+    // return Future.value(
+    //     'events.json?fields=event,eventDate,dueDate,program,programStage,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&orgUnit=${this.orgUnit}&program=${this.program}${this.programStage != null ? '&programStage=${this.programStage}' : ''}&order=eventDate:desc&pageSize=100&page=1');
   }
 
   @override
   Future create() async {
     Event event = Event(
+        activity: this.activity,
         orgUnit: this.orgUnit as String,
         status: 'ACTIVE',
         enrollment: this.enrollment ?? '',
@@ -126,8 +143,13 @@ class EventQuery extends BaseQuery<Event> {
 
     List<String> eventIds = [];
     List<String> eventProgramStageIds = [];
+    List<String> eventActivityIds = [];
+
     events.forEach((event) {
       eventIds.add(event.id as String);
+
+      eventActivityIds.removeWhere((id) => id == event.activity);
+      eventActivityIds.add(event.activity);
 
       eventProgramStageIds.removeWhere((id) => id == event.programStage);
       eventProgramStageIds.add(event.programStage);
@@ -136,6 +158,9 @@ class EventQuery extends BaseQuery<Event> {
     List<EventDataValue> eventDataValues = await EventDataValueQuery()
         .whereIn(attribute: 'event', values: eventIds, merge: false)
         .get();
+
+    List<Activity> activities =
+        await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();
@@ -147,6 +172,10 @@ class EventQuery extends BaseQuery<Event> {
       event.programStage = programStages
           .lastWhere((programStage) => programStage.id == event.programStage)
           .toJson();
+      event.activity = activities
+          .lastWhere((activity) => activity.id == event.activity)
+          .toJson();
+
       return Event.toUpload(event);
     }).toList();
 

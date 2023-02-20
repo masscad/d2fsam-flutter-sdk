@@ -7,12 +7,15 @@ import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.enti
 import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
+import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import '../sample/current_user.sample.dart';
 import '../sample/program.sample.dart';
 import '../sample/reserved_values.sample.dart';
+import '../sample/project.sample.dart';
 import 'generate_event_test.reflectable.dart';
 
 void main() async {
@@ -43,6 +46,15 @@ void main() async {
 
   await ProgramQuery().setData(programs).save();
 
+  // NMCP /////////
+  List<Project> projects = [];
+  sampleProjects['projects'].forEach((project) {
+    projects.add(Project.fromJson({...project, 'dirty': false}));
+  });
+
+  await ProjectQuery().setData(projects).save();
+  //////////////////
+
   List<AttributeReservedValue> attributeResrvedValues = [];
   sampleReservedValues.forEach((reservedValue) {
     attributeResrvedValues.add(
@@ -55,6 +67,7 @@ void main() async {
 
   final TrackedEntityInstance trackedEntityInstance = await D2TouchTeams
       .trackerModule.trackedEntityInstance
+      .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();
@@ -65,6 +78,7 @@ void main() async {
       .getOne();
 
   final Event event = await D2TouchTeams.trackerModule.event
+      .byActivity('ActzpKrYNg8')
       .byProgramStage('A03MvHHogjR')
       .byOrgUnit('fnei293faf')
       .byEnrollment(trackedEntityInstance.enrollments?[0].enrollment as String)
@@ -87,6 +101,7 @@ void main() async {
 
   final Event eventWithoutEnrollment = await D2TouchTeams.trackerModule.event
       .byProgramStage('A03MvHHogjR')
+      .byActivity('ActzpKrYNg8')
       .byOrgUnit('fnei293faf')
       .create();
 

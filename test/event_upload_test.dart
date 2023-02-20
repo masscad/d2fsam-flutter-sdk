@@ -5,6 +5,10 @@ import 'package:d2_touch_teams/modules/data/tracker/entities/event.entity.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/event.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program_stage.query.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/activity/queries/activity.query.dart';
+import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -18,6 +22,7 @@ import '../sample/event_import_summary.sample.dart';
 import '../sample/event_upload.sample.dart';
 import '../sample/tracked_entity_instances.sample.dart';
 import '../sample/program_stage.sample.dart';
+import '../sample/project.sample.dart';
 import 'tracked_entity_instance_upload_test.reflectable.dart';
 
 void main() async {
@@ -48,6 +53,15 @@ void main() async {
   });
 
   await ProgramStageQuery().setData(programStages).save();
+
+  // NMCP /////////
+  List<Project> projects = [];
+  sampleProjects['projects'].forEach((project) {
+    projects.add(Project.fromJson({...project, 'dirty': false}));
+  });
+
+  await ProjectQuery().setData(projects).save();
+  //////////////////
 
   final Event event = Event.fromJson({
     ...sampleTrackedEntityInstances['trackedEntityInstances'][0]['enrollments']

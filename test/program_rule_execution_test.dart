@@ -13,6 +13,8 @@ import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_rule.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program_rule.query.dart';
+import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,6 +25,7 @@ import '../sample/current_user.sample.dart';
 import '../sample/program.sample.dart';
 import '../sample/program_rule.sample.dart';
 import '../sample/reserved_values.sample.dart';
+import '../sample/project.sample.dart';
 import 'program_rule_execution_test.reflectable.dart';
 
 void main() async {
@@ -62,6 +65,15 @@ void main() async {
 
   await ProgramRuleQuery().setData(programRules).save();
 
+  // NMCP /////////
+  List<Project> projects = [];
+  sampleProjects['projects'].forEach((project) {
+    projects.add(Project.fromJson({...project, 'dirty': false}));
+  });
+
+  await ProjectQuery().setData(projects).save();
+  //////////////////
+
   List<AttributeReservedValue> attributeResrvedValues = [];
   sampleReservedValues.forEach((reservedValue) {
     attributeResrvedValues.add(
@@ -72,6 +84,7 @@ void main() async {
 
   final TrackedEntityInstance trackedEntityInstance = await D2TouchTeams
       .trackerModule.trackedEntityInstance
+      .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();
