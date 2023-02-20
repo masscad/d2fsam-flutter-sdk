@@ -168,11 +168,11 @@ class Enrollment extends IdentifiableEntity {
 
     // NMCP
     Map<String, dynamic> enrollmentToUpload = {
-      "activity": enrollment.activity,
       "enrollment": enrollment.enrollment,
       "trackedEntityInstance": enrollment.trackedEntityInstance,
       "geometry":
       enrollment.geometry != null ? enrollment.geometry?.toJson() : null,
+      "activity": enrollment.activity,
       "orgUnit": enrollment.orgUnit,
       "program": enrollment.program,
       "enrollmentDate": enrollment.enrollmentDate,
