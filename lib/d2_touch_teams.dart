@@ -106,7 +106,8 @@ class D2TouchTeams {
     Dio? dioTestClient}) async {
     WidgetsFlutterBinding.ensureInitialized();
     HttpResponse userResponse = await HttpClient.get(
-        'me.json?fields=id,name,lastName,login,created,lastUpdated,birthday,gender,displayName,jobTitle,surname,employer,email,firstName,phoneNumber,nationality,userCredentials[code,id,name,lastLogin,displayName,username,userRoles[id,name,code]],organisationUnits[id,code,name],teams[id,code,name],dataViewOrganisationUnits[id,code,name],userGroups[id,name],authorities,programs,dataSets',
+        // 'me.json?fields=id,name,lastName,login,created,lastUpdated,birthday,gender,displayName,jobTitle,surname,employer,email,firstName,phoneNumber,nationality,userCredentials[code,id,name,lastLogin,displayName,username,userRoles[id,name,code]],organisationUnits[id,code,name],teams[id,code,name],dataViewOrganisationUnits[id,code,name],userGroups[id,name],authorities,programs,dataSets',
+        'me.json?fields=id,name,lastName,login,created,lastUpdated,birthday,gender,displayName,jobTitle,surname,employer,email,firstName,phoneNumber,nationality,code,lastLogin,username,userRoles[id,name,code],organisationUnits[id,code,name],teams[id,name],dataViewOrganisationUnits[id,code,name],userGroups[id,name],authorities,programs,dataSets',
         baseUrl: url,
         username: username,
         password: password,
@@ -196,7 +197,7 @@ class D2TouchTeams {
 
     List<dynamic> authorities = [];
 
-    userObject['userCredentials']['userRoles'].forEach((role) {
+    userObject['userRoles'].forEach((role) {
 
       List<dynamic> authoritiesToAdd = role["authorities"].map((auth) {
         return auth as String;

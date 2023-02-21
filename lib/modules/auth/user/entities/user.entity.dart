@@ -191,7 +191,7 @@ class User extends IdentifiableEntity {
                 user: jsonData['id'],
                 dirty: jsonData['dirty'] ?? false))
             .toList(),
-        roles: (jsonData['userCredentials']?['userRoles'] ?? [])
+        roles: (jsonData['userRoles'] ?? [])
             .map<UserRole>((role) => UserRole(
                 id: '${jsonData['id']}_${role['id']}',
                 name: role['name'],

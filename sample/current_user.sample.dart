@@ -12,29 +12,25 @@ Map<String, dynamic> userData = {
   "surname": "Traore",
   "employer": "DHIS",
   "email": "dummy@dhis2.org",
-  "userCredentials": {
-    "code": "admin",
-    "name": "John Traore",
-    "id": "ZyjSDLHGPv4",
-    "lastLogin": "2022-07-21T05:29:42.367",
-    "displayName": "John Traore",
-    "username": "admin",
-    "userRoles": [
-      {"name": "Antenatal care program", "id": "UYXOT4A7JMI"},
-      {"name": "Superuser", "id": "Ufph3mGRmMo"},
-      {"name": "Data entry clerk", "id": "Euq3XfEIEbx"},
-      {"name": "MNCH / PNC (Adult Woman) program", "id": "aNk5AyC7ydy"},
-      {"name": "TB program", "id": "cUlTcejWree"},
-      {"name": "Child Health Tracker", "id": "TMK9CMZ2V98"},
-      {"name": "Child Health Program Manager", "id": "Ql6Gew7eaX6"},
-      {"name": "WHO MCH program", "id": "Pqoy4DLOdMK"},
-      {"name": "Inpatient program", "id": "DRdaVRtwmG5"},
-      {"name": "M and E Officer", "id": "jRWSNIHdKww"},
-      {"name": "Facility tracker", "id": "txB7vu1w2Pr"},
-      {"name": "User manager", "id": "xJZBzAHI88H"},
-      {"name": "Guest", "id": "XS0dNzuZmfH"}
-    ]
-  },
+  "code": "admin",
+  "lastLogin": "2022-07-21T05:29:42.367",
+  "displayName": "John Traore",
+  "username": "admin",
+  "userRoles": [
+    {"name": "Antenatal care program", "id": "UYXOT4A7JMI"},
+    {"name": "Superuser", "id": "Ufph3mGRmMo"},
+    {"name": "Data entry clerk", "id": "Euq3XfEIEbx"},
+    {"name": "MNCH / PNC (Adult Woman) program", "id": "aNk5AyC7ydy"},
+    {"name": "TB program", "id": "cUlTcejWree"},
+    {"name": "Child Health Tracker", "id": "TMK9CMZ2V98"},
+    {"name": "Child Health Program Manager", "id": "Ql6Gew7eaX6"},
+    {"name": "WHO MCH program", "id": "Pqoy4DLOdMK"},
+    {"name": "Inpatient program", "id": "DRdaVRtwmG5"},
+    {"name": "M and E Officer", "id": "jRWSNIHdKww"},
+    {"name": "Facility tracker", "id": "txB7vu1w2Pr"},
+    {"name": "User manager", "id": "xJZBzAHI88H"},
+    {"name": "Guest", "id": "XS0dNzuZmfH"}
+  ],
   "userGroups": [
     {"name": "_PROGRAM_TB program", "id": "Kk12LkEWtXp"},
     {"name": "_PROGRAM_Antenatal care program", "id": "M1Qre0247G3"},
@@ -57,8 +53,8 @@ Map<String, dynamic> userData = {
     {"code": "OU_525", "name": "Sierra Leone", "id": "ImspTQPwCqd"}
   ],
   "teams": [
-    {"code": "TM_01", "name": "Team 1", "id": "TMspTQPwC01"},
-    {"code": "TM_02", "name": "Team 2", "id": "TMspTQPwC02"}
+    {"name": "Team 1", "id": "TMspTQPwC01"},
+    {"name": "Team 2", "id": "TMspTQPwC02"}
   ],
   "dataViewOrganisationUnits": [],
   "authorities": [
