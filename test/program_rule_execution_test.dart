@@ -13,8 +13,8 @@ import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_rule.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program_rule.query.dart';
-import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
+import 'package:d2_touch_teams/modules/activity_management/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/project/queries/project.query.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';

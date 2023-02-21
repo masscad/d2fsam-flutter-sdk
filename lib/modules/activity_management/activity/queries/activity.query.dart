@@ -1,8 +1,8 @@
 import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/core/utilities/repository.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
-import 'package:d2_touch_teams/modules/user_enrollment/assignment/entities/assignment.entity.dart';
-import 'package:d2_touch_teams/modules/user_enrollment/team/entities/team.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/assignment/entities/assignment.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/team/entities/team.entity.dart';
 import 'package:d2_touch_teams/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';

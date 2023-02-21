@@ -1,7 +1,7 @@
 import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
-import 'package:d2_touch_teams/modules/user_enrollment/assignment/entities/assignment.entity.dart';
-import 'package:d2_touch_teams/modules/user_enrollment/team/entities/team_group.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/assignment/entities/assignment.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/team/entities/team_group.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable

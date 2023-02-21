@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/enrollment_import_summary.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/geometry.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
 import 'event.entity.dart';

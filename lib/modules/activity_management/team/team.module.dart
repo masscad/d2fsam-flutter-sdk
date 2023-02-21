@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/user_enrollment/team/queries/team.query.dart';
+import 'package:d2_touch_teams/modules/activity_management/team/queries/team.query.dart';
 
 class TeamModule {
   static createTables() async {

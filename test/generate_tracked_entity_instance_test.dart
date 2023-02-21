@@ -6,8 +6,8 @@ import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.enti
 import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
-import 'package:d2_touch_teams/modules/metadata/project/entities/project.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/project/queries/project.query.dart';
+import 'package:d2_touch_teams/modules/activity_management/project/entities/project.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/project/queries/project.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';

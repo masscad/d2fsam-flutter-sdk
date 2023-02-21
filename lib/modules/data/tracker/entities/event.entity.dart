@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/modules/data/tracker/models/event_import_summary.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 

@@ -10,8 +10,8 @@ import 'package:d2_touch_teams/modules/data/tracker/models/tracked_entity_instan
 import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/enrollment.query.dart';
 import 'package:d2_touch_teams/modules/data/tracker/queries/event.query.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/entities/activity.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/activity/queries/activity.query.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_touch_teams/modules/activity_management/activity/queries/activity.query.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_touch_teams/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
