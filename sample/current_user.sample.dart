@@ -56,6 +56,10 @@ Map<String, dynamic> userData = {
   "organisationUnits": [
     {"code": "OU_525", "name": "Sierra Leone", "id": "ImspTQPwCqd"}
   ],
+  "teams": [
+    {"code": "TM_01", "name": "Team 1", "id": "TMspTQPwC01"},
+    {"code": "TM_02", "name": "Team 2", "id": "TMspTQPwC02"}
+  ],
   "dataViewOrganisationUnits": [],
   "authorities": [
     "F_PROGRAM_INDICATOR_PUBLIC_ADD",

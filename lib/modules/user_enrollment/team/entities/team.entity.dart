@@ -4,8 +4,6 @@ import 'package:d2_touch_teams/modules/user_enrollment/assignment/entities/assig
 import 'package:d2_touch_teams/modules/user_enrollment/team/entities/team_group.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
-import 'team_user.entity.dart';
-
 @AnnotationReflectable
 @Entity(tableName: 'team', apiResourceName: 'teams')
 class Team extends IdentifiableEntity {
@@ -15,11 +13,11 @@ class Team extends IdentifiableEntity {
   @ManyToOne(table: TeamGroup, joinColumnName: 'teamGroup')
   dynamic teamGroup;
 
-  @OneToMany(table: TeamUser)
-  List<TeamUser>? users;
-
   @OneToMany(table: Assignment)
   List<Assignment>? assignments;
+
+  @Column(type: ColumnType.BOOLEAN)
+  bool inactive;
 
   @Column(nullable: true)
   bool? synced;
@@ -34,8 +32,8 @@ class Team extends IdentifiableEntity {
       String? displayName,
       this.activity,
       this.teamGroup,
-      this.users,
       this.assignments,
+      required this.inactive,
       this.synced,
       required dirty})
       : super(
@@ -58,11 +56,11 @@ class Team extends IdentifiableEntity {
         displayName: json['displayName'],
         teamGroup: json['teamGroup'],
         activity: json['activity'],
-        users: json['users'],
         assignments: (json['assignments'] ?? [])
             .map<Assignment>((assignment) => Assignment.fromJson(
                 {...assignment, 'team': json['id'], 'dirty': false}))
             .toList(),
+        inactive: json['inactive'] ?? false,
         synced: json['synced'],
         dirty: json['dirty']);
   }
@@ -77,16 +75,8 @@ class Team extends IdentifiableEntity {
         displayName: jsonData['displayName'],
         teamGroup: jsonData['teamGroup'],
         activity: jsonData['activity'],
-        users: (jsonData['users'] ?? [])
-            .map<TeamUser>((user) => TeamUser(
-                id: '${jsonData['id']}_${user['id']}',
-                name: '${jsonData['id']}_${user['id']}',
-                user: user['id'],
-                type: user['type'],
-                team: jsonData['id'],
-                dirty: jsonData['dirty'] ?? false))
-            .toList(),
-        assignments: (jsonData['assignments'] ?? [])
+        inactive: jsonData['inactive'] ?? false,
+        assignments: jsonData['assignments']
             .map<Assignment>((assignment) => Assignment.fromJson(
                 {...assignment, 'team': jsonData['id'], 'dirty': false}))
             .toList(),
@@ -104,8 +94,8 @@ class Team extends IdentifiableEntity {
     data['displayName'] = this.displayName;
     data['teamGroup'] = this.teamGroup;
     data['activity'] = this.activity;
-    data['users'] = this.users;
     data['assignments'] = this.assignments;
+    data['inactive'] = this.inactive;
     data['synced'] = this.synced;
     data['dirty'] = this.dirty;
     return data;

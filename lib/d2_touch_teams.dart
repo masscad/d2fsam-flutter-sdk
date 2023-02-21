@@ -1,5 +1,6 @@
 library d2_touch_teams;
 
+import 'package:d2_touch_teams/modules/auth/user/queries/user_team.query.dart';
 import 'package:d2_touch_teams/modules/auth/user/user.module.dart';
 import 'package:d2_touch_teams/modules/data/aggregate/aggregate.module.dart';
 import 'package:d2_touch_teams/modules/data/tracker/tracked_entity_instance.module.dart';
@@ -105,7 +106,7 @@ class D2TouchTeams {
     Dio? dioTestClient}) async {
     WidgetsFlutterBinding.ensureInitialized();
     HttpResponse userResponse = await HttpClient.get(
-        'me.json?fields=id,name,lastName,login,created,lastUpdated,birthday,gender,displayName,jobTitle,surname,employer,email,firstName,phoneNumber,nationality,userCredentials[code,id,name,lastLogin,displayName,username,userRoles[id,name,code]],organisationUnits[id,code,name],dataViewOrganisationUnits[id,code,name],userGroups[id,name],authorities,programs,dataSets',
+        'me.json?fields=id,name,lastName,login,created,lastUpdated,birthday,gender,displayName,jobTitle,surname,employer,email,firstName,phoneNumber,nationality,userCredentials[code,id,name,lastLogin,displayName,username,userRoles[id,name,code]],organisationUnits[id,code,name],teams[id,code,name],dataViewOrganisationUnits[id,code,name],userGroups[id,name],authorities,programs,dataSets',
         baseUrl: url,
         username: username,
         password: password,
@@ -148,6 +149,8 @@ class D2TouchTeams {
     await userQuery.setData(user).save();
 
     await UserOrganisationUnitQuery().setData(user.organisationUnits).save();
+
+    await UserTeamQuery().setData(user.teams).save();
 
     return LoginResponseStatus.ONLINE_LOGIN_SUCCESS;
   }
@@ -216,6 +219,8 @@ class D2TouchTeams {
     await UserQuery().setData(user).save();
 
     await UserOrganisationUnitQuery().setData(user.organisationUnits).save();
+
+    await UserTeamQuery().setData(user.teams).save();
 
     return LoginResponseStatus.ONLINE_LOGIN_SUCCESS;
   }

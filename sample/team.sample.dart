@@ -9,17 +9,17 @@ final Map<String, dynamic> sampleActivities = {
   },
   "teams": [
     {
-      "code": "Tm_01",
+      "code": "TM_01",
       "created": "2012-02-17T15:54:39.987",
       "lastUpdated": "2017-05-22T15:21:48.515",
       "name": "Team 1",
-      "id": "TemzpKrYNg8",
+      "id": "TMspTQPwC01",
       "activity": {"id": "ActzpKrYNg1"},
       "shortName": "Tm 1",
       "assignments": [
-        {"id": "lxAQ7Zs9VYR"},
-        {"id": "IpHINAT79UW"},
-        {"id": "q04UBOqq3rp"},
+        {"id": "ASSQ7Zs9V01"},
+        {"id": "ASSINAT7902"},
+        {"id": "ASSUBOqq303"},
       ],
       "inactive": false,
       "users": [
@@ -28,17 +28,17 @@ final Map<String, dynamic> sampleActivities = {
       "teamGroup": {"id": "ActzpKrYNg8"},
     },
     {
-      "code": "Tm_02",
+      "code": "TM_02",
       "created": "2012-02-17T15:54:39.987",
       "lastUpdated": "2017-05-22T15:21:48.515",
       "name": "Team 2",
-      "id": "TemzpKrYNg2",
+      "id": "TMspTQPwC02",
       "activity": {"id": "ActzpKrYNg8"},
-      "shortName": "Act 1",
+      "shortName": "TM 2",
       "assignments": [
-        {"id": "lxAQ7Zs9VYR"},
-        {"id": "IpHINAT79UW"},
-        {"id": "q04UBOqq3rp"},
+        {"id": "ASSQ7Zs9V04"},
+        {"id": "ASSINAT7905"},
+        {"id": "ASSUBOqq306"},
       ],
       "inactive": false,
       "users": [
@@ -46,5 +46,24 @@ final Map<String, dynamic> sampleActivities = {
       ],
       "teamGroup": {"id": "ActzpKrYNg8"},
     },
+    {
+      "code": "TM_03",
+      "created": "2012-02-17T15:54:39.987",
+      "lastUpdated": "2017-05-22T15:21:48.515",
+      "name": "Team 3",
+      "id": "TMspTQPwC03",
+      "activity": {"id": "ActzpKrYNg8"},
+      "shortName": "TM 3",
+      "assignments": [
+        {"id": "ASSQ7Zs9V07"},
+        {"id": "ASSINAT7908"},
+        {"id": "ASSUBOqq309"},
+      ],
+      "inactive": false,
+      "users": [
+        {"id": "xE7jOejl9FI"},
+      ],
+      "teamGroup": {"id": "ActzpKrYNg8"},
+    }
   ]
 };

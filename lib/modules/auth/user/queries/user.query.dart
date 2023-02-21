@@ -4,6 +4,7 @@ import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_authority.entity.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_organisation_unit.entity.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_role.entity.dart';
+import 'package:d2_touch_teams/modules/auth/user/entities/user_team.entity.dart';
 import 'package:d2_touch_teams/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
@@ -29,6 +30,31 @@ class UserQuery extends BaseQuery<User> {
           referencedEntityColumns: Entity.getEntityColumns(
               AnnotationReflectable.reflectType(UserOrganisationUnit)
                   as ClassMirror,
+              false));
+      this.relations.add(relation);
+    }
+
+    return this;
+  }
+
+  UserQuery withTeam() {
+    final userTeam = Repository<UserTeam>();
+    final Column? relationColumn = userTeam.columns.firstWhere(
+            (column) =>
+        column.relation?.referencedEntity?.tableName == this.tableName);
+
+    if (relationColumn != null) {
+      ColumnRelation relation = ColumnRelation(
+          referencedColumn: relationColumn.relation?.attributeName,
+          attributeName: 'teams',
+          primaryKey: this.primaryKey?.name,
+          relationType: RelationType.OneToMany,
+          referencedEntity: Entity.getEntityDefinition(
+              AnnotationReflectable.reflectType(UserTeam)
+              as ClassMirror),
+          referencedEntityColumns: Entity.getEntityColumns(
+              AnnotationReflectable.reflectType(UserTeam)
+              as ClassMirror,
               false));
       this.relations.add(relation);
     }

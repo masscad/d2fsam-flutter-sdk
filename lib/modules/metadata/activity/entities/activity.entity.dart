@@ -16,9 +16,6 @@ class Activity extends IdentifiableEntity {
   @Column(nullable: true)
   String? endDate;
 
-  @Column(nullable: true)
-  Object? programs;
-
   @Column(type: ColumnType.BOOLEAN)
   bool inactive;
 
@@ -27,6 +24,12 @@ class Activity extends IdentifiableEntity {
 
   @OneToMany(table: Team)
   List<Team>? teams;
+
+  @Column(nullable: true)
+  final String? programs;
+
+  @Column(nullable: true)
+  final String? organisationUnits;
 
   Activity(
       {required String id,
@@ -39,10 +42,11 @@ class Activity extends IdentifiableEntity {
       String? displayName,
       this.startDate,
       this.endDate,
-      this.programs,
       required this.inactive,
       this.assignments,
       this.teams,
+      this.programs,
+      this.organisationUnits,
       required dirty})
       : super(
             id: id,
@@ -66,15 +70,16 @@ class Activity extends IdentifiableEntity {
         endDate: json['endDate'],
         project: json['project'],
         inactive: json['inactive'] ?? false,
-        programs: json['programs']?.toString() ?? null,
         assignments: (json['assignments'] ?? [])
             .map<Assignment>((assignment) => Assignment.fromJson(
-                {...assignment, 'team': json['id'], 'dirty': false}))
+                {...assignment, 'activity': json['id'], 'dirty': false}))
             .toList(),
         teams: (json['teams'] ?? [])
             .map<Team>((team) => Team.fromJson(
                 {...team, 'activity': json['id'], 'dirty': false}))
             .toList(),
+        programs: json['programs'].toString(),
+        organisationUnits: json['organisationUnits'].toString(),
         dirty: json['dirty']);
   }
 

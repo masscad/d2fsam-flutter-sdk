@@ -2,6 +2,7 @@ import 'package:d2_touch_teams/core/annotations/index.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_authority.entity.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_organisation_unit.entity.dart';
 import 'package:d2_touch_teams/modules/auth/user/entities/user_role.entity.dart';
+import 'package:d2_touch_teams/modules/auth/user/entities/user_team.entity.dart';
 import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
@@ -46,6 +47,9 @@ class User extends IdentifiableEntity {
   @OneToMany(table: UserOrganisationUnit)
   List<UserOrganisationUnit>? organisationUnits;
 
+  @OneToMany(table: UserTeam)
+  List<UserTeam>? teams;
+
   @OneToMany(table: UserAuthority)
   List<UserAuthority>? authorities;
 
@@ -79,6 +83,7 @@ class User extends IdentifiableEntity {
       String? lastUpdated,
       this.teiSearchOrganisationUnits,
       this.organisationUnits,
+      this.teams,
       this.authorities,
       this.roles,
       this.dataViewOrganisationUnits,
@@ -119,6 +124,7 @@ class User extends IdentifiableEntity {
         teiSearchOrganisationUnits:
             jsonData['teiSearchOrganisationUnits'].toString(),
         organisationUnits: jsonData['organisationUnits'],
+        teams: jsonData['teams'],
         authorities: (jsonData['authorities'] ?? [])
             .map<UserAuthority>((authority) => UserAuthority(
                 id: authority['id'],
@@ -169,6 +175,14 @@ class User extends IdentifiableEntity {
                 type: 'DATA_VIEW',
                 dirty: jsonData['dirty'] ?? false))
             .toList(),
+        teams: jsonData['teams']
+            .map<UserTeam>((team) => UserTeam(
+                id: '${jsonData['id']}_${team['id']}',
+                name: '${jsonData['id']}_${team['id']}',
+                team: team['id'],
+                user: jsonData['id'],
+                dirty: jsonData['dirty'] ?? false))
+            .toList(),
         authorities: (jsonData['authorities'] ?? [])
             .map<UserAuthority>((authority) => UserAuthority(
                 id: '${jsonData['id']}_$authority',
@@ -215,6 +229,7 @@ class User extends IdentifiableEntity {
     data['authType'] = this.authType;
     data['teiSearchOrganisationUnits'] = this.teiSearchOrganisationUnits;
     data['organisationUnits'] = this.organisationUnits;
+    data['teams'] = this.teams;
     data['authorities'] = this.authorities;
     data['roles'] = this.roles;
     data['dataViewOrganisationUnits'] = this.dataViewOrganisationUnits;
