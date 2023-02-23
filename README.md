@@ -2,7 +2,7 @@
 
 [![Flutter SDK CI](https://github.com/Hamza-ye/am-touch/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hamza-ye/am-touch/actions/workflows/deploy.yml)
 
-A New Project forked from the original project [d2-touch](https://github.com/udsm-dhis2-lab/d2-touch) by [UDSM DHIS2 LAB](https://github.com/udsm-dhis2-lab)
+A New Project forked from the original project [d2-touch](https://github.com/udsm-dhis2-lab/d2-touch)
 
 ## Introduction
 
