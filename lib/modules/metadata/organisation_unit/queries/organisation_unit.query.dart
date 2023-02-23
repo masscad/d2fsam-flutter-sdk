@@ -1,9 +1,9 @@
-import 'package:d2_touch_teams/modules/auth/user/entities/user_organisation_unit.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user_organisation_unit.query.dart';
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
-import 'package:d2_touch_teams/shared/models/request_progress.model.dart';
-import 'package:d2_touch_teams/shared/queries/base.query.dart';
-import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
+import 'package:am_touch/modules/auth/user/entities/user_organisation_unit.entity.dart';
+import 'package:am_touch/modules/auth/user/queries/user_organisation_unit.query.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
+import 'package:am_touch/shared/models/request_progress.model.dart';
+import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:am_touch/shared/utilities/http_client.util.dart';
 import 'package:dio/dio.dart';
 import 'package:sqflite/sqflite.dart';
 

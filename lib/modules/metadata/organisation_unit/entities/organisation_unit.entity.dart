@@ -1,7 +1,7 @@
-import 'package:d2_touch_teams/core/annotations/column.annotation.dart';
-import 'package:d2_touch_teams/core/annotations/entity.annotation.dart';
-import 'package:d2_touch_teams/core/annotations/reflectable.annotation.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/column.annotation.dart';
+import 'package:am_touch/core/annotations/entity.annotation.dart';
+import 'package:am_touch/core/annotations/reflectable.annotation.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'organisationunit', apiResourceName: 'organisationUnits')

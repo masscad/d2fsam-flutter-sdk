@@ -1,10 +1,11 @@
 ## [1.0.0] - 21/02/2023
 
-- Add inactive flag to Team
+- Add Activity Management module
 - Connect Activity with Programs
 - Connect Activity with OrganisationUnits
 - Add Filtering Assignments by Team and Activity
 - Add MANAGE_TEAM_AUTHORITY
+- Add inactive flag to Team
 
 ## [1.0.0-beta.13] - 09/09/2022
 

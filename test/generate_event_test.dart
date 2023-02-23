@@ -1,14 +1,14 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/event.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
-import 'package:d2_touch_teams/modules/activity_management/project/entities/project.entity.dart';
-import 'package:d2_touch_teams/modules/activity_management/project/queries/project.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/queries/user.query.dart';
+import 'package:am_touch/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
+import 'package:am_touch/modules/data/tracker/entities/event.entity.dart';
+import 'package:am_touch/modules/data/tracker/entities/tracked-entity.entity.dart';
+import 'package:am_touch/modules/data/tracker/queries/attribute_reserved_value.query.dart';
+import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
+import 'package:am_touch/modules/metadata/program/queries/program.query.dart';
+import 'package:am_touch/modules/activity_management/project/entities/project.entity.dart';
+import 'package:am_touch/modules/activity_management/project/queries/project.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -25,7 +25,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -63,21 +63,21 @@ void main() async {
 
   await AttributeReservedValueQuery().setData(attributeResrvedValues).save();
 
-  await D2TouchTeams.trackerModule.attributeReservedValue.get();
+  await AmTouch.trackerModule.attributeReservedValue.get();
 
-  final TrackedEntityInstance trackedEntityInstance = await D2TouchTeams
+  final TrackedEntityInstance trackedEntityInstance = await AmTouch
       .trackerModule.trackedEntityInstance
       .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();
 
-  final TrackedEntityInstance createdInstance = await D2TouchTeams
+  final TrackedEntityInstance createdInstance = await AmTouch
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .getOne();
 
-  final Event event = await D2TouchTeams.trackerModule.event
+  final Event event = await AmTouch.trackerModule.event
       .byActivity('ActzpKrYNg8')
       .byProgramStage('A03MvHHogjR')
       .byOrgUnit('fnei293faf')
@@ -85,7 +85,7 @@ void main() async {
       .create();
 
   final Event? createdEvent =
-      await D2TouchTeams.trackerModule.event.byId(event.id as String).getOne();
+      await AmTouch.trackerModule.event.byId(event.id as String).getOne();
 
   test('should return created tracked entity instance with generated values',
       () {
@@ -99,13 +99,13 @@ void main() async {
     expect(createdEvent?.id, event.id);
   });
 
-  final Event eventWithoutEnrollment = await D2TouchTeams.trackerModule.event
+  final Event eventWithoutEnrollment = await AmTouch.trackerModule.event
       .byProgramStage('A03MvHHogjR')
       .byActivity('ActzpKrYNg8')
       .byOrgUnit('fnei293faf')
       .create();
 
-  final Event? createdEventWithoutEnrollment = await D2TouchTeams.trackerModule.event
+  final Event? createdEventWithoutEnrollment = await AmTouch.trackerModule.event
       .byId(eventWithoutEnrollment.id as String)
       .getOne();
 

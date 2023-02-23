@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 import 'data_set.entity.dart';
 

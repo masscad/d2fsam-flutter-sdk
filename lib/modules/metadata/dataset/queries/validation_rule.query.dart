@@ -1,9 +1,9 @@
-import 'package:d2_touch_teams/modules/metadata/dataset/entities/data_set.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/dataset/entities/validation_rule.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/dataset/queries/data_set.query.dart';
-import 'package:d2_touch_teams/shared/models/request_progress.model.dart';
-import 'package:d2_touch_teams/shared/queries/base.query.dart';
-import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
+import 'package:am_touch/modules/metadata/dataset/entities/data_set.entity.dart';
+import 'package:am_touch/modules/metadata/dataset/entities/validation_rule.entity.dart';
+import 'package:am_touch/modules/metadata/dataset/queries/data_set.query.dart';
+import 'package:am_touch/shared/models/request_progress.model.dart';
+import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:am_touch/shared/utilities/http_client.util.dart';
 import 'package:dio/dio.dart';
 import 'package:queue/queue.dart';
 import 'package:sqflite/sqflite.dart';

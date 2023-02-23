@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/shared/queries/base.query.dart';
+import 'package:am_touch/shared/queries/base.query.dart';
 import 'package:sqflite/sqflite.dart';
 
 import '../entities/data_set_element_option.entity.dart';

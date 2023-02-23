@@ -1,5 +1,5 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/shared/entities/base.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/shared/entities/base.entity.dart';
 
 @AnnotationReflectable
 class IdentifiableEntity extends BaseEntity {

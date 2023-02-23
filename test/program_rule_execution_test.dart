@@ -1,20 +1,20 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/tracked-entity.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/entities/tracked_entity_attribute_value.entity.dart';
-import 'package:d2_touch_teams/modules/data/tracker/queries/attribute_reserved_value.query.dart';
-import 'package:d2_touch_teams/modules/engine/program_rule/models/tracker_rule_result.model.dart';
-import 'package:d2_touch_teams/modules/engine/program_rule/tracker_rule_engine.dart';
-import 'package:d2_touch_teams/modules/engine/shared/utilities/data_value_entities.util.dart';
-import 'package:d2_touch_teams/modules/engine/program_rule/utilities/program_rule_engine.util.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_rule.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program_rule.query.dart';
-import 'package:d2_touch_teams/modules/activity_management/project/entities/project.entity.dart';
-import 'package:d2_touch_teams/modules/activity_management/project/queries/project.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/queries/user.query.dart';
+import 'package:am_touch/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
+import 'package:am_touch/modules/data/tracker/entities/tracked-entity.entity.dart';
+import 'package:am_touch/modules/data/tracker/entities/tracked_entity_attribute_value.entity.dart';
+import 'package:am_touch/modules/data/tracker/queries/attribute_reserved_value.query.dart';
+import 'package:am_touch/modules/engine/program_rule/models/tracker_rule_result.model.dart';
+import 'package:am_touch/modules/engine/program_rule/tracker_rule_engine.dart';
+import 'package:am_touch/modules/engine/shared/utilities/data_value_entities.util.dart';
+import 'package:am_touch/modules/engine/program_rule/utilities/program_rule_engine.util.dart';
+import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_rule.entity.dart';
+import 'package:am_touch/modules/metadata/program/queries/program.query.dart';
+import 'package:am_touch/modules/metadata/program/queries/program_rule.query.dart';
+import 'package:am_touch/modules/activity_management/project/entities/project.entity.dart';
+import 'package:am_touch/modules/activity_management/project/queries/project.query.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -36,7 +36,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -82,7 +82,7 @@ void main() async {
 
   await AttributeReservedValueQuery().setData(attributeResrvedValues).save();
 
-  final TrackedEntityInstance trackedEntityInstance = await D2TouchTeams
+  final TrackedEntityInstance trackedEntityInstance = await AmTouch
       .trackerModule.trackedEntityInstance
       .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
@@ -102,11 +102,11 @@ void main() async {
         value: 'Female')
   ];
 
-  await D2TouchTeams.trackerModule.trackedEntityAttributeValue
+  await AmTouch.trackerModule.trackedEntityAttributeValue
       .setData(trackedEntityAttributeValues)
       .save();
 
-  final TrackedEntityInstance createdInstance = await D2TouchTeams
+  final TrackedEntityInstance createdInstance = await AmTouch
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .withEnrollments()
@@ -117,10 +117,10 @@ void main() async {
       createdInstance.attributes as List<TrackedEntityAttributeValue>);
 
   final createdProgramRules =
-      await D2TouchTeams.programModule.programRule.withActions().get();
+      await AmTouch.programModule.programRule.withActions().get();
 
   final createdProgramRuleVariables =
-      await D2TouchTeams.programModule.programRuleVariable.get();
+      await AmTouch.programModule.programRuleVariable.get();
 
   final programRuleActions = ProgramRuleEngine.execute(
       dataValueEntities: dataValueEntities,
@@ -141,11 +141,11 @@ void main() async {
       trackedEntityInstance: trackedEntityInstance.trackedEntityInstance,
       value: 'Male');
 
-  await D2TouchTeams.trackerModule.trackedEntityAttributeValue
+  await AmTouch.trackerModule.trackedEntityAttributeValue
       .setData(secondTrackedEntityAttributeValue)
       .save();
 
-  final TrackedEntityInstance updatedInstance = await D2TouchTeams
+  final TrackedEntityInstance updatedInstance = await AmTouch
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .withEnrollments()
@@ -167,7 +167,7 @@ void main() async {
     expect(secondLastNameRuleAction.programRuleActionType, '');
   });
 
-  await D2TouchTeams.trackerModule.trackedEntityAttributeValue
+  await AmTouch.trackerModule.trackedEntityAttributeValue
       .setData(TrackedEntityAttributeValue(
           dirty: true,
           attribute: 'cejWyOfXge6',

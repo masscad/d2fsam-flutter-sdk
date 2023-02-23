@@ -1,9 +1,9 @@
-import 'package:d2_touch_teams/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program_tracked_entity_attribute.query.dart';
-import 'package:d2_touch_teams/shared/models/request_progress.model.dart';
-import 'package:d2_touch_teams/shared/queries/base.query.dart';
-import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
+import 'package:am_touch/modules/data/tracker/entities/attribute_reserved_value.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
+import 'package:am_touch/modules/metadata/program/queries/program_tracked_entity_attribute.query.dart';
+import 'package:am_touch/shared/models/request_progress.model.dart';
+import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:am_touch/shared/utilities/http_client.util.dart';
 import 'package:dio/dio.dart';
 import 'package:queue/queue.dart';
 import 'package:sqflite/sqflite.dart';

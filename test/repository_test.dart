@@ -1,8 +1,8 @@
-import 'package:d2_touch_teams/core/utilities/repository.dart';
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
-import 'package:d2_touch_teams/shared/utilities/merge_mode.util.dart';
-import 'package:d2_touch_teams/shared/utilities/query_filter.util.dart';
-import 'package:d2_touch_teams/shared/utilities/query_filter_condition.util.dart';
+import 'package:am_touch/core/utilities/repository.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
+import 'package:am_touch/shared/utilities/merge_mode.util.dart';
+import 'package:am_touch/shared/utilities/query_filter.util.dart';
+import 'package:am_touch/shared/utilities/query_filter_condition.util.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';

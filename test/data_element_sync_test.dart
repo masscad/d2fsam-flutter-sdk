@@ -1,8 +1,8 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
-import 'package:d2_touch_teams/modules/metadata/data_element/entities/data_element.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/data_element/queries/data_element.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/queries/user.query.dart';
+import 'package:am_touch/modules/metadata/data_element/entities/data_element.entity.dart';
+import 'package:am_touch/modules/metadata/data_element/queries/data_element.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -24,7 +24,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);

@@ -1,10 +1,10 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/core/utilities/repository.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage_data_element.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage_section.entity.dart';
-import 'package:d2_touch_teams/shared/queries/base.query.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/core/utilities/repository.dart';
+import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_stage.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_stage_data_element.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_stage_section.entity.dart';
+import 'package:am_touch/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 

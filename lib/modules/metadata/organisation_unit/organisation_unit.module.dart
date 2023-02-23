@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/queries/organisation_unit.query.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/queries/organisation_unit.query.dart';
 
 class OrganisationUnitModule {
   static createTables() async {

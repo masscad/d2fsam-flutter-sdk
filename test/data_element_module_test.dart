@@ -1,6 +1,6 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/metadata/data_element/entities/data_element.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/data_element/queries/data_element.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/metadata/data_element/entities/data_element.entity.dart';
+import 'package:am_touch/modules/metadata/data_element/queries/data_element.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -11,10 +11,10 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  DataElementQuery dataElementQuery = D2TouchTeams.dataElementModule.dataElement;
+  DataElementQuery dataElementQuery = AmTouch.dataElementModule.dataElement;
 
   final dataElement = DataElement(
       id: 'test1',

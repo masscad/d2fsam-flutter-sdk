@@ -1,8 +1,8 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_rule_variable.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_section.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_rule_variable.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_section.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_stage.entity.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 import 'program_tracked_entity_attribute.entity.dart';
 

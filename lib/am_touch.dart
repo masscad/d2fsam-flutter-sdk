@@ -1,20 +1,20 @@
-library d2_touch_teams;
+library am_touch;
 
-import 'package:d2_touch_teams/modules/auth/user/queries/user_team.query.dart';
-import 'package:d2_touch_teams/modules/auth/user/user.module.dart';
-import 'package:d2_touch_teams/modules/data/aggregate/aggregate.module.dart';
-import 'package:d2_touch_teams/modules/data/tracker/tracked_entity_instance.module.dart';
-import 'package:d2_touch_teams/modules/file_resource/file_resource.module.dart';
-import 'package:d2_touch_teams/modules/activity_management/activity/activity.module.dart';
-import 'package:d2_touch_teams/modules/metadata/dataset/data_set.module.dart';
-import 'package:d2_touch_teams/modules/metadata/option_set/option_set.module.dart';
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/organisation_unit.module.dart';
-import 'package:d2_touch_teams/modules/metadata/program/program.module.dart';
-import 'package:d2_touch_teams/modules/activity_management/project/project.module.dart';
-import 'package:d2_touch_teams/modules/notification/notification.module.dart';
-import 'package:d2_touch_teams/modules/activity_management/assignment/assignment.module.dart';
-import 'package:d2_touch_teams/modules/activity_management/team/team.module.dart';
-import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
+import 'package:am_touch/modules/auth/user/queries/user_team.query.dart';
+import 'package:am_touch/modules/auth/user/user.module.dart';
+import 'package:am_touch/modules/data/aggregate/aggregate.module.dart';
+import 'package:am_touch/modules/data/tracker/tracked_entity_instance.module.dart';
+import 'package:am_touch/modules/file_resource/file_resource.module.dart';
+import 'package:am_touch/modules/activity_management/activity/activity.module.dart';
+import 'package:am_touch/modules/metadata/dataset/data_set.module.dart';
+import 'package:am_touch/modules/metadata/option_set/option_set.module.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/organisation_unit.module.dart';
+import 'package:am_touch/modules/metadata/program/program.module.dart';
+import 'package:am_touch/modules/activity_management/project/project.module.dart';
+import 'package:am_touch/modules/notification/notification.module.dart';
+import 'package:am_touch/modules/activity_management/assignment/assignment.module.dart';
+import 'package:am_touch/modules/activity_management/team/team.module.dart';
+import 'package:am_touch/shared/utilities/http_client.util.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,11 +29,11 @@ import 'modules/auth/user/queries/user_organisation_unit.query.dart';
 import 'modules/metadata/dashboard/dashboard.module.dart';
 import 'modules/metadata/data_element/data_element.module.dart';
 
-class D2TouchTeams {
+class AmTouch {
   static Future<void> initialize({String? databaseName,
     bool? inMemory,
     DatabaseFactory? databaseFactory}) async {
-    final newDatabaseName = databaseName ?? await D2TouchTeams.getDatabaseName();
+    final newDatabaseName = databaseName ?? await AmTouch.getDatabaseName();
     if (newDatabaseName != null) {
       DatabaseManager(
           databaseName: newDatabaseName,
@@ -64,19 +64,19 @@ class D2TouchTeams {
         bool? inMemory,
         DatabaseFactory? databaseFactory}) async {
     WidgetsFlutterBinding.ensureInitialized();
-    final databaseName = await D2TouchTeams.getDatabaseName(
+    final databaseName = await AmTouch.getDatabaseName(
         sharedPreferenceInstance: sharedPreferenceInstance);
 
     if (databaseName == null) {
       return false;
     }
 
-    await D2TouchTeams.initialize(
+    await AmTouch.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    User? user = await D2TouchTeams.userModule.user.getOne();
+    User? user = await AmTouch.userModule.user.getOne();
 
     return user?.isLoggedIn ?? false;
   }
@@ -126,12 +126,12 @@ class D2TouchTeams {
         .host;
     final String databaseName = '${username}_$uri';
 
-    await D2TouchTeams.initialize(
+    await AmTouch.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    await D2TouchTeams.setDatabaseName(
+    await AmTouch.setDatabaseName(
         databaseName: databaseName,
         sharedPreferenceInstance:
         sharedPreferenceInstance ?? SharedPreferences.getInstance());
@@ -160,12 +160,12 @@ class D2TouchTeams {
     WidgetsFlutterBinding.ensureInitialized();
     bool logOutSuccess = false;
     try {
-      User? currentUser = await D2TouchTeams.userModule.user.getOne();
+      User? currentUser = await AmTouch.userModule.user.getOne();
 
       currentUser?.isLoggedIn = false;
       currentUser?.dirty = true;
 
-      await D2TouchTeams.userModule.user.setData(currentUser).save();
+      await AmTouch.userModule.user.setData(currentUser).save();
 
       logOutSuccess = true;
     } catch (e) {}
@@ -183,12 +183,12 @@ class D2TouchTeams {
         .parse(instanceUrl)
         .host;
     final String databaseName = '$uri';
-    await D2TouchTeams.initialize(
+    await AmTouch.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    await D2TouchTeams.setDatabaseName(
+    await AmTouch.setDatabaseName(
         databaseName: databaseName,
         sharedPreferenceInstance:
         sharedPreferenceInstance ?? SharedPreferences.getInstance());

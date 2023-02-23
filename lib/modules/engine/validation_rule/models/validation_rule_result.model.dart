@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/data/aggregate/entities/data_value_set.entity.dart';
+import 'package:am_touch/modules/data/aggregate/entities/data_value_set.entity.dart';
 
 import 'validation_rule_action.model.dart';
 

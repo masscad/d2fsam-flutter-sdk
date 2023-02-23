@@ -1,7 +1,7 @@
-import 'package:d2_touch_teams/modules/sync/models/error_message.model.dart';
-import 'package:d2_touch_teams/modules/sync/utilities/query-resource.util.dart';
-import 'package:d2_touch_teams/shared/models/request_progress.model.dart';
-import 'package:d2_touch_teams/shared/utilities/http_client.util.dart';
+import 'package:am_touch/modules/sync/models/error_message.model.dart';
+import 'package:am_touch/modules/sync/utilities/query-resource.util.dart';
+import 'package:am_touch/shared/models/request_progress.model.dart';
+import 'package:am_touch/shared/utilities/http_client.util.dart';
 import 'package:queue/queue.dart';
 import 'package:sqflite/sqflite.dart';
 

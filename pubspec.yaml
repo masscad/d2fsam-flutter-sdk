@@ -1,8 +1,8 @@
-name: d2_touch_teams
+name: am_touch
 description: DHIS2 Flutter SDK
 version: 1.0.2
 homepage:
-repository: https://github.com/Hamza-ye/d2-touch-teams
+repository: https://github.com/Hamza-ye/am-touch
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

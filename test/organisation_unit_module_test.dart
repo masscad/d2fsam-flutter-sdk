@@ -1,9 +1,9 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user_organisation_unit.query.dart';
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/organisation_unit/queries/organisation_unit.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/queries/user.query.dart';
+import 'package:am_touch/modules/auth/user/queries/user_organisation_unit.query.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
+import 'package:am_touch/modules/metadata/organisation_unit/queries/organisation_unit.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
@@ -18,7 +18,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -36,7 +36,7 @@ void main() async {
       .save();
 
   OrganisationUnitQuery orgUnitQuery =
-      D2TouchTeams.organisationUnitModule.organisationUnit;
+      AmTouch.organisationUnitModule.organisationUnit;
 
   final organisationUnit = OrganisationUnit(
       id: 'ImspTQPwCqd',

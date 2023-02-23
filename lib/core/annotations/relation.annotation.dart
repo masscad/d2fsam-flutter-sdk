@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/core/annotations/reflectable.annotation.dart';
+import 'package:am_touch/core/annotations/reflectable.annotation.dart';
 
 @AnnotationReflectable
 class OneToOne {

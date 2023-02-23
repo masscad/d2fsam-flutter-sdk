@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/activity_management/activity/queries/activity.query.dart';
+import 'package:am_touch/modules/activity_management/activity/queries/activity.query.dart';
 
 class ActivityModule {
   static createTables() async {

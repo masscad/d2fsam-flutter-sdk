@@ -1,5 +1,5 @@
-import 'package:d2_touch_teams/modules/data/tracker/entities/event.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_rule_action.entity.dart';
+import 'package:am_touch/modules/data/tracker/entities/event.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_rule_action.entity.dart';
 
 class EventRuleResult {
   Event event;

@@ -1,7 +1,7 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/models/login-response.model.dart';
-import 'package:d2_touch_teams/modules/auth/user/queries/user.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/models/login-response.model.dart';
+import 'package:am_touch/modules/auth/user/queries/user.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -19,7 +19,7 @@ void main() async {
   // initializeReflectable();
   // sqfliteFfiInit();
 
-  // await D2TouchTeams.initialize(databaseFactory: databaseFactoryFfi);
+  // await AmTouch.initialize(databaseFactory: databaseFactoryFfi);
 
   // var databaseFactory = databaseFactoryFfi;
 
@@ -32,7 +32,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -48,7 +48,7 @@ void main() async {
     expect(userResponse, null);
   });
 
-  final isAuthenticated = await D2TouchTeams.isAuthenticated(
+  final isAuthenticated = await AmTouch.isAuthenticated(
       sharedPreferenceInstance: SharedPreferences.getInstance());
 
   test('should not be authenticated if database is not set', () {
@@ -64,7 +64,7 @@ void main() async {
     (server) => server.reply(200, userData),
   );
 
-  final onlineLogIn = await D2TouchTeams.logIn(
+  final onlineLogIn = await AmTouch.logIn(
       username: 'admin',
       password: 'district',
       url: 'https://play.dhis2.org/2.35.11',
@@ -72,7 +72,7 @@ void main() async {
       dioTestClient: dio);
 
   final user =
-      await D2TouchTeams.userModule.user.withAuthorities().withRoles().getOne();
+      await AmTouch.userModule.user.withAuthorities().withRoles().getOne();
 
   test('should successfully authenticate user on online login', () {
     expect(onlineLogIn, LoginResponseStatus.ONLINE_LOGIN_SUCCESS);
@@ -82,9 +82,9 @@ void main() async {
     expect(user?.roles?.length, 13);
   });
 
-  final logOutResponse = await D2TouchTeams.logOut();
+  final logOutResponse = await AmTouch.logOut();
 
-  final isAuthenticatedAfterLogout = await D2TouchTeams.isAuthenticated(
+  final isAuthenticatedAfterLogout = await AmTouch.isAuthenticated(
       sharedPreferenceInstance: SharedPreferences.getInstance());
 
   test('should successfully log out user', () {

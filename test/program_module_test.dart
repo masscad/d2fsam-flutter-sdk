@@ -1,8 +1,8 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_stage.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program.query.dart';
-import 'package:d2_touch_teams/modules/metadata/program/queries/program_stage.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_stage.entity.dart';
+import 'package:am_touch/modules/metadata/program/queries/program.query.dart';
+import 'package:am_touch/modules/metadata/program/queries/program_stage.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -13,11 +13,11 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  ProgramQuery programQuery = D2TouchTeams.programModule.program;
-  ProgramStageQuery programStageQuery = D2TouchTeams.programModule.programStage;
+  ProgramQuery programQuery = AmTouch.programModule.program;
+  ProgramStageQuery programStageQuery = AmTouch.programModule.programStage;
 
   final program = Program(
     id: 'test1',

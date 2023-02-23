@@ -1,7 +1,7 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/program/entities/program_section_attribute.entity.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
+import 'package:am_touch/modules/metadata/program/entities/program_section_attribute.entity.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'programsection', apiResourceName: 'programSections')

@@ -1,6 +1,6 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/modules/activity_management/activity/entities/activity.entity.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'project', apiResourceName: 'projects')

@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/auth/user/entities/user.entity.dart';
+import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
 import 'package:sqflite/sqflite.dart';
 
 class QueryResource {

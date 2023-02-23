@@ -1,4 +1,4 @@
-import 'package:d2_touch_teams/modules/notification/queries/message_conversation.query.dart';
+import 'package:am_touch/modules/notification/queries/message_conversation.query.dart';
 
 import 'queries/message.query.dart';
 

@@ -1,6 +1,6 @@
-import 'package:d2_touch_teams/d2_touch_teams.dart';
-import 'package:d2_touch_teams/modules/metadata/dashboard/entities/dashboard.entity.dart';
-import 'package:d2_touch_teams/modules/metadata/dashboard/queries/dashboard.query.dart';
+import 'package:am_touch/am_touch.dart';
+import 'package:am_touch/modules/metadata/dashboard/entities/dashboard.entity.dart';
+import 'package:am_touch/modules/metadata/dashboard/queries/dashboard.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
@@ -11,10 +11,10 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await D2TouchTeams.initialize(
+  await AmTouch.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  DashboardQuery dashboardQuery = D2TouchTeams.dashboardModule.dashboard;
+  DashboardQuery dashboardQuery = AmTouch.dashboardModule.dashboard;
 
   final dashboard = Dashboard(
       id: 'test1',

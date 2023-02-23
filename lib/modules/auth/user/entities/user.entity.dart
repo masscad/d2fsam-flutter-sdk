@@ -1,9 +1,9 @@
-import 'package:d2_touch_teams/core/annotations/index.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user_authority.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user_organisation_unit.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user_role.entity.dart';
-import 'package:d2_touch_teams/modules/auth/user/entities/user_team.entity.dart';
-import 'package:d2_touch_teams/shared/entities/identifiable.entity.dart';
+import 'package:am_touch/core/annotations/index.dart';
+import 'package:am_touch/modules/auth/user/entities/user_authority.entity.dart';
+import 'package:am_touch/modules/auth/user/entities/user_organisation_unit.entity.dart';
+import 'package:am_touch/modules/auth/user/entities/user_role.entity.dart';
+import 'package:am_touch/modules/auth/user/entities/user_team.entity.dart';
+import 'package:am_touch/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'user', apiResourceName: 'users')
