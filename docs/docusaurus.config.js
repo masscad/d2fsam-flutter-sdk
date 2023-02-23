@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "D2Touch (DHIS2 Flutter SDK)",
+  title: "AmTouch (DHIS2 Flutter SDK)",
   url: "https://Hamza-ye.github.io",
   baseUrl: "/am-touch/",
   onBrokenLinks: "throw",
@@ -10,9 +10,9 @@ module.exports = {
   projectName: "am-touch",
   themeConfig: {
     navbar: {
-      title: "D2Touch (DHIS2 Flutter SDK)",
+      title: "AmTouch (DHIS2 Flutter SDK)",
       logo: {
-        alt: "D2Touch (DHIS2 Flutter SDK)",
+        alt: "AmTouch (DHIS2 Flutter SDK)",
         src: "img/logo.svg",
       },
       items: [

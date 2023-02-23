@@ -7,12 +7,12 @@ Repositories offer a builder syntax with compile-time validation to access the r
 
 ```java
 // Generic syntax
-d2Touch.<module>.<repository>
+amTouch.<module>.<repository>
     .[ filter | orderBy | nested fields ]
     .<action>;
 
 // An example for events
-d2Touch.eventModule().events()
+amTouch.eventModule().events()
     .byOrganisationUnitUid().eq("DiszpKrYNg8")
     .byEventDate().after(Date("2019-05-05"))
     .orderByEventDate(DESC)
