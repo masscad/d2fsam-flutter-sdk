@@ -1,5 +1,5 @@
-import 'package:am_touch/modules/activity_management/assignment/entities/assignment.entity.dart';
-import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:d2_remote/modules/activity_management/assignment/entities/assignment.entity.dart';
+import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:sqflite/sqflite.dart';
 
 class AssignmentQuery extends BaseQuery<Assignment> {

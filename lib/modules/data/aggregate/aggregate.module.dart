@@ -1,5 +1,5 @@
-import 'package:am_touch/modules/data/aggregate/queries/data_value.query.dart';
-import 'package:am_touch/modules/data/aggregate/queries/data_value_set.query.dart';
+import 'package:d2_remote/modules/data/aggregate/queries/data_value.query.dart';
+import 'package:d2_remote/modules/data/aggregate/queries/data_value_set.query.dart';
 
 class AggregateModule {
   static createTables() async {

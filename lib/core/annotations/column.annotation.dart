@@ -1,6 +1,6 @@
-import 'package:am_touch/core/annotations/reflectable.annotation.dart';
-import 'package:am_touch/core/annotations/relation.annotation.dart';
-import 'package:am_touch/core/utilities/query_expression.dart';
+import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
+import 'package:d2_remote/core/annotations/relation.annotation.dart';
+import 'package:d2_remote/core/utilities/query_expression.dart';
 import 'package:reflectable/reflectable.dart';
 
 import 'entity.annotation.dart';

@@ -1,8 +1,8 @@
-import 'package:am_touch/modules/auth/user/queries/user.query.dart';
-import 'package:am_touch/modules/auth/user/queries/user_authority.query.dart';
-import 'package:am_touch/modules/auth/user/queries/user_organisation_unit.query.dart';
-import 'package:am_touch/modules/auth/user/queries/user_role.query.dart';
-import 'package:am_touch/modules/auth/user/queries/user_team.query.dart';
+import 'package:d2_remote/modules/auth/user/queries/user.query.dart';
+import 'package:d2_remote/modules/auth/user/queries/user_authority.query.dart';
+import 'package:d2_remote/modules/auth/user/queries/user_organisation_unit.query.dart';
+import 'package:d2_remote/modules/auth/user/queries/user_role.query.dart';
+import 'package:d2_remote/modules/auth/user/queries/user_team.query.dart';
 
 class UserModule {
   static createTables() async {

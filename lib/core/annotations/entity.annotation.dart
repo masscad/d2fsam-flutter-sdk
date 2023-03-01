@@ -1,5 +1,5 @@
-import 'package:am_touch/core/annotations/column.annotation.dart';
-import 'package:am_touch/core/annotations/reflectable.annotation.dart';
+import 'package:d2_remote/core/annotations/column.annotation.dart';
+import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 import 'package:reflectable/reflectable.dart';
 
 class EntityOptions {

@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/modules/data/tracker/models/event_import_summary.dart';
-import 'package:am_touch/modules/activity_management/activity/entities/activity.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_stage.entity.dart';
-import 'package:am_touch/shared/entities/identifiable.entity.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
+import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
+import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 import 'enrollment.entity.dart';
 import 'event_data_value.entity.dart';

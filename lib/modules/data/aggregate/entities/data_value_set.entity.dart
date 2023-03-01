@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/modules/data/aggregate/entities/data_value.entity.dart';
-import 'package:am_touch/shared/entities/identifiable.entity.dart';
-import 'package:am_touch/shared/utilities/object.util.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/data/aggregate/entities/data_value.entity.dart';
+import 'package:d2_remote/shared/entities/identifiable.entity.dart';
+import 'package:d2_remote/shared/utilities/object.util.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'datavalueset', apiResourceName: 'dataValueSets')

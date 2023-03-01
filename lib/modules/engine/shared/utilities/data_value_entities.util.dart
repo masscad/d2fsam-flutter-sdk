@@ -1,6 +1,6 @@
-import 'package:am_touch/modules/data/aggregate/entities/data_value.entity.dart';
-import 'package:am_touch/modules/data/tracker/entities/event_data_value.entity.dart';
-import 'package:am_touch/modules/data/tracker/entities/tracked_entity_attribute_value.entity.dart';
+import 'package:d2_remote/modules/data/aggregate/entities/data_value.entity.dart';
+import 'package:d2_remote/modules/data/tracker/entities/event_data_value.entity.dart';
+import 'package:d2_remote/modules/data/tracker/entities/tracked_entity_attribute_value.entity.dart';
 
 class DataValueObject {
   String id;

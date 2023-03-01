@@ -1,5 +1,5 @@
-import 'package:am_touch/modules/data/tracker/entities/tracked-entity.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_rule_action.entity.dart';
+import 'package:d2_remote/modules/data/tracker/entities/tracked-entity.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_rule_action.entity.dart';
 
 class TrackerRuleResult {
   TrackedEntityInstance trackedEntityInstance;

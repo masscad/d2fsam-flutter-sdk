@@ -1,6 +1,6 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_section.entity.dart';
-import 'package:am_touch/shared/entities/base.entity.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_section.entity.dart';
+import 'package:d2_remote/shared/entities/base.entity.dart';
 
 @AnnotationReflectable
 @Entity(

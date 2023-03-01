@@ -1,12 +1,12 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/core/utilities/repository.dart';
-import 'package:am_touch/modules/metadata/program/entities/program.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_rule_variable.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_section.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_stage.entity.dart';
-import 'package:am_touch/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
-import 'package:am_touch/shared/queries/base.query.dart';
-import 'package:am_touch/shared/utilities/query_filter.util.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/core/utilities/repository.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_rule_variable.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_section.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
+import 'package:d2_remote/modules/metadata/program/entities/program_tracked_entity_attribute.entity.dart';
+import 'package:d2_remote/shared/queries/base.query.dart';
+import 'package:d2_remote/shared/utilities/query_filter.util.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 

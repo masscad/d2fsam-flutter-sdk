@@ -2,12 +2,12 @@
 module.exports = {
   title: "AmTouch (DHIS2 Flutter SDK)",
   url: "https://Hamza-ye.github.io",
-  baseUrl: "/am-touch/",
+  baseUrl: "/d2-remote/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "Hamza-ye",
-  projectName: "am-touch",
+  projectName: "d2-remote",
   themeConfig: {
     navbar: {
       title: "AmTouch (DHIS2 Flutter SDK)",
@@ -23,7 +23,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/Hamza-ye/am-touch/tree/develop/docs/",
+          href: "https://github.com/Hamza-ye/d2-remote/tree/develop/docs/",
           label: "GitHub",
           position: "right",
         },
@@ -42,7 +42,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            "https://github.com/Hamza-ye/am-touch/edit/develop/docs/",
+            "https://github.com/Hamza-ye/d2-remote/edit/develop/docs/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

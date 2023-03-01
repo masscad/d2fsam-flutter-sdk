@@ -1,8 +1,8 @@
-name: am_touch
+name: d2_remote
 description: DHIS2 Flutter SDK
 version: 1.0.0
 homepage:
-repository: https://github.com/Hamza-ye/am-touch
+repository: https://github.com/Hamza-ye/d2-remote
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

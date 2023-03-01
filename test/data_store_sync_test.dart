@@ -1,8 +1,8 @@
-import 'package:am_touch/am_touch.dart';
-import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
-import 'package:am_touch/modules/auth/user/queries/user.query.dart';
-import 'package:am_touch/modules/metadata/dataset/queries/data_set.query.dart';
-import 'package:am_touch/shared/utilities/http_client.util.dart';
+import 'package:d2_remote/d2_remote.dart';
+import 'package:d2_remote/modules/auth/user/entities/user.entity.dart';
+import 'package:d2_remote/modules/auth/user/queries/user.query.dart';
+import 'package:d2_remote/modules/metadata/dataset/queries/data_set.query.dart';
+import 'package:d2_remote/shared/utilities/http_client.util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';

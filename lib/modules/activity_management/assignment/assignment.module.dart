@@ -1,4 +1,4 @@
-import 'package:am_touch/modules/activity_management/assignment/queries/assignment.query.dart';
+import 'package:d2_remote/modules/activity_management/assignment/queries/assignment.query.dart';
 
 class AssignmentModule {
   static createTables() async {

@@ -1,7 +1,7 @@
-import 'package:am_touch/am_touch.dart';
-import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
-import 'package:am_touch/modules/auth/user/models/login-response.model.dart';
-import 'package:am_touch/modules/auth/user/queries/user.query.dart';
+import 'package:d2_remote/d2_remote.dart';
+import 'package:d2_remote/modules/auth/user/entities/user.entity.dart';
+import 'package:d2_remote/modules/auth/user/models/login-response.model.dart';
+import 'package:d2_remote/modules/auth/user/queries/user.query.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';

@@ -1,6 +1,6 @@
 # DHIS2 Flutter SDK
 
-[![Flutter SDK CI](https://github.com/Hamza-ye/am-touch/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hamza-ye/am-touch/actions/workflows/deploy.yml)
+[![Flutter SDK CI](https://github.com/Hamza-ye/d2-remote/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hamza-ye/d2-remote/actions/workflows/deploy.yml)
 
 A New Project forked from the original project [d2-touch](https://github.com/udsm-dhis2-lab/d2-touch)
 

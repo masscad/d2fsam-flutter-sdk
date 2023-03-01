@@ -1,4 +1,4 @@
-import 'package:am_touch/core/annotations/reflectable.annotation.dart';
+import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 
 @AnnotationReflectable
 class OneToOne {

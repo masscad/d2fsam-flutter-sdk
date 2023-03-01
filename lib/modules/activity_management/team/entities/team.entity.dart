@@ -1,8 +1,8 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/modules/activity_management/activity/entities/activity.entity.dart';
-import 'package:am_touch/modules/activity_management/assignment/entities/assignment.entity.dart';
-import 'package:am_touch/modules/activity_management/team/entities/team_group.entity.dart';
-import 'package:am_touch/shared/entities/identifiable.entity.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_remote/modules/activity_management/assignment/entities/assignment.entity.dart';
+import 'package:d2_remote/modules/activity_management/team/entities/team_group.entity.dart';
+import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
 @Entity(tableName: 'team', apiResourceName: 'teams')

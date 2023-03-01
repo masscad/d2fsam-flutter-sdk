@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:am_touch/modules/auth/user/entities/user.entity.dart';
-import 'package:am_touch/modules/auth/user/queries/user.query.dart';
-import 'package:am_touch/shared/utilities/http-details.util.dart';
+import 'package:d2_remote/modules/auth/user/entities/user.entity.dart';
+import 'package:d2_remote/modules/auth/user/queries/user.query.dart';
+import 'package:d2_remote/shared/utilities/http-details.util.dart';
 import 'package:dio/dio.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:xml2json/xml2json.dart';

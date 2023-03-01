@@ -1,5 +1,5 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/shared/utilities/query_filter.util.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/shared/utilities/query_filter.util.dart';
 
 class QueryModel {
   String resourceName;

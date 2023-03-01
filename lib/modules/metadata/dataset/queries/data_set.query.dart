@@ -1,6 +1,6 @@
-import 'package:am_touch/modules/metadata/dataset/entities/data_set.entity.dart';
-import 'package:am_touch/shared/queries/base.query.dart';
-import 'package:am_touch/shared/utilities/query_filter.util.dart';
+import 'package:d2_remote/modules/metadata/dataset/entities/data_set.entity.dart';
+import 'package:d2_remote/shared/queries/base.query.dart';
+import 'package:d2_remote/shared/utilities/query_filter.util.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DataSetQuery extends BaseQuery<DataSet> {

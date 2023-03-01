@@ -1,6 +1,6 @@
-import 'package:am_touch/am_touch.dart';
-import 'package:am_touch/modules/metadata/data_element/entities/data_element.entity.dart';
-import 'package:am_touch/modules/metadata/data_element/queries/data_element.query.dart';
+import 'package:d2_remote/d2_remote.dart';
+import 'package:d2_remote/modules/metadata/data_element/entities/data_element.entity.dart';
+import 'package:d2_remote/modules/metadata/data_element/queries/data_element.query.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 

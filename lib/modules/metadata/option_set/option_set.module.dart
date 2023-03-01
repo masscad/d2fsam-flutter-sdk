@@ -1,4 +1,4 @@
-import 'package:am_touch/modules/metadata/option_set/queries/option_set.query.dart';
+import 'package:d2_remote/modules/metadata/option_set/queries/option_set.query.dart';
 
 class OptionSetModule {
   static createTables() async {

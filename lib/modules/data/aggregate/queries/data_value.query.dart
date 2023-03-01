@@ -1,5 +1,5 @@
-import 'package:am_touch/modules/data/aggregate/entities/data_value.entity.dart';
-import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:d2_remote/modules/data/aggregate/entities/data_value.entity.dart';
+import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:sqflite/sqflite.dart';
 
 class DataValueQuery extends BaseQuery<DataValue> {

@@ -1,6 +1,6 @@
-import 'package:am_touch/shared/utilities/dhis-url-generator.util.dart';
-import 'package:am_touch/modules/sync/utilities/query-resource.util.dart';
-import 'package:am_touch/shared/utilities/query_model.util.dart';
+import 'package:d2_remote/shared/utilities/dhis-url-generator.util.dart';
+import 'package:d2_remote/modules/sync/utilities/query-resource.util.dart';
+import 'package:d2_remote/shared/utilities/query_model.util.dart';
 
 class QueryRequest {
   QueryModel? query;

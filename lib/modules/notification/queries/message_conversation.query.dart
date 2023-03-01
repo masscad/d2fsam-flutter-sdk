@@ -1,8 +1,8 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/core/utilities/repository.dart';
-import 'package:am_touch/modules/notification/entities/message.entity.dart';
-import 'package:am_touch/modules/notification/entities/message_conversation.entity.dart';
-import 'package:am_touch/shared/queries/base.query.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/core/utilities/repository.dart';
+import 'package:d2_remote/modules/notification/entities/message.entity.dart';
+import 'package:d2_remote/modules/notification/entities/message_conversation.entity.dart';
+import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 

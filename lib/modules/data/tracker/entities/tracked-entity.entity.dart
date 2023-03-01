@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/modules/data/tracker/models/tracked_entity_instance_import_summary.model.dart';
-import 'package:am_touch/shared/entities/identifiable.entity.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/data/tracker/models/tracked_entity_instance_import_summary.model.dart';
+import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 import 'enrollment.entity.dart';
 import 'event.entity.dart';

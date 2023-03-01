@@ -1,4 +1,4 @@
-import 'package:am_touch/core/annotations/index.dart';
+import 'package:d2_remote/core/annotations/index.dart';
 
 class QueryExpression {
   static String getColumnExpression(

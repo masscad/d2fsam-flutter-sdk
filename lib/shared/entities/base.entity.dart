@@ -1,5 +1,5 @@
-import 'package:am_touch/core/annotations/index.dart';
-import 'package:am_touch/shared/utilities/dhis_uid_generator.util.dart';
+import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/shared/utilities/dhis_uid_generator.util.dart';
 
 // @AnnotationReflectable
 class BaseEntity {
