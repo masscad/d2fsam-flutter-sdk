@@ -36,7 +36,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -82,7 +82,7 @@ void main() async {
 
   await AttributeReservedValueQuery().setData(attributeResrvedValues).save();
 
-  final TrackedEntityInstance trackedEntityInstance = await AmTouch
+  final TrackedEntityInstance trackedEntityInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
@@ -102,11 +102,11 @@ void main() async {
         value: 'Female')
   ];
 
-  await AmTouch.trackerModule.trackedEntityAttributeValue
+  await D2Remote.trackerModule.trackedEntityAttributeValue
       .setData(trackedEntityAttributeValues)
       .save();
 
-  final TrackedEntityInstance createdInstance = await AmTouch
+  final TrackedEntityInstance createdInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .withEnrollments()
@@ -117,10 +117,10 @@ void main() async {
       createdInstance.attributes as List<TrackedEntityAttributeValue>);
 
   final createdProgramRules =
-      await AmTouch.programModule.programRule.withActions().get();
+      await D2Remote.programModule.programRule.withActions().get();
 
   final createdProgramRuleVariables =
-      await AmTouch.programModule.programRuleVariable.get();
+      await D2Remote.programModule.programRuleVariable.get();
 
   final programRuleActions = ProgramRuleEngine.execute(
       dataValueEntities: dataValueEntities,
@@ -141,11 +141,11 @@ void main() async {
       trackedEntityInstance: trackedEntityInstance.trackedEntityInstance,
       value: 'Male');
 
-  await AmTouch.trackerModule.trackedEntityAttributeValue
+  await D2Remote.trackerModule.trackedEntityAttributeValue
       .setData(secondTrackedEntityAttributeValue)
       .save();
 
-  final TrackedEntityInstance updatedInstance = await AmTouch
+  final TrackedEntityInstance updatedInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .withEnrollments()
@@ -167,7 +167,7 @@ void main() async {
     expect(secondLastNameRuleAction.programRuleActionType, '');
   });
 
-  await AmTouch.trackerModule.trackedEntityAttributeValue
+  await D2Remote.trackerModule.trackedEntityAttributeValue
       .setData(TrackedEntityAttributeValue(
           dirty: true,
           attribute: 'cejWyOfXge6',

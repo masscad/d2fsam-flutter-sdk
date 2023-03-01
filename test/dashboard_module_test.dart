@@ -11,10 +11,10 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  DashboardQuery dashboardQuery = AmTouch.dashboardModule.dashboard;
+  DashboardQuery dashboardQuery = D2Remote.dashboardModule.dashboard;
 
   final dashboard = Dashboard(
       id: 'test1',

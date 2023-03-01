@@ -20,7 +20,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);

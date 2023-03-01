@@ -23,7 +23,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -45,7 +45,7 @@ void main() async {
   final user = User.fromApi(userData);
   await userQuery.setData(user).save();
 
-  await AmTouch.aggregateModule.dataValueSet
+  await D2Remote.aggregateModule.dataValueSet
       .byDataSet('BfMAe6Itzgt')
       .byOrgUnit('bG0PlyD0iP3')
       .byPeriod("202201")

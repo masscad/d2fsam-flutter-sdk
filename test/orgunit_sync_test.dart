@@ -23,7 +23,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -54,7 +54,7 @@ void main() async {
   }, dioTestClient: dio);
 
   List<OrganisationUnit> orgUnits =
-      await AmTouch.organisationUnitModule.organisationUnit.get();
+      await D2Remote.organisationUnitModule.organisationUnit.get();
 
   test('should store all incoming organisation unit metadata', () {
     expect(orgUnits.length, 50);

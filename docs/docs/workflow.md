@@ -21,12 +21,12 @@ A typical workflow would be like this:
 Before interacting with the server it is required to login into the DHIS 2 instance. Currently, the SDK does only support one pair "user - server" simultaneously. That means that only one user can be authenticated in only one server at the same time.
 
 ```dart
-amTouchInstance.userModule().login(
+d2RemoteInstance.userModule().login(
     username: "admin",
     password: "district"
 );
 
-amTouchInstance.userModule().logOut();
+d2RemoteInstance.userModule().logOut();
 
 ```
 

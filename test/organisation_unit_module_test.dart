@@ -18,7 +18,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -36,7 +36,7 @@ void main() async {
       .save();
 
   OrganisationUnitQuery orgUnitQuery =
-      AmTouch.organisationUnitModule.organisationUnit;
+      D2Remote.organisationUnitModule.organisationUnit;
 
   final organisationUnit = OrganisationUnit(
       id: 'ImspTQPwCqd',

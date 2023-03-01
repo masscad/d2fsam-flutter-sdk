@@ -29,11 +29,11 @@ import 'modules/auth/user/queries/user_organisation_unit.query.dart';
 import 'modules/metadata/dashboard/dashboard.module.dart';
 import 'modules/metadata/data_element/data_element.module.dart';
 
-class AmTouch {
+class D2Remote {
   static Future<void> initialize({String? databaseName,
     bool? inMemory,
     DatabaseFactory? databaseFactory}) async {
-    final newDatabaseName = databaseName ?? await AmTouch.getDatabaseName();
+    final newDatabaseName = databaseName ?? await D2Remote.getDatabaseName();
     if (newDatabaseName != null) {
       DatabaseManager(
           databaseName: newDatabaseName,
@@ -64,19 +64,19 @@ class AmTouch {
         bool? inMemory,
         DatabaseFactory? databaseFactory}) async {
     WidgetsFlutterBinding.ensureInitialized();
-    final databaseName = await AmTouch.getDatabaseName(
+    final databaseName = await D2Remote.getDatabaseName(
         sharedPreferenceInstance: sharedPreferenceInstance);
 
     if (databaseName == null) {
       return false;
     }
 
-    await AmTouch.initialize(
+    await D2Remote.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    User? user = await AmTouch.userModule.user.getOne();
+    User? user = await D2Remote.userModule.user.getOne();
 
     return user?.isLoggedIn ?? false;
   }
@@ -126,12 +126,12 @@ class AmTouch {
         .host;
     final String databaseName = '${username}_$uri';
 
-    await AmTouch.initialize(
+    await D2Remote.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    await AmTouch.setDatabaseName(
+    await D2Remote.setDatabaseName(
         databaseName: databaseName,
         sharedPreferenceInstance:
         sharedPreferenceInstance ?? SharedPreferences.getInstance());
@@ -160,12 +160,12 @@ class AmTouch {
     WidgetsFlutterBinding.ensureInitialized();
     bool logOutSuccess = false;
     try {
-      User? currentUser = await AmTouch.userModule.user.getOne();
+      User? currentUser = await D2Remote.userModule.user.getOne();
 
       currentUser?.isLoggedIn = false;
       currentUser?.dirty = true;
 
-      await AmTouch.userModule.user.setData(currentUser).save();
+      await D2Remote.userModule.user.setData(currentUser).save();
 
       logOutSuccess = true;
     } catch (e) {}
@@ -183,12 +183,12 @@ class AmTouch {
         .parse(instanceUrl)
         .host;
     final String databaseName = '$uri';
-    await AmTouch.initialize(
+    await D2Remote.initialize(
         databaseName: databaseName,
         inMemory: inMemory,
         databaseFactory: databaseFactory);
 
-    await AmTouch.setDatabaseName(
+    await D2Remote.setDatabaseName(
         databaseName: databaseName,
         sharedPreferenceInstance:
         sharedPreferenceInstance ?? SharedPreferences.getInstance());

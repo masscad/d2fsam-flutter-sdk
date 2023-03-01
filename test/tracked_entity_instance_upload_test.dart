@@ -30,7 +30,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -47,10 +47,10 @@ void main() async {
       .map((fileResource) => FileResource.fromJson(fileResource))
       .toList();
 
-  await AmTouch.fileResourceModule.fileResource.setData(fileResources).save();
+  await D2Remote.fileResourceModule.fileResource.setData(fileResources).save();
 
   final List<FileResource> savedFileResources =
-      await AmTouch.fileResourceModule.fileResource.get();
+      await D2Remote.fileResourceModule.fileResource.get();
 
   // NMCP /////////
   List<Project> projects = [];

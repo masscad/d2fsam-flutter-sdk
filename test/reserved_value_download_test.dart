@@ -26,7 +26,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -55,7 +55,7 @@ void main() async {
 
   await ProgramQuery().setData(programs).save();
 
-  await AmTouch.trackerModule.attributeReservedValue.download(
+  await D2Remote.trackerModule.attributeReservedValue.download(
       (progress, complete) {
     print(progress.message);
   }, dioTestClient: dio);

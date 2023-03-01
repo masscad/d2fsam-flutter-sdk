@@ -19,7 +19,7 @@ void main() async {
   // initializeReflectable();
   // sqfliteFfiInit();
 
-  // await AmTouch.initialize(databaseFactory: databaseFactoryFfi);
+  // await D2Remote.initialize(databaseFactory: databaseFactoryFfi);
 
   // var databaseFactory = databaseFactoryFfi;
 
@@ -32,7 +32,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -48,7 +48,7 @@ void main() async {
     expect(userResponse, null);
   });
 
-  final isAuthenticated = await AmTouch.isAuthenticated(
+  final isAuthenticated = await D2Remote.isAuthenticated(
       sharedPreferenceInstance: SharedPreferences.getInstance());
 
   test('should not be authenticated if database is not set', () {
@@ -64,7 +64,7 @@ void main() async {
     (server) => server.reply(200, userData),
   );
 
-  final onlineLogIn = await AmTouch.logIn(
+  final onlineLogIn = await D2Remote.logIn(
       username: 'admin',
       password: 'district',
       url: 'https://play.dhis2.org/2.35.11',
@@ -72,7 +72,7 @@ void main() async {
       dioTestClient: dio);
 
   final user =
-      await AmTouch.userModule.user.withAuthorities().withRoles().getOne();
+      await D2Remote.userModule.user.withAuthorities().withRoles().getOne();
 
   test('should successfully authenticate user on online login', () {
     expect(onlineLogIn, LoginResponseStatus.ONLINE_LOGIN_SUCCESS);
@@ -82,9 +82,9 @@ void main() async {
     expect(user?.roles?.length, 13);
   });
 
-  final logOutResponse = await AmTouch.logOut();
+  final logOutResponse = await D2Remote.logOut();
 
-  final isAuthenticatedAfterLogout = await AmTouch.isAuthenticated(
+  final isAuthenticatedAfterLogout = await D2Remote.isAuthenticated(
       sharedPreferenceInstance: SharedPreferences.getInstance());
 
   test('should successfully log out user', () {

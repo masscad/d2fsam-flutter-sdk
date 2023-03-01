@@ -24,7 +24,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -62,14 +62,14 @@ void main() async {
 
   await AttributeReservedValueQuery().setData(attributeResrvedValues).save();
 
-  final TrackedEntityInstance trackedEntityInstance = await AmTouch
+  final TrackedEntityInstance trackedEntityInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();
 
-  final TrackedEntityInstance createdInstance = await AmTouch
+  final TrackedEntityInstance createdInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .withEnrollments()

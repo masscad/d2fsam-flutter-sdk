@@ -13,11 +13,11 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  ProgramQuery programQuery = AmTouch.programModule.program;
-  ProgramStageQuery programStageQuery = AmTouch.programModule.programStage;
+  ProgramQuery programQuery = D2Remote.programModule.program;
+  ProgramStageQuery programStageQuery = D2Remote.programModule.programStage;
 
   final program = Program(
     id: 'test1',

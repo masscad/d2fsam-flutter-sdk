@@ -38,7 +38,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -67,7 +67,7 @@ void main() async {
   List<Program> programs = await programQuery.get();
 
   List<ProgramTrackedEntityAttribute> programTrackedEntityAttributes =
-      await AmTouch.programModule.programTrackedEntityAttribute
+      await D2Remote.programModule.programTrackedEntityAttribute
           .withOptions()
           .get();
 

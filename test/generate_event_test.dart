@@ -25,7 +25,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -63,21 +63,21 @@ void main() async {
 
   await AttributeReservedValueQuery().setData(attributeResrvedValues).save();
 
-  await AmTouch.trackerModule.attributeReservedValue.get();
+  await D2Remote.trackerModule.attributeReservedValue.get();
 
-  final TrackedEntityInstance trackedEntityInstance = await AmTouch
+  final TrackedEntityInstance trackedEntityInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byActivity('ActzpKrYNg8')
       .byProgram('IpHINAT79UW')
       .byOrgUnit('fnei293faf')
       .create();
 
-  final TrackedEntityInstance createdInstance = await AmTouch
+  final TrackedEntityInstance createdInstance = await D2Remote
       .trackerModule.trackedEntityInstance
       .byId(trackedEntityInstance.id as String)
       .getOne();
 
-  final Event event = await AmTouch.trackerModule.event
+  final Event event = await D2Remote.trackerModule.event
       .byActivity('ActzpKrYNg8')
       .byProgramStage('A03MvHHogjR')
       .byOrgUnit('fnei293faf')
@@ -85,7 +85,7 @@ void main() async {
       .create();
 
   final Event? createdEvent =
-      await AmTouch.trackerModule.event.byId(event.id as String).getOne();
+      await D2Remote.trackerModule.event.byId(event.id as String).getOne();
 
   test('should return created tracked entity instance with generated values',
       () {
@@ -99,13 +99,13 @@ void main() async {
     expect(createdEvent?.id, event.id);
   });
 
-  final Event eventWithoutEnrollment = await AmTouch.trackerModule.event
+  final Event eventWithoutEnrollment = await D2Remote.trackerModule.event
       .byProgramStage('A03MvHHogjR')
       .byActivity('ActzpKrYNg8')
       .byOrgUnit('fnei293faf')
       .create();
 
-  final Event? createdEventWithoutEnrollment = await AmTouch.trackerModule.event
+  final Event? createdEventWithoutEnrollment = await D2Remote.trackerModule.event
       .byId(eventWithoutEnrollment.id as String)
       .getOne();
 

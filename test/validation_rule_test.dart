@@ -28,7 +28,7 @@ void main() async {
 
   var databaseFactory = databaseFactoryFfi;
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
   var db = await databaseFactory.openDatabase(inMemoryDatabasePath);
@@ -66,13 +66,13 @@ void main() async {
       (progress, complete) => {print(progress.message)},
       dioTestClient: dio);
 
-  final DataValueSet dataValueSet = await AmTouch.aggregateModule.dataValueSet
+  final DataValueSet dataValueSet = await D2Remote.aggregateModule.dataValueSet
       .byDataSet('BfMAe6Itzgt')
       .byOrgUnit('orgunitid')
       .byPeriod('202001')
       .create();
 
-  await AmTouch.aggregateModule.dataValue
+  await D2Remote.aggregateModule.dataValue
       .setData(DataValue(
           dataElement: 'YtbsuPPo010',
           attributeOptionCombo: '',
@@ -83,7 +83,7 @@ void main() async {
           dirty: true))
       .save();
 
-  await AmTouch.aggregateModule.dataValue
+  await D2Remote.aggregateModule.dataValue
       .setData(DataValue(
           dataElement: 'GCGfEY82Wz6',
           attributeOptionCombo: '',

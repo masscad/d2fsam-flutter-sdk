@@ -11,10 +11,10 @@ void main() async {
   initializeReflectable();
   sqfliteFfiInit();
 
-  await AmTouch.initialize(
+  await D2Remote.initialize(
       databaseFactory: databaseFactoryFfi, databaseName: 'flutter_test');
 
-  DataElementQuery dataElementQuery = AmTouch.dataElementModule.dataElement;
+  DataElementQuery dataElementQuery = D2Remote.dataElementModule.dataElement;
 
   final dataElement = DataElement(
       id: 'test1',
