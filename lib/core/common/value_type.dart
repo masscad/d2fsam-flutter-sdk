@@ -67,4 +67,8 @@ enum ValueType {
   bool get isFile => FILE_TYPES.contains(this);
 
   bool get isCoordinate => this == COORDINATE;
+
+  static ValueType? valueOf(String? str) =>
+      ValueType.values.firstWhere((e) => e.toString() == 'ValueType.' + '$str',
+          orElse: () => TEXT);
 }

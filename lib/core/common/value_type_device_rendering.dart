@@ -1,4 +1,3 @@
-import 'package:d2_remote/core/common/value_type_rendering_type.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 class ValueTypeDeviceRendering extends IdentifiableEntity {
@@ -6,7 +5,7 @@ class ValueTypeDeviceRendering extends IdentifiableEntity {
 
   String? deviceType;
 
-  ValueTypeRenderingType? type;
+  String? type;
 
   int? min;
 
@@ -35,7 +34,7 @@ class ValueTypeDeviceRendering extends IdentifiableEntity {
         name: json['name'],
         objectTable: json['objectTable'],
         deviceType: json['deviceType'],
-        type: ValueTypeRenderingType.valueOf(json['type']),
+        type: json['type'],
         min: json['min'],
         max: json['max'],
         step: json['step'],
