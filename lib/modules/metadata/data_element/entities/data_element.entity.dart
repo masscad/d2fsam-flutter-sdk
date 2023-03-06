@@ -16,6 +16,9 @@ class DataElement extends IdentifiableEntity {
   @Column(type: ColumnType.TEXT, nullable: true)
   String? description;
 
+  @Column(type: ColumnType.TEXT, nullable: true, length: 11)
+  String? optionSet;
+
   DataElement(
       {required String id,
       String? created,
@@ -28,6 +31,8 @@ class DataElement extends IdentifiableEntity {
       required this.aggregationType,
       this.description,
       required this.valueType,
+      // NMCP
+      this.optionSet,
       required dirty})
       : super(
             id: id,
@@ -50,6 +55,8 @@ class DataElement extends IdentifiableEntity {
         valueType: json['valueType'],
         aggregationType: json['aggregationType'],
         description: json['description'],
+        optionSet: json['optionSet']?['id'],
+        formName: json['formName'],
         dirty: json['dirty']);
   }
 
@@ -65,6 +72,8 @@ class DataElement extends IdentifiableEntity {
     data['valueType'] = this.valueType;
     data['aggregationType'] = this.aggregationType;
     data['description'] = this.description;
+    data['formName'] = this.formName;
+    data['optionSet'] = this.optionSet;
     data['dirty'] = this.dirty;
 
     return data;

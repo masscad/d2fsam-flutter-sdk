@@ -7,13 +7,19 @@ import 'package:d2_remote/shared/entities/identifiable.entity.dart';
     apiResourceName: 'trackedEntityAttributes')
 class TrackedEntityAttribute extends IdentifiableEntity {
 
+  // NMCP Ext
   @Column(type: ColumnType.TEXT, length: 50)
   String valueType;
 
   @Column(type: ColumnType.TEXT, nullable: true)
   String? description;
 
-  // NMCP Ext
+  @Column(type: ColumnType.TEXT, nullable: true)
+  String? formName;
+
+  @Column(type: ColumnType.TEXT, nullable: true, length: 11)
+  String? optionSet;
+
   TrackedEntityAttribute(
       {required String id,
         String? created,
@@ -24,6 +30,8 @@ class TrackedEntityAttribute extends IdentifiableEntity {
         String? displayName,
         this.description,
         required this.valueType,
+        this.formName,
+        this.optionSet,
         required dirty})
       : super(
       id: id,
@@ -45,6 +53,8 @@ class TrackedEntityAttribute extends IdentifiableEntity {
         displayName: json['displayName'],
         valueType: json['valueType'],
         description: json['description'],
+        optionSet: json['optionSet']?['id'],
+        formName: json['formName'],
         dirty: json['dirty']);
   }
 
@@ -59,6 +69,8 @@ class TrackedEntityAttribute extends IdentifiableEntity {
     data['displayName'] = this.displayName;
     data['valueType'] = this.valueType;
     data['description'] = this.description;
+    data['formName'] = this.formName;
+    data['optionSet'] = this.optionSet;
     data['dirty'] = this.dirty;
 
     return data;

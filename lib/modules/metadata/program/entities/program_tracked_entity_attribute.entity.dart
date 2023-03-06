@@ -50,6 +50,16 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
   @OneToMany(table: AttributeOption)
   List<AttributeOption>? options;
 
+  // NMCP
+  @Column(nullable: true)
+  bool? allowFutureDate;
+
+  @Column(nullable: true)
+  String? fieldMask;
+
+  @Column(nullable: true)
+  String? description;
+
   ProgramTrackedEntityAttribute(
       {required String id,
       required this.attribute,
@@ -68,6 +78,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
       this.optionSetValueCount,
       this.optionSetName,
       this.options,
+      this.allowFutureDate,
+        this.fieldMask,
+        this.description,
       required bool dirty})
       : super(id: id, name: name, displayName: displayName, dirty: dirty);
 
@@ -112,6 +125,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
                   'dirty': false
                 }))
             .toList(),
+        allowFutureDate: jsonData['allowFutureDate'],
+        fieldMask: jsonData['fieldMask'],
+        description: jsonData['description'],
         dirty: jsonData['dirty']);
   }
 
@@ -134,6 +150,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
     data['optionSetName'] = this.optionSetName;
     data['options'] = this.options;
     data['optionSetValueCount'] = this.optionSetValueCount;
+    data['allowFutureDate'] = this.allowFutureDate;
+    data['fieldMask'] = this.fieldMask;
+    data['description'] = this.description;
     return data;
   }
 }
