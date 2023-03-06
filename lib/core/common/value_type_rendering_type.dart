@@ -18,7 +18,7 @@ enum ValueTypeRenderingType {
   BAR_CODE,
   GS1_DATAMATRIX;
 
-  ValueTypeRenderingType valueOf(String? str) => ValueTypeRenderingType.values
+  static ValueTypeRenderingType valueOf(String? str) => ValueTypeRenderingType.values
       .firstWhere((e) => e.toString() == 'ValueTypeRenderingType.' + '$str',
           orElse: () => DEFAULT);
 }
