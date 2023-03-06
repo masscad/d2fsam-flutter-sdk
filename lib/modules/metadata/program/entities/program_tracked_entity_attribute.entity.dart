@@ -79,8 +79,7 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
       this.optionSetName,
       this.options,
       this.allowFutureDate,
-        this.fieldMask,
-        this.description,
+      this.description,
       required bool dirty})
       : super(id: id, name: name, displayName: displayName, dirty: dirty);
 
@@ -126,7 +125,6 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
                 }))
             .toList(),
         allowFutureDate: jsonData['allowFutureDate'],
-        fieldMask: jsonData['fieldMask'],
         description: jsonData['description'],
         dirty: jsonData['dirty']);
   }
@@ -151,7 +149,6 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
     data['options'] = this.options;
     data['optionSetValueCount'] = this.optionSetValueCount;
     data['allowFutureDate'] = this.allowFutureDate;
-    data['fieldMask'] = this.fieldMask;
     data['description'] = this.description;
     return data;
   }

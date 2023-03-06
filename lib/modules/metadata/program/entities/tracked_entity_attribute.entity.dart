@@ -20,6 +20,9 @@ class TrackedEntityAttribute extends IdentifiableEntity {
   @Column(type: ColumnType.TEXT, nullable: true, length: 11)
   String? optionSet;
 
+  @Column(nullable: true)
+  String? fieldMask;
+
   TrackedEntityAttribute(
       {required String id,
         String? created,
@@ -32,6 +35,7 @@ class TrackedEntityAttribute extends IdentifiableEntity {
         required this.valueType,
         this.formName,
         this.optionSet,
+        this.fieldMask,
         required dirty})
       : super(
       id: id,
@@ -55,6 +59,7 @@ class TrackedEntityAttribute extends IdentifiableEntity {
         description: json['description'],
         optionSet: json['optionSet']?['id'],
         formName: json['formName'],
+        fieldMask: json['fieldMask'],
         dirty: json['dirty']);
   }
 
@@ -71,6 +76,7 @@ class TrackedEntityAttribute extends IdentifiableEntity {
     data['description'] = this.description;
     data['formName'] = this.formName;
     data['optionSet'] = this.optionSet;
+    data['fieldMask'] = this.fieldMask;
     data['dirty'] = this.dirty;
 
     return data;
