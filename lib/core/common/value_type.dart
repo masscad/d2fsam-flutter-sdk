@@ -57,19 +57,19 @@ enum ValueType {
 
   static List<ValueType> get FILE_TYPES => [IMAGE, FILE_RESOURCE];
 
-  static bool get isInteger => INTEGER_TYPES.contains(this);
+  bool get isInteger => INTEGER_TYPES.contains(this);
 
-  static bool get isNumeric => NUMERIC_TYPES.contains(this);
+  bool get isNumeric => NUMERIC_TYPES.contains(this);
 
-  static bool get isBoolean => BOOLEAN_TYPES.contains(this);
+  bool get isBoolean => BOOLEAN_TYPES.contains(this);
 
-  static bool get isText => TEXT_TYPES.contains(this);
+  bool get isText => TEXT_TYPES.contains(this);
 
-  static bool get isDate => DATE_TYPES.contains(this);
+  bool get isDate => DATE_TYPES.contains(this);
 
-  static bool get isFile => FILE_TYPES.contains(this);
+  bool get isFile => FILE_TYPES.contains(this);
 
-  static bool get isCoordinate => this == COORDINATE;
+  bool get isCoordinate => this == COORDINATE;
 
   static ValueType? valueOf(String? str) =>
       ValueType.values.firstWhere((e) => e.toString() == 'ValueType.' + '$str',
