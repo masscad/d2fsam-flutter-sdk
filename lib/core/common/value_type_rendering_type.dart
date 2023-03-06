@@ -16,5 +16,9 @@ enum ValueTypeRenderingType {
   AUTOCOMPLETE,
   QR_CODE,
   BAR_CODE,
-  GS1_DATAMATRIX
+  GS1_DATAMATRIX;
+
+  ValueTypeRenderingType valueOf(String str) => ValueTypeRenderingType.values
+      .firstWhere((e) => e.toString() == 'ValueTypeRenderingType.' + str,
+          orElse: () => DEFAULT);
 }

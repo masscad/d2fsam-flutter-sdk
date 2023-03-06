@@ -21,4 +21,3 @@ export './number_validator_base.dart';
 export './letter_validator.dart';
 export './integer_zero_or_positive_validator.dart';
 export './integer_positive_validator.dart';
-export './date_validator.dart';
