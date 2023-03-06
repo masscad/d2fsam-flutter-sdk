@@ -55,9 +55,6 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
   bool? allowFutureDate;
 
   @Column(nullable: true)
-  String? fieldMask;
-
-  @Column(nullable: true)
   String? description;
 
   ProgramTrackedEntityAttribute(
