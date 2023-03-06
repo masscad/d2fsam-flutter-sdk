@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/percentage_failure.dar
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class PercentageValidator extends ValueTypeValidator<PercentageFailure> {
+  const PercentageValidator();
+
   static const int ONE_HUNDRED_PERCENT = 100;
   static const int ZERO_PERCENT = 0;
 

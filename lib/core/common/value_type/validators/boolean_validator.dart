@@ -4,6 +4,8 @@ import 'package:d2_remote/core/common/value_type/validators/value_type_validator
 import 'package:d2_remote/core/common/value_type/failures/boolean_failure.dart';
 
 class BooleanValidator extends ValueTypeValidator<BooleanFailure> {
+  const BooleanValidator();
+
   @override
   Either<BooleanFailure, String> validate(String value) {
     if (value == '0') {

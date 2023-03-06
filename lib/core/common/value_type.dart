@@ -1,29 +1,70 @@
+import 'package:d2_remote/core/common/value_type/validators/validators.dart';
+
 enum ValueType {
-  TEXT,
-  LONG_TEXT,
-  LETTER,
-  PHONE_NUMBER,
-  EMAIL,
-  BOOLEAN,
-  TRUE_ONLY,
-  DATE,
-  DATETIME,
-  TIME,
-  NUMBER,
-  UNIT_INTERVAL,
-  PERCENTAGE,
-  INTEGER,
-  INTEGER_POSITIVE,
-  INTEGER_NEGATIVE,
-  INTEGER_ZERO_OR_POSITIVE,
-  TRACKER_ASSOCIATE,
-  USERNAME,
-  COORDINATE,
-  ORGANISATION_UNIT,
-  REFERENCE,
-  AGE,
-  URL,
-  FILE_RESOURCE,
-  IMAGE,
-  GEOJSON;
+  TEXT(TextValidator()),
+  LONG_TEXT(LongTextValidator()),
+  LETTER(LetterValidator()),
+  PHONE_NUMBER(PhoneNumberValidator()),
+  EMAIL(EmailValidator()),
+  BOOLEAN(BooleanValidator()),
+  TRUE_ONLY(TrueOnlyValidator()),
+  DATE(DateValidator()),
+  DATETIME(DateTimeValidator()),
+  TIME(TimeValidator()),
+  NUMBER(NumberValidator()),
+  UNIT_INTERVAL(UnitIntervalValidator()),
+  PERCENTAGE(PercentageValidator()),
+  INTEGER(IntegerValidator()),
+  INTEGER_POSITIVE(IntegerPositiveValidator()),
+  INTEGER_NEGATIVE(IntegerNegativeValidator()),
+  INTEGER_ZERO_OR_POSITIVE(IntegerZeroOrPositiveValidator()),
+  TRACKER_ASSOCIATE(UidValidator()),
+  USERNAME(TextValidator()),
+  COORDINATE(CoordinateValidator()),
+  ORGANISATION_UNIT(UidValidator()),
+  REFERENCE(TextValidator()),
+  AGE(DateValidator()),
+  URL(TextValidator()),
+  FILE_RESOURCE(UidValidator()),
+  IMAGE(UidValidator()),
+  GEOJSON(TextValidator());
+
+  const ValueType(this.validator);
+
+  final ValueTypeValidator<Exception> validator;
+
+  List<ValueType> get INTEGER_TYPES =>
+      [INTEGER, INTEGER_POSITIVE, INTEGER_NEGATIVE, INTEGER_ZERO_OR_POSITIVE];
+
+  List<ValueType> get NUMERIC_TYPES => [
+        INTEGER,
+        NUMBER,
+        INTEGER_POSITIVE,
+        INTEGER_NEGATIVE,
+        INTEGER_ZERO_OR_POSITIVE,
+        UNIT_INTERVAL,
+        PERCENTAGE
+      ];
+
+  List<ValueType> get BOOLEAN_TYPES => [BOOLEAN, TRUE_ONLY];
+
+  List<ValueType> get TEXT_TYPES => [TEXT, LONG_TEXT, LETTER, COORDINATE, TIME];
+
+  List<ValueType> get DATE_TYPES => [DATE, DATETIME];
+
+  List<ValueType> get FILE_TYPES => [IMAGE, FILE_RESOURCE];
+
+  bool get isInteger => INTEGER_TYPES.contains(this);
+
+  bool get isNumeric => NUMERIC_TYPES.contains(this);
+
+  bool get isBoolean => BOOLEAN_TYPES.contains(this);
+
+  bool get isText => TEXT_TYPES.contains(this);
+
+  bool get isDate => DATE_TYPES.contains(this);
+
+  bool get isFile => FILE_TYPES.contains(this);
+
+  bool get isCoordinate => this == COORDINATE;
 }

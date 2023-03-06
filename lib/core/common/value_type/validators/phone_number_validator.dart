@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/phone_number_failure.d
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class PhoneNumberValidator extends ValueTypeValidator<PhoneNumberFailure> {
+  const PhoneNumberValidator();
+
   static const String PHONE_PATTERN = r'^[0-9+(][0-9+\-() ]{2,18}[0-9]$';
 
   @override

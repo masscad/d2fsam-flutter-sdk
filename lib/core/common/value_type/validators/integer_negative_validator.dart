@@ -4,6 +4,8 @@ import 'package:d2_remote/core/common/value_type/validators/integer_validator_ba
 
 class IntegerNegativeValidator
     extends IntegerValidatorBase<IntegerNegativeFailure> {
+  const IntegerNegativeValidator();
+
   @override
   IntegerNegativeFailure get formatFailure =>
       const IntegerNegativeFailure.numberFormatException();

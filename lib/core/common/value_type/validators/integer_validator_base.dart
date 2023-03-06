@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/validators/number_validator_bas
 
 abstract class IntegerValidatorBase<T extends Exception>
     extends NumberValidatorBase<T> {
+  const IntegerValidatorBase();
+
   static const int MAX_VALUE = 2147483647;
   static const int MIN_VALUE = -2147483648;
 

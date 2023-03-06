@@ -4,6 +4,8 @@ import 'package:d2_remote/core/common/value_type/validators/number_validator.dar
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class UnitIntervalValidator extends ValueTypeValidator<UnitIntervalFailure> {
+  const UnitIntervalValidator();
+
   @override
   Either<UnitIntervalFailure, String> validate(String value) {
     double convertedValue = double.parse(value);

@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/uid_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class UidValidator extends ValueTypeValidator<UidFailure> {
+  const UidValidator();
+
   static const String UID_PATTERN = r'^[a-zA-Z0-9]{11}$';
 
   static const int NUMBER_OF_UID_CHARS = 11;

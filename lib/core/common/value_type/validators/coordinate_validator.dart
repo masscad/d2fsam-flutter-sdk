@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/coordinate_failure.dar
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class CoordinateValidator extends ValueTypeValidator<CoordinateFailure> {
+  const CoordinateValidator();
+
   static const String COORDINATE_PATTERN =
       r'^\\[[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?),\\s*[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)]\$';
 

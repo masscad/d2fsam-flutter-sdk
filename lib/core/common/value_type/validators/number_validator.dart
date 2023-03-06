@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/number_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/number_validator_base.dart';
 
 class NumberValidator extends NumberValidatorBase<NumberFailure> {
+  const NumberValidator();
+
   static const String STARTS_WITH_DOT = r'^\.\d*';
 
   static const String SCIENTIFIC_NOTATION_PATTERN =

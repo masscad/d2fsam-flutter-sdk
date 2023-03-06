@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/failures/email_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
 class EmailValidator extends ValueTypeValidator<EmailFailure> {
+  const EmailValidator();
+
   static const String EMAIL_PATTERN =
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
 

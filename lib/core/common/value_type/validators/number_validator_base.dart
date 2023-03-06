@@ -3,6 +3,8 @@ import 'package:d2_remote/core/common/value_type/validators/value_type_validator
 
 abstract class NumberValidatorBase<T extends Exception>
     extends ValueTypeValidator<T> {
+  const NumberValidatorBase();
+
   static const String HAS_LEADING_ZERO_REGEX = r'^[+\\-]?(0+[0-9]).*$';
 
   @override
