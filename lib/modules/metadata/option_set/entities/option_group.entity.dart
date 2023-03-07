@@ -1,44 +1,44 @@
 import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/metadata/option_set/entities/option.entity.dart';
 import 'package:d2_remote/modules/metadata/option_set/entities/option_set.entity.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
-@Entity(tableName: 'option', apiResourceName: 'options')
-class Option extends IdentifiableEntity {
-  @Column(nullable: true)
-  int? sortOrder;
-
+@Entity(tableName: 'optiongroup', apiResourceName: 'optionGroups')
+class OptionGroup extends IdentifiableEntity {
   @Column(type: ColumnType.TEXT, nullable: true)
   String? description;
 
   @ManyToOne(table: OptionSet, joinColumnName: 'optionSet')
   dynamic optionSet;
 
-  Option(
+  @OneToMany(table: Option)
+  List<Option>? options;
+
+  OptionGroup(
       {required String id,
       required String name,
       required String code,
       String? displayName,
-      this.sortOrder,
+      this.description,
       required this.optionSet,
-        this.description,
+      this.options,
       required bool dirty})
       : super(
             id: id,
             name: name,
-            code: code,
             displayName: displayName,
+            code: code,
             dirty: dirty);
 
-  factory Option.fromJson(Map<String, dynamic> jsonData) {
-    return Option(
+  factory OptionGroup.fromJson(Map<String, dynamic> jsonData) {
+    return OptionGroup(
         id: jsonData['id'],
         name: jsonData['name'],
         code: jsonData['code'],
         optionSet: jsonData['optionSet'],
-        displayName: jsonData['displayName'],
         description: jsonData['description'],
-        sortOrder: jsonData['sortOrder'],
+        displayName: jsonData['displayName'],
         dirty: jsonData['dirty']);
   }
 
@@ -48,9 +48,8 @@ class Option extends IdentifiableEntity {
     data['name'] = this.name;
     data['code'] = this.code;
     data['optionSet'] = this.optionSet;
-    data['sortOrder'] = this.sortOrder;
-    data['displayName'] = this.displayName;
     data['description'] = this.description;
+    data['displayName'] = this.displayName;
     data['dirty'] = this.dirty;
     return data;
   }

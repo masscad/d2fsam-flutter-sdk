@@ -7,7 +7,7 @@ import 'package:d2_remote/modules/data/tracker/tracked_entity_instance.module.da
 import 'package:d2_remote/modules/file_resource/file_resource.module.dart';
 import 'package:d2_remote/modules/activity_management/activity/activity.module.dart';
 import 'package:d2_remote/modules/metadata/dataset/data_set.module.dart';
-import 'package:d2_remote/modules/metadata/option_set/option_set.module.dart';
+import 'package:d2_remote/modules/metadata/option_set/option.module.dart';
 import 'package:d2_remote/modules/metadata/organisation_unit/organisation_unit.module.dart';
 import 'package:d2_remote/modules/metadata/program/program.module.dart';
 import 'package:d2_remote/modules/activity_management/project/project.module.dart';
@@ -53,7 +53,7 @@ class D2Remote {
       await DashboardModule.createTables();
       await TrackedEntityInstanceModule.createTables();
       await AggregateModule.createTables();
-      await OptionSetModule.createTables();
+      await OptionModule.createTables();
       await NotificationModule.createTables();
       await FileResourceModule.createTables();
     }
@@ -263,7 +263,7 @@ class D2Remote {
 
   static NotificationModule notificationModule = NotificationModule();
 
-  static OptionSetModule optionSetModule = OptionSetModule();
+  static OptionModule optionModule = OptionModule();
 
   static FileResourceModule fileResourceModule = FileResourceModule();
 }
