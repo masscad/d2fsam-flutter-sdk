@@ -4,4 +4,5 @@ import 'package:sqflite/sqflite.dart';
 
 class OptionSetQuery extends BaseQuery<OptionSet> {
   OptionSetQuery({Database? database}) : super(database: database);
+
 }

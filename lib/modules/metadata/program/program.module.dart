@@ -11,6 +11,7 @@ import 'package:d2_remote/modules/metadata/program/queries/program_stage_section
 import 'package:d2_remote/modules/metadata/program/queries/program_tracked_entity_attribute.query.dart';
 import 'package:d2_remote/modules/metadata/program/queries/tracked_entity_attribute.query.dart';
 
+import 'queries/attribute_option.query.dart';
 import 'queries/program_stage_data_element_option.query.dart';
 
 class ProgramModule {
@@ -20,7 +21,7 @@ class ProgramModule {
     await ProgramStageSectionQuery().createTable();
     await ProgramStageSectionDataElementQuery().createTable();
     await ProgramStageDataElementOptionQuery().createTable();
-    // await AttributeOptionQuery().createTable();
+    await AttributeOptionQuery().createTable();
     await ProgramTrackedEntityAttributeQuery().createTable();
     await ProgramStageDataElementQuery().createTable();
     await ProgramRuleQuery().createTable();
@@ -38,8 +39,7 @@ class ProgramModule {
   ProgramTrackedEntityAttributeQuery get programTrackedEntityAttribute =>
       ProgramTrackedEntityAttributeQuery();
 
-  // NMCP
-  // AttributeOptionQuery get attributeOption => AttributeOptionQuery();
+  AttributeOptionQuery get attributeOption => AttributeOptionQuery();
 
   ProgramStageSectionQuery get programStageSection =>
       ProgramStageSectionQuery();
