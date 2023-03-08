@@ -15,6 +15,4 @@ abstract class IntegerFailure with _$IntegerFailure implements Exception {
   @Implements<Exception>()
   const factory IntegerFailure.leadingZeroException([dynamic message]) =
   LeadingZeroException;
-
-  const IntegerFailure._();
 }

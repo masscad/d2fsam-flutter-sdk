@@ -7,6 +7,4 @@ abstract class DateTimeFailure with _$DateTimeFailure implements Exception {
   @Implements<Exception>()
   const factory DateTimeFailure.parseException([dynamic message]) =
   ParseException;
-
-  const DateTimeFailure._();
 }

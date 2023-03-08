@@ -143,8 +143,8 @@ class __$$StringIsNotALetterExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StringIsNotALetterException extends StringIsNotALetterException {
-  const _$StringIsNotALetterException([this.message]) : super._();
+class _$StringIsNotALetterException implements StringIsNotALetterException {
+  const _$StringIsNotALetterException([this.message]);
 
   @override
   final dynamic message;
@@ -248,11 +248,9 @@ class _$StringIsNotALetterException extends StringIsNotALetterException {
   }
 }
 
-abstract class StringIsNotALetterException extends LetterFailure
-    implements Exception {
+abstract class StringIsNotALetterException implements LetterFailure, Exception {
   const factory StringIsNotALetterException([final dynamic message]) =
       _$StringIsNotALetterException;
-  const StringIsNotALetterException._() : super._();
 
   @override
   dynamic get message;
@@ -299,8 +297,8 @@ class __$$MoreThanOneLetterExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MoreThanOneLetterException extends MoreThanOneLetterException {
-  const _$MoreThanOneLetterException([this.message]) : super._();
+class _$MoreThanOneLetterException implements MoreThanOneLetterException {
+  const _$MoreThanOneLetterException([this.message]);
 
   @override
   final dynamic message;
@@ -404,11 +402,9 @@ class _$MoreThanOneLetterException extends MoreThanOneLetterException {
   }
 }
 
-abstract class MoreThanOneLetterException extends LetterFailure
-    implements Exception {
+abstract class MoreThanOneLetterException implements LetterFailure, Exception {
   const factory MoreThanOneLetterException([final dynamic message]) =
       _$MoreThanOneLetterException;
-  const MoreThanOneLetterException._() : super._();
 
   @override
   dynamic get message;
@@ -453,8 +449,8 @@ class __$$EmptyStringExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmptyStringException extends EmptyStringException {
-  const _$EmptyStringException([this.message]) : super._();
+class _$EmptyStringException implements EmptyStringException {
+  const _$EmptyStringException([this.message]);
 
   @override
   final dynamic message;
@@ -558,10 +554,9 @@ class _$EmptyStringException extends EmptyStringException {
   }
 }
 
-abstract class EmptyStringException extends LetterFailure implements Exception {
+abstract class EmptyStringException implements LetterFailure, Exception {
   const factory EmptyStringException([final dynamic message]) =
       _$EmptyStringException;
-  const EmptyStringException._() : super._();
 
   @override
   dynamic get message;

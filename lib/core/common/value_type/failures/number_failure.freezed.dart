@@ -141,8 +141,8 @@ class __$$ScientificNotationExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScientificNotationException extends ScientificNotationException {
-  const _$ScientificNotationException([this.message]) : super._();
+class _$ScientificNotationException implements ScientificNotationException {
+  const _$ScientificNotationException([this.message]);
 
   @override
   final dynamic message;
@@ -244,11 +244,9 @@ class _$ScientificNotationException extends ScientificNotationException {
   }
 }
 
-abstract class ScientificNotationException extends NumberFailure
-    implements Exception {
+abstract class ScientificNotationException implements NumberFailure, Exception {
   const factory ScientificNotationException([final dynamic message]) =
       _$ScientificNotationException;
-  const ScientificNotationException._() : super._();
 
   @override
   dynamic get message;
@@ -293,8 +291,8 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NumberFormatException extends NumberFormatException {
-  const _$NumberFormatException([this.message]) : super._();
+class _$NumberFormatException implements NumberFormatException {
+  const _$NumberFormatException([this.message]);
 
   @override
   final dynamic message;
@@ -396,11 +394,9 @@ class _$NumberFormatException extends NumberFormatException {
   }
 }
 
-abstract class NumberFormatException extends NumberFailure
-    implements Exception {
+abstract class NumberFormatException implements NumberFailure, Exception {
   const factory NumberFormatException([final dynamic message]) =
       _$NumberFormatException;
-  const NumberFormatException._() : super._();
 
   @override
   dynamic get message;
@@ -445,8 +441,8 @@ class __$$LeadingZeroExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LeadingZeroException extends LeadingZeroException {
-  const _$LeadingZeroException([this.message]) : super._();
+class _$LeadingZeroException implements LeadingZeroException {
+  const _$LeadingZeroException([this.message]);
 
   @override
   final dynamic message;
@@ -548,10 +544,9 @@ class _$LeadingZeroException extends LeadingZeroException {
   }
 }
 
-abstract class LeadingZeroException extends NumberFailure implements Exception {
+abstract class LeadingZeroException implements NumberFailure, Exception {
   const factory LeadingZeroException([final dynamic message]) =
       _$LeadingZeroException;
-  const LeadingZeroException._() : super._();
 
   @override
   dynamic get message;

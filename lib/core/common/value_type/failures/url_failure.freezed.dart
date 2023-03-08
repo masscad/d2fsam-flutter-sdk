@@ -124,8 +124,8 @@ class __$$MalformedUrlExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MalformedUrlException extends MalformedUrlException {
-  const _$MalformedUrlException([this.message]) : super._();
+class _$MalformedUrlException implements MalformedUrlException {
+  const _$MalformedUrlException([this.message]);
 
   @override
   final dynamic message;
@@ -212,10 +212,9 @@ class _$MalformedUrlException extends MalformedUrlException {
   }
 }
 
-abstract class MalformedUrlException extends UrlFailure implements Exception {
+abstract class MalformedUrlException implements UrlFailure, Exception {
   const factory MalformedUrlException([final dynamic message]) =
       _$MalformedUrlException;
-  const MalformedUrlException._() : super._();
 
   @override
   dynamic get message;

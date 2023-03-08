@@ -21,6 +21,4 @@ abstract class UnitIntervalFailure
   @Implements<Exception>()
   const factory UnitIntervalFailure.smallerThanZeroException(
       [dynamic message]) = SmallerThanZeroException;
-
-  const UnitIntervalFailure._();
 }

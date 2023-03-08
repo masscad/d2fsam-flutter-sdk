@@ -129,8 +129,8 @@ class __$$MalformedPhoneNumberExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MalformedPhoneNumberException extends MalformedPhoneNumberException {
-  const _$MalformedPhoneNumberException([this.message]) : super._();
+class _$MalformedPhoneNumberException implements MalformedPhoneNumberException {
+  const _$MalformedPhoneNumberException([this.message]);
 
   @override
   final dynamic message;
@@ -219,11 +219,10 @@ class _$MalformedPhoneNumberException extends MalformedPhoneNumberException {
   }
 }
 
-abstract class MalformedPhoneNumberException extends PhoneNumberFailure
-    implements Exception {
+abstract class MalformedPhoneNumberException
+    implements PhoneNumberFailure, Exception {
   const factory MalformedPhoneNumberException([final dynamic message]) =
       _$MalformedPhoneNumberException;
-  const MalformedPhoneNumberException._() : super._();
 
   @override
   dynamic get message;

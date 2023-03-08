@@ -7,6 +7,4 @@ abstract class TextFailure with _$TextFailure implements Exception {
   @Implements<Exception>()
   const factory TextFailure.tooLargeTextException([dynamic message]) =
   TooLargeTextException;
-
-  const TextFailure._();
 }

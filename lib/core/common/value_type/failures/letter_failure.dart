@@ -15,6 +15,4 @@ abstract class LetterFailure with _$LetterFailure implements Exception {
   @Implements<Exception>()
   const factory LetterFailure.emptyStringException([dynamic message]) =
       EmptyStringException;
-
-  const LetterFailure._();
 }

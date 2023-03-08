@@ -136,8 +136,8 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NumberFormatException extends NumberFormatException {
-  const _$NumberFormatException([this.message]) : super._();
+class _$NumberFormatException implements NumberFormatException {
+  const _$NumberFormatException([this.message]);
 
   @override
   final dynamic message;
@@ -236,11 +236,9 @@ class _$NumberFormatException extends NumberFormatException {
   }
 }
 
-abstract class NumberFormatException extends PercentageFailure
-    implements Exception {
+abstract class NumberFormatException implements PercentageFailure, Exception {
   const factory NumberFormatException([final dynamic message]) =
       _$NumberFormatException;
-  const NumberFormatException._() : super._();
 
   @override
   dynamic get message;
@@ -285,8 +283,8 @@ class __$$ValueGreaterThan100CopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ValueGreaterThan100 extends ValueGreaterThan100 {
-  const _$ValueGreaterThan100([this.message]) : super._();
+class _$ValueGreaterThan100 implements ValueGreaterThan100 {
+  const _$ValueGreaterThan100([this.message]);
 
   @override
   final dynamic message;
@@ -385,11 +383,9 @@ class _$ValueGreaterThan100 extends ValueGreaterThan100 {
   }
 }
 
-abstract class ValueGreaterThan100 extends PercentageFailure
-    implements Exception {
+abstract class ValueGreaterThan100 implements PercentageFailure, Exception {
   const factory ValueGreaterThan100([final dynamic message]) =
       _$ValueGreaterThan100;
-  const ValueGreaterThan100._() : super._();
 
   @override
   dynamic get message;
@@ -434,8 +430,8 @@ class __$$ValueIsNegativeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ValueIsNegative extends ValueIsNegative {
-  const _$ValueIsNegative([this.message]) : super._();
+class _$ValueIsNegative implements ValueIsNegative {
+  const _$ValueIsNegative([this.message]);
 
   @override
   final dynamic message;
@@ -533,9 +529,8 @@ class _$ValueIsNegative extends ValueIsNegative {
   }
 }
 
-abstract class ValueIsNegative extends PercentageFailure implements Exception {
+abstract class ValueIsNegative implements PercentageFailure, Exception {
   const factory ValueIsNegative([final dynamic message]) = _$ValueIsNegative;
-  const ValueIsNegative._() : super._();
 
   @override
   dynamic get message;

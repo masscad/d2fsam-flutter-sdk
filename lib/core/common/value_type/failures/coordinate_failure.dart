@@ -7,6 +7,4 @@ abstract class CoordinateFailure with _$CoordinateFailure implements Exception {
   @Implements<Exception>()
   const factory CoordinateFailure.coordinateMalformedException([dynamic message]) =
   CoordinateMalformedException;
-
-  const CoordinateFailure._();
 }

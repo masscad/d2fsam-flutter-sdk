@@ -144,8 +144,8 @@ class __$$MoreThanElevenCharsExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MoreThanElevenCharsException extends MoreThanElevenCharsException {
-  const _$MoreThanElevenCharsException([this.message]) : super._();
+class _$MoreThanElevenCharsException implements MoreThanElevenCharsException {
+  const _$MoreThanElevenCharsException([this.message]);
 
   @override
   final dynamic message;
@@ -250,11 +250,9 @@ class _$MoreThanElevenCharsException extends MoreThanElevenCharsException {
   }
 }
 
-abstract class MoreThanElevenCharsException extends UidFailure
-    implements Exception {
+abstract class MoreThanElevenCharsException implements UidFailure, Exception {
   const factory MoreThanElevenCharsException([final dynamic message]) =
       _$MoreThanElevenCharsException;
-  const MoreThanElevenCharsException._() : super._();
 
   @override
   dynamic get message;
@@ -301,8 +299,8 @@ class __$$LessThanElevenCharsExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LessThanElevenCharsException extends LessThanElevenCharsException {
-  const _$LessThanElevenCharsException([this.message]) : super._();
+class _$LessThanElevenCharsException implements LessThanElevenCharsException {
+  const _$LessThanElevenCharsException([this.message]);
 
   @override
   final dynamic message;
@@ -407,11 +405,9 @@ class _$LessThanElevenCharsException extends LessThanElevenCharsException {
   }
 }
 
-abstract class LessThanElevenCharsException extends UidFailure
-    implements Exception {
+abstract class LessThanElevenCharsException implements UidFailure, Exception {
   const factory LessThanElevenCharsException([final dynamic message]) =
       _$LessThanElevenCharsException;
-  const LessThanElevenCharsException._() : super._();
 
   @override
   dynamic get message;
@@ -456,8 +452,8 @@ class __$$MalformedUidExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MalformedUidException extends MalformedUidException {
-  const _$MalformedUidException([this.message]) : super._();
+class _$MalformedUidException implements MalformedUidException {
+  const _$MalformedUidException([this.message]);
 
   @override
   final dynamic message;
@@ -562,10 +558,9 @@ class _$MalformedUidException extends MalformedUidException {
   }
 }
 
-abstract class MalformedUidException extends UidFailure implements Exception {
+abstract class MalformedUidException implements UidFailure, Exception {
   const factory MalformedUidException([final dynamic message]) =
       _$MalformedUidException;
-  const MalformedUidException._() : super._();
 
   @override
   dynamic get message;

@@ -7,6 +7,4 @@ abstract class EmailFailure with _$EmailFailure implements Exception {
   @Implements<Exception>()
   const factory EmailFailure.malformedEmailException([dynamic message]) =
   MalformedEmailException;
-
-  const EmailFailure._();
 }

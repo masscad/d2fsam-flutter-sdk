@@ -23,6 +23,4 @@ abstract class IntegerNegativeFailure with _$IntegerNegativeFailure implements E
   @Implements<Exception>()
   const factory IntegerNegativeFailure.leadingZeroException([dynamic message]) =
   LeadingZeroException;
-
-  const IntegerNegativeFailure._();
 }

@@ -7,6 +7,4 @@ abstract class PhoneNumberFailure with _$PhoneNumberFailure implements Exception
   @Implements<Exception>()
   const factory PhoneNumberFailure.malformedPhoneNumberException([dynamic message]) =
   MalformedPhoneNumberException;
-
-  const PhoneNumberFailure._();
 }

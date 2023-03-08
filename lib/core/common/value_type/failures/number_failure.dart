@@ -15,6 +15,4 @@ abstract class NumberFailure with _$NumberFailure implements Exception {
   @Implements<Exception>()
   const factory NumberFailure.leadingZeroException([dynamic message]) =
       LeadingZeroException;
-
-  const NumberFailure._();
 }

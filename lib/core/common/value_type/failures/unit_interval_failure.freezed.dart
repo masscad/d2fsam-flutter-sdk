@@ -150,8 +150,8 @@ class __$$ScientificNotationExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ScientificNotationException extends ScientificNotationException {
-  const _$ScientificNotationException([this.message]) : super._();
+class _$ScientificNotationException implements ScientificNotationException {
+  const _$ScientificNotationException([this.message]);
 
   @override
   final dynamic message;
@@ -261,11 +261,10 @@ class _$ScientificNotationException extends ScientificNotationException {
   }
 }
 
-abstract class ScientificNotationException extends UnitIntervalFailure
-    implements Exception {
+abstract class ScientificNotationException
+    implements UnitIntervalFailure, Exception {
   const factory ScientificNotationException([final dynamic message]) =
       _$ScientificNotationException;
-  const ScientificNotationException._() : super._();
 
   @override
   dynamic get message;
@@ -310,8 +309,8 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NumberFormatException extends NumberFormatException {
-  const _$NumberFormatException([this.message]) : super._();
+class _$NumberFormatException implements NumberFormatException {
+  const _$NumberFormatException([this.message]);
 
   @override
   final dynamic message;
@@ -421,11 +420,9 @@ class _$NumberFormatException extends NumberFormatException {
   }
 }
 
-abstract class NumberFormatException extends UnitIntervalFailure
-    implements Exception {
+abstract class NumberFormatException implements UnitIntervalFailure, Exception {
   const factory NumberFormatException([final dynamic message]) =
       _$NumberFormatException;
-  const NumberFormatException._() : super._();
 
   @override
   dynamic get message;
@@ -470,8 +467,8 @@ class __$$GreaterThanOneExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GreaterThanOneException extends GreaterThanOneException {
-  const _$GreaterThanOneException([this.message]) : super._();
+class _$GreaterThanOneException implements GreaterThanOneException {
+  const _$GreaterThanOneException([this.message]);
 
   @override
   final dynamic message;
@@ -581,11 +578,10 @@ class _$GreaterThanOneException extends GreaterThanOneException {
   }
 }
 
-abstract class GreaterThanOneException extends UnitIntervalFailure
-    implements Exception {
+abstract class GreaterThanOneException
+    implements UnitIntervalFailure, Exception {
   const factory GreaterThanOneException([final dynamic message]) =
       _$GreaterThanOneException;
-  const GreaterThanOneException._() : super._();
 
   @override
   dynamic get message;
@@ -630,8 +626,8 @@ class __$$SmallerThanZeroExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SmallerThanZeroException extends SmallerThanZeroException {
-  const _$SmallerThanZeroException([this.message]) : super._();
+class _$SmallerThanZeroException implements SmallerThanZeroException {
+  const _$SmallerThanZeroException([this.message]);
 
   @override
   final dynamic message;
@@ -742,11 +738,10 @@ class _$SmallerThanZeroException extends SmallerThanZeroException {
   }
 }
 
-abstract class SmallerThanZeroException extends UnitIntervalFailure
-    implements Exception {
+abstract class SmallerThanZeroException
+    implements UnitIntervalFailure, Exception {
   const factory SmallerThanZeroException([final dynamic message]) =
       _$SmallerThanZeroException;
-  const SmallerThanZeroException._() : super._();
 
   @override
   dynamic get message;

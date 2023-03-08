@@ -15,6 +15,4 @@ abstract class PercentageFailure with _$PercentageFailure implements Exception {
   @Implements<Exception>()
   const factory PercentageFailure.valueIsNegative([dynamic message]) =
       ValueIsNegative;
-
-  const PercentageFailure._();
 }

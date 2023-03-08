@@ -142,8 +142,8 @@ class __$$OneIsNotTrueExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OneIsNotTrueException extends OneIsNotTrueException {
-  const _$OneIsNotTrueException([this.message]) : super._();
+class _$OneIsNotTrueException implements OneIsNotTrueException {
+  const _$OneIsNotTrueException([this.message]);
 
   @override
   final dynamic message;
@@ -248,11 +248,9 @@ class _$OneIsNotTrueException extends OneIsNotTrueException {
   }
 }
 
-abstract class OneIsNotTrueException extends TrueOnlyFailure
-    implements Exception {
+abstract class OneIsNotTrueException implements TrueOnlyFailure, Exception {
   const factory OneIsNotTrueException([final dynamic message]) =
       _$OneIsNotTrueException;
-  const OneIsNotTrueException._() : super._();
 
   @override
   dynamic get message;
@@ -300,8 +298,9 @@ class __$$FalseIsNotAValidValueExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FalseIsNotAValidValueException extends FalseIsNotAValidValueException {
-  const _$FalseIsNotAValidValueException([this.message]) : super._();
+class _$FalseIsNotAValidValueException
+    implements FalseIsNotAValidValueException {
+  const _$FalseIsNotAValidValueException([this.message]);
 
   @override
   final dynamic message;
@@ -406,11 +405,10 @@ class _$FalseIsNotAValidValueException extends FalseIsNotAValidValueException {
   }
 }
 
-abstract class FalseIsNotAValidValueException extends TrueOnlyFailure
-    implements Exception {
+abstract class FalseIsNotAValidValueException
+    implements TrueOnlyFailure, Exception {
   const factory FalseIsNotAValidValueException([final dynamic message]) =
       _$FalseIsNotAValidValueException;
-  const FalseIsNotAValidValueException._() : super._();
 
   @override
   dynamic get message;
@@ -456,8 +454,8 @@ class __$$BooleanMalformedExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BooleanMalformedException extends BooleanMalformedException {
-  const _$BooleanMalformedException([this.message]) : super._();
+class _$BooleanMalformedException implements BooleanMalformedException {
+  const _$BooleanMalformedException([this.message]);
 
   @override
   final dynamic message;
@@ -562,11 +560,9 @@ class _$BooleanMalformedException extends BooleanMalformedException {
   }
 }
 
-abstract class BooleanMalformedException extends TrueOnlyFailure
-    implements Exception {
+abstract class BooleanMalformedException implements TrueOnlyFailure, Exception {
   const factory BooleanMalformedException([final dynamic message]) =
       _$BooleanMalformedException;
-  const BooleanMalformedException._() : super._();
 
   @override
   dynamic get message;

@@ -15,6 +15,4 @@ abstract class TrueOnlyFailure with _$TrueOnlyFailure implements Exception {
   @Implements<Exception>()
   const factory TrueOnlyFailure.booleanMalformedException([dynamic message]) =
       BooleanMalformedException;
-
-  const TrueOnlyFailure._();
 }

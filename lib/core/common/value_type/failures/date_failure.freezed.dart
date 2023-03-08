@@ -123,8 +123,8 @@ class __$$ParseExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ParseException extends ParseException {
-  const _$ParseException([this.message]) : super._();
+class _$ParseException implements ParseException {
+  const _$ParseException([this.message]);
 
   @override
   final dynamic message;
@@ -209,9 +209,8 @@ class _$ParseException extends ParseException {
   }
 }
 
-abstract class ParseException extends DateFailure implements Exception {
+abstract class ParseException implements DateFailure, Exception {
   const factory ParseException([final dynamic message]) = _$ParseException;
-  const ParseException._() : super._();
 
   @override
   dynamic get message;

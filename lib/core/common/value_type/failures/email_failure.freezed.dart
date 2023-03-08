@@ -124,8 +124,8 @@ class __$$MalformedEmailExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MalformedEmailException extends MalformedEmailException {
-  const _$MalformedEmailException([this.message]) : super._();
+class _$MalformedEmailException implements MalformedEmailException {
+  const _$MalformedEmailException([this.message]);
 
   @override
   final dynamic message;
@@ -212,11 +212,9 @@ class _$MalformedEmailException extends MalformedEmailException {
   }
 }
 
-abstract class MalformedEmailException extends EmailFailure
-    implements Exception {
+abstract class MalformedEmailException implements EmailFailure, Exception {
   const factory MalformedEmailException([final dynamic message]) =
       _$MalformedEmailException;
-  const MalformedEmailException._() : super._();
 
   @override
   dynamic get message;

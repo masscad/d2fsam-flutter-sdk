@@ -15,6 +15,4 @@ abstract class UidFailure with _$UidFailure implements Exception {
   @Implements<Exception>()
   const factory UidFailure.malformedUidException([dynamic message]) =
       MalformedUidException;
-
-  const UidFailure._();
 }

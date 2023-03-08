@@ -129,8 +129,8 @@ class __$$CoordinateMalformedExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CoordinateMalformedException extends CoordinateMalformedException {
-  const _$CoordinateMalformedException([this.message]) : super._();
+class _$CoordinateMalformedException implements CoordinateMalformedException {
+  const _$CoordinateMalformedException([this.message]);
 
   @override
   final dynamic message;
@@ -219,11 +219,10 @@ class _$CoordinateMalformedException extends CoordinateMalformedException {
   }
 }
 
-abstract class CoordinateMalformedException extends CoordinateFailure
-    implements Exception {
+abstract class CoordinateMalformedException
+    implements CoordinateFailure, Exception {
   const factory CoordinateMalformedException([final dynamic message]) =
       _$CoordinateMalformedException;
-  const CoordinateMalformedException._() : super._();
 
   @override
   dynamic get message;

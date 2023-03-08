@@ -21,6 +21,4 @@ abstract class IntegerZeroOrPositiveFailure
   @Implements<Exception>()
   const factory IntegerZeroOrPositiveFailure.leadingZeroException(
       [dynamic message]) = LeadingZeroException;
-
-  const IntegerZeroOrPositiveFailure._();
 }

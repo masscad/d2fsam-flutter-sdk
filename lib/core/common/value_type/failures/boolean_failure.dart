@@ -15,6 +15,4 @@ abstract class BooleanFailure with _$BooleanFailure implements Exception {
   @Implements<Exception>()
   const factory BooleanFailure.booleanMalformedException([dynamic message]) =
       BooleanMalformedException;
-
-  const BooleanFailure._();
 }

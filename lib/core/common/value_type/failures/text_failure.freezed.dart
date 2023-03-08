@@ -124,8 +124,8 @@ class __$$TooLargeTextExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TooLargeTextException extends TooLargeTextException {
-  const _$TooLargeTextException([this.message]) : super._();
+class _$TooLargeTextException implements TooLargeTextException {
+  const _$TooLargeTextException([this.message]);
 
   @override
   final dynamic message;
@@ -212,10 +212,9 @@ class _$TooLargeTextException extends TooLargeTextException {
   }
 }
 
-abstract class TooLargeTextException extends TextFailure implements Exception {
+abstract class TooLargeTextException implements TextFailure, Exception {
   const factory TooLargeTextException([final dynamic message]) =
       _$TooLargeTextException;
-  const TooLargeTextException._() : super._();
 
   @override
   dynamic get message;

@@ -136,8 +136,8 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NumberFormatException extends NumberFormatException {
-  const _$NumberFormatException([this.message]) : super._();
+class _$NumberFormatException implements NumberFormatException {
+  const _$NumberFormatException([this.message]);
 
   @override
   final dynamic message;
@@ -236,11 +236,9 @@ class _$NumberFormatException extends NumberFormatException {
   }
 }
 
-abstract class NumberFormatException extends IntegerFailure
-    implements Exception {
+abstract class NumberFormatException implements IntegerFailure, Exception {
   const factory NumberFormatException([final dynamic message]) =
       _$NumberFormatException;
-  const NumberFormatException._() : super._();
 
   @override
   dynamic get message;
@@ -285,8 +283,8 @@ class __$$IntegerOverflowCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$IntegerOverflow extends IntegerOverflow {
-  const _$IntegerOverflow([this.message]) : super._();
+class _$IntegerOverflow implements IntegerOverflow {
+  const _$IntegerOverflow([this.message]);
 
   @override
   final dynamic message;
@@ -384,9 +382,8 @@ class _$IntegerOverflow extends IntegerOverflow {
   }
 }
 
-abstract class IntegerOverflow extends IntegerFailure implements Exception {
+abstract class IntegerOverflow implements IntegerFailure, Exception {
   const factory IntegerOverflow([final dynamic message]) = _$IntegerOverflow;
-  const IntegerOverflow._() : super._();
 
   @override
   dynamic get message;
@@ -431,8 +428,8 @@ class __$$LeadingZeroExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LeadingZeroException extends LeadingZeroException {
-  const _$LeadingZeroException([this.message]) : super._();
+class _$LeadingZeroException implements LeadingZeroException {
+  const _$LeadingZeroException([this.message]);
 
   @override
   final dynamic message;
@@ -531,11 +528,9 @@ class _$LeadingZeroException extends LeadingZeroException {
   }
 }
 
-abstract class LeadingZeroException extends IntegerFailure
-    implements Exception {
+abstract class LeadingZeroException implements IntegerFailure, Exception {
   const factory LeadingZeroException([final dynamic message]) =
       _$LeadingZeroException;
-  const LeadingZeroException._() : super._();
 
   @override
   dynamic get message;
