@@ -8,13 +8,13 @@ import 'package:sqflite/sqlite_api.dart';
 
 class ProgramSectionQuery extends BaseQuery<ProgramSection> {
   ProgramSectionQuery({Database? database}) : super(database: database);
-  // String? program;
-  //
-  // ProgramSectionQuery byProgram(String program) {
-  //   this.program = program;
-  //   where(attribute: 'program', value: program);
-  //   return this;
-  // }
+  String? program;
+
+  ProgramSectionQuery byProgram(String program) {
+    this.program = program;
+    where(attribute: 'program', value: program);
+    return this;
+  }
 
   ProgramSectionQuery withAttributes() {
     final programSectionAttribute = Repository<ProgramSectionAttribute>();
