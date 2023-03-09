@@ -15,10 +15,9 @@ class ProgramTrackedEntityAttributeQuery
 
   ProgramTrackedEntityAttributeQuery byProgram(String program) {
     this.program = program;
-    where(attribute: 'program', value: program);
-    return this;
+    return this.where(attribute: 'program', value: program);
   }
-  
+
   ProgramTrackedEntityAttributeQuery withOptions() {
     final attributeOption = Repository<AttributeOption>();
 

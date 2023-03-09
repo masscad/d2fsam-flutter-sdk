@@ -92,7 +92,8 @@ class EventQuery extends BaseQuery<Event> {
   @override
   Future create() async {
     Event event = Event(
-        activity: this.activity,
+        // activity: this.activity,
+        activity: this.activity as String,
         orgUnit: this.orgUnit as String,
         status: 'ACTIVE',
         enrollment: this.enrollment ?? '',
@@ -172,9 +173,10 @@ class EventQuery extends BaseQuery<Event> {
       event.programStage = programStages
           .lastWhere((programStage) => programStage.id == event.programStage)
           .toJson();
-      event.activity = activities
-          .lastWhere((activity) => activity.id == event.activity)
-          .toJson();
+
+      // event.activity = activities
+      //     .lastWhere((activity) => activity.id == event.activity)
+      //     .toJson();
 
       return Event.toUpload(event);
     }).toList();

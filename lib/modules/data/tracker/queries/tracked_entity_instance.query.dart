@@ -222,7 +222,7 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
 
     Enrollment enrollment = Enrollment(
         trackedEntityType: program.trackedEntityType as String,
-        activity: activity.id,
+        activity: activity.id as String,
         orgUnit: this.orgUnit as String,
         program: program.id as String,
         trackedEntityInstance: trackedEntityInstance.trackedEntityInstance,
@@ -393,9 +393,9 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
             .lastWhere((programStage) => programStage.id == event.programStage)
             .toJson();
 
-        event.activity = activities
-            .lastWhere((activity) => activity.id == event.activity)
-            .toJson();
+        // event.activity = activities
+        //     .lastWhere((activity) => activity.id == event.activity)
+        //     .toJson();
       }
       return event;
     }).toList();

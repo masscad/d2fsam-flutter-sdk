@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/modules/data/tracker/models/enrollment_import_summary.dart';
 import 'package:d2_remote/modules/data/tracker/models/geometry.dart';
-import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 import 'event.entity.dart';
@@ -12,8 +11,10 @@ import 'tracked-entity.entity.dart';
 @AnnotationReflectable
 @Entity(tableName: 'enrollment', apiResourceName: 'enrollments')
 class Enrollment extends IdentifiableEntity {
-  @ManyToOne(joinColumnName: 'activity', table: Activity)
-  dynamic activity;
+  // @ManyToOne(joinColumnName: 'activity', table: Activity)
+  // dynamic activity;
+
+  String activity;
 
   @Column()
   String? enrollment;
@@ -180,10 +181,10 @@ class Enrollment extends IdentifiableEntity {
       "events": (filteredEvents).map((event) => Event.toUpload(event)).toList()
     };
 
-    if (enrollment.activity != null &&
-        enrollment.activity.runtimeType != String) {
-      enrollmentToUpload['activity'] = enrollment.activity['id'];
-    }
+    // if (enrollment.activity != null &&
+    //     enrollment.activity.runtimeType != String) {
+    //   enrollmentToUpload['activity'] = enrollment.activity['id'];
+    // }
 
     return enrollmentToUpload;
     //////////////

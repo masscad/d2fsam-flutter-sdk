@@ -55,8 +55,8 @@ class DataElement extends IdentifiableEntity {
         valueType: json['valueType'],
         aggregationType: json['aggregationType'],
         description: json['description'],
-        optionSet: json['optionSet']?['id'],
         formName: json['formName'],
+        optionSet: json['optionSet']?['id'],
         dirty: json['dirty']);
   }
 

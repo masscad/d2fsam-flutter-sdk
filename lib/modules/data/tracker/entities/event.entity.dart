@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
-import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
@@ -15,8 +14,10 @@ class Event extends IdentifiableEntity {
   @Column()
   String? event;
 
-  @ManyToOne(joinColumnName: 'activity', table: Activity)
-  dynamic activity;
+  // @ManyToOne(joinColumnName: 'activity', table: Activity)
+  // dynamic activity;
+
+  String activity;
 
   @Column()
   String orgUnit;
@@ -199,10 +200,10 @@ class Event extends IdentifiableEntity {
           .toList()
     };
 
-    if (event.activity != null &&
-        event.activity.runtimeType != String) {
-      eventToUpload['activity'] = event.activity['id'];
-    }
+    // if (event.activity != null &&
+    //     event.activity.runtimeType != String) {
+    //   eventToUpload['activity'] = event.activity['id'];
+    // }
 
     if (event.programStage != null &&
         event.programStage.runtimeType != String) {
