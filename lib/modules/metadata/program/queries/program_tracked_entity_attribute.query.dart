@@ -11,6 +11,14 @@ class ProgramTrackedEntityAttributeQuery
   ProgramTrackedEntityAttributeQuery({Database? database})
       : super(database: database);
 
+  String? program;
+
+  ProgramTrackedEntityAttributeQuery byProgram(String program) {
+    this.program = program;
+    where(attribute: 'program', value: program);
+    return this;
+  }
+  
   ProgramTrackedEntityAttributeQuery withOptions() {
     final attributeOption = Repository<AttributeOption>();
 
