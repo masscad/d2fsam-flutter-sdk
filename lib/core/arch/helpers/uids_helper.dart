@@ -5,8 +5,8 @@ abstract class UidsHelper {
   ///
   /// @param objects A collection of objects with uid.
   /// @return A [Set] with the uids of the given objects.
-  static Set<String> getUids<T extends IdentifiableEntity>(
-      [Iterable<T> objects = const []]) {
+  static Set<String> getUids(
+      [Iterable<IdentifiableEntity> objects = const []]) {
     return getUidsList(objects).toSet();
   }
 
@@ -14,8 +14,8 @@ abstract class UidsHelper {
   ///
   /// @param objects A collection of objects with uid.
   /// @return A [List] with the uids of the given objects.
-  static List<String> getUidsList<T extends IdentifiableEntity>(
-      [Iterable<T> objects = const []]) {
+  static List<String> getUidsList(
+      [Iterable<IdentifiableEntity> objects = const []]) {
     return objects.map((e) => e.id!).toList();
   }
 
