@@ -12,6 +12,12 @@ class ProgramTrackedEntityAttributeQuery
       : super(database: database);
 
   String? program;
+  String? attribute;
+
+  ProgramTrackedEntityAttributeQuery byTrackedEntityAttribute(String attribute) {
+    this.attribute = attribute;
+    return this.where(attribute: 'attribute', value: attribute);
+  }
 
   ProgramTrackedEntityAttributeQuery byProgram(String program) {
     this.program = program;
