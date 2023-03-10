@@ -1,12 +1,11 @@
-import 'package:d2_remote/shared/entities/identifiable.entity.dart';
+import 'package:d2_remote/shared/entities/base.entity.dart';
 
 abstract class UidsHelper {
   /// Returns a [Set] of uids of the given objects.
   ///
   /// @param objects A collection of objects with uid.
   /// @return A [Set] with the uids of the given objects.
-  static Set<String> getUids(
-      [Iterable<IdentifiableEntity> objects = const []]) {
+  static Set<String> getUids([Iterable<BaseEntity> objects = const []]) {
     return getUidsList(objects).toSet();
   }
 
@@ -14,8 +13,7 @@ abstract class UidsHelper {
   ///
   /// @param objects A collection of objects with uid.
   /// @return A [List] with the uids of the given objects.
-  static List<String> getUidsList(
-      [Iterable<IdentifiableEntity> objects = const []]) {
+  static List<String> getUidsList([Iterable<BaseEntity> objects = const []]) {
     return objects.map((e) => e.id!).toList();
   }
 
@@ -23,7 +21,7 @@ abstract class UidsHelper {
   ///
   /// @param o A object with uid.
   /// @return The uid of the object.
-  static String? getUidOrNull(IdentifiableEntity? o) {
+  static String? getUidOrNull(BaseEntity? o) {
     return o?.id;
   }
 }
