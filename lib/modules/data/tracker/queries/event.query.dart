@@ -4,8 +4,6 @@ import 'package:d2_remote/modules/data/tracker/entities/event.entity.dart';
 import 'package:d2_remote/modules/data/tracker/entities/event_data_value.entity.dart';
 import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
 import 'package:d2_remote/modules/data/tracker/queries/event_data_value.query.dart';
-import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
-import 'package:d2_remote/modules/activity_management/activity/queries/activity.query.dart';
 import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_remote/modules/metadata/program/queries/program_stage.query.dart';
 import 'package:d2_remote/shared/models/request_progress.model.dart';
@@ -160,8 +158,8 @@ class EventQuery extends BaseQuery<Event> {
         .whereIn(attribute: 'event', values: eventIds, merge: false)
         .get();
 
-    List<Activity> activities =
-        await ActivityQuery().byIds(eventActivityIds).get();
+    // List<Activity> activities =
+    //     await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();

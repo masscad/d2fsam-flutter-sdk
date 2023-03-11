@@ -381,8 +381,8 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
       eventProgramStageIds.add(event.programStage);
     });
 
-    List<Activity> activities =
-        await ActivityQuery().byIds(eventActivityIds).get();
+    // List<Activity> activities =
+    //     await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();
