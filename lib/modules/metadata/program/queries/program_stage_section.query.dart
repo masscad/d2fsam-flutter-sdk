@@ -8,6 +8,12 @@ import 'package:sqflite/sqflite.dart';
 
 class ProgramStageSectionQuery extends BaseQuery<ProgramStageSection> {
   ProgramStageSectionQuery({Database? database}) : super(database: database);
+  String? programStage;
+
+  ProgramStageSectionQuery byProgramStage(String programStage) {
+    this.programStage = programStage;
+    return where(attribute: 'programStage', value: programStage);
+  }
 
   ProgramStageSectionQuery withDataElements() {
     final programStageSectionDataElement =

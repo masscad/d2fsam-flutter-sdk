@@ -12,8 +12,7 @@ class ProgramSectionQuery extends BaseQuery<ProgramSection> {
 
   ProgramSectionQuery byProgram(String program) {
     this.program = program;
-    where(attribute: 'program', value: program);
-    return this;
+    return where(attribute: 'program', value: program);
   }
 
   ProgramSectionQuery withAttributes() {
