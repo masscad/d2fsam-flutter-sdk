@@ -38,10 +38,6 @@ class ProgramStageDataElement extends IdentifiableEntity {
   @Column(nullable: true)
   bool? renderOptionsAsRadio;
 
-  // NMCP
-  @Column(nullable: true)
-  String? renderType;
-
   @Column(nullable: true)
   bool? compulsory;
 
@@ -98,7 +94,6 @@ class ProgramStageDataElement extends IdentifiableEntity {
       this.optionSetValue,
       this.optionSetName,
       this.options,
-      this.renderType,
       required this.domainType,
       required this.valueType,
       required dirty})
@@ -113,9 +108,6 @@ class ProgramStageDataElement extends IdentifiableEntity {
             dirty: dirty);
 
   factory ProgramStageDataElement.fromJson(Map<String, dynamic> json) {
-    final renderType = json['renderType'] is String
-        ? json['renderType']
-        : json['renderType']?['MOBILE']?['type'];
     return ProgramStageDataElement(
         id: json['id'],
         name: json['name'],
@@ -151,7 +143,6 @@ class ProgramStageDataElement extends IdentifiableEntity {
                   'dirty': false
                 }))
             .toList(),
-        renderType: renderType,
         dirty: json['dirty']);
   }
 
@@ -182,7 +173,6 @@ class ProgramStageDataElement extends IdentifiableEntity {
     data['allowFutureDate'] = this.allowFutureDate;
     data['displayDescription'] = this.displayDescription;
     data['displayFormName'] = this.displayFormName;
-    data['renderType'] = this.renderType;
     data['dirty'] = this.dirty;
 
     return data;
