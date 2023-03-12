@@ -17,5 +17,5 @@ jobs:
           channel: "stable"
       - run: flutter pub get
       - run: flutter analyze
-      - run: sh database_builder.sh
+#      - run: sh database_builder.sh
       - run: flutter test
