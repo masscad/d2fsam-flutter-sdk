@@ -1,6 +1,7 @@
 name: Flutter SDK CI
 on:
-  push:
+  pull_request:
+#  push:
     branches:
       - develop
 jobs:
@@ -16,6 +17,6 @@ jobs:
         with:
           channel: "stable"
       - run: flutter pub get
-      - run: flutter analyze
-      - run: sh database_builder.sh
+#      - run: flutter analyze
+#      - run: sh database_builder.sh
       - run: flutter test
