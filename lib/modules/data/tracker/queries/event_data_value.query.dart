@@ -4,4 +4,16 @@ import 'package:sqflite/sqflite.dart';
 
 class EventDataValueQuery extends BaseQuery<EventDataValue> {
   EventDataValueQuery({Database? database}) : super(database: database);
+  String? event;
+  String? dataElement;
+
+  EventDataValueQuery byEvent(String event) {
+    this.event = event;
+    return this.where(attribute: 'event', value: event);
+  }
+
+  EventDataValueQuery byDataElement(String dataElement) {
+    this.dataElement = dataElement;
+    return this.where(attribute: 'dataElement', value: dataElement);
+  }
 }
