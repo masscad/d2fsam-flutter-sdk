@@ -9,18 +9,6 @@ import 'package:sqflite/sqflite.dart';
 class ProgramStageDataElementQuery extends BaseQuery<ProgramStageDataElement> {
   ProgramStageDataElementQuery({Database? database})
       : super(database: database);
-  String? programStage;
-  String? dataElementId;
-
-  ProgramStageDataElementQuery byProgramStage(String programStage) {
-    this.programStage = programStage;
-    return where(attribute: 'programStage', value: programStage);
-  }
-
-  ProgramStageDataElementQuery byDataElement(String dataElementId) {
-    this.dataElementId = dataElementId;
-    return where(attribute: 'dataElementId', value: dataElementId);
-  }
 
   ProgramStageDataElementQuery withOptions() {
     final dataElementOption = Repository<ProgramStageDataElementOption>();
