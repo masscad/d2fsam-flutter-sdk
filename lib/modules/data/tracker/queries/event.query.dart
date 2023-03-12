@@ -1,5 +1,7 @@
 import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/core/utilities/repository.dart';
+import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
+import 'package:d2_remote/modules/activity_management/activity/queries/activity.query.dart';
 import 'package:d2_remote/modules/data/tracker/entities/event.entity.dart';
 import 'package:d2_remote/modules/data/tracker/entities/event_data_value.entity.dart';
 import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
@@ -90,8 +92,8 @@ class EventQuery extends BaseQuery<Event> {
   @override
   Future create() async {
     Event event = Event(
-        // activity: this.activity,
-        activity: this.activity as String,
+        activity: this.activity,
+        // activity: this.activity as String,
         orgUnit: this.orgUnit as String,
         status: 'ACTIVE',
         enrollment: this.enrollment ?? '',
@@ -158,8 +160,8 @@ class EventQuery extends BaseQuery<Event> {
         .whereIn(attribute: 'event', values: eventIds, merge: false)
         .get();
 
-    // List<Activity> activities =
-    //     await ActivityQuery().byIds(eventActivityIds).get();
+    List<Activity> activities =
+        await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();
@@ -172,9 +174,9 @@ class EventQuery extends BaseQuery<Event> {
           .lastWhere((programStage) => programStage.id == event.programStage)
           .toJson();
 
-      // event.activity = activities
-      //     .lastWhere((activity) => activity.id == event.activity)
-      //     .toJson();
+      event.activity = activities
+          .lastWhere((activity) => activity.id == event.activity)
+          .toJson();
 
       return Event.toUpload(event);
     }).toList();

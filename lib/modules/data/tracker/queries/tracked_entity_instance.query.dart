@@ -381,8 +381,8 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
       eventProgramStageIds.add(event.programStage);
     });
 
-    // List<Activity> activities =
-    //     await ActivityQuery().byIds(eventActivityIds).get();
+    List<Activity> activities =
+        await ActivityQuery().byIds(eventActivityIds).get();
 
     List<ProgramStage> programStages =
         await ProgramStageQuery().byIds(eventProgramStageIds).get();
@@ -393,9 +393,9 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
             .lastWhere((programStage) => programStage.id == event.programStage)
             .toJson();
 
-        // event.activity = activities
-        //     .lastWhere((activity) => activity.id == event.activity)
-        //     .toJson();
+        event.activity = activities
+            .lastWhere((activity) => activity.id == event.activity)
+            .toJson();
       }
       return event;
     }).toList();
