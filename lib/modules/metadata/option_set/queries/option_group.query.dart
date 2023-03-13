@@ -6,11 +6,10 @@ import 'package:sqflite/sqflite.dart';
 class OptionGroupQuery extends BaseQuery<OptionGroup> {
   OptionGroupQuery({Database? database}) : super(database: database);
 
-
   @override
   Future<String> dhisUrl() {
     final apiFilter =
-    QueryFilter.getApiFilters(this.repository.columns, this.filters);
+        QueryFilter.getApiFilters(this.repository.columns, this.filters);
     return Future.value(
         'optionGroups.json${apiFilter != null ? '?$apiFilter&' : '?'}fields=id,name,displayName,shortName,lastUpdated,created,code,dirty,description,optionSet[id,code,name,shortName,displayName,created,lastUpdated],options[id,code,name,description,sortOrder,displayName,lastUpdated,created]&paging=false');
   }
