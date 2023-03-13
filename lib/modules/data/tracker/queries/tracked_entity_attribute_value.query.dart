@@ -6,4 +6,18 @@ class TrackedEntityAttributeValueQuery
     extends BaseQuery<TrackedEntityAttributeValue> {
   TrackedEntityAttributeValueQuery({Database? database})
       : super(database: database);
+  String? attribute;
+  String? trackedEntityInstance;
+
+  TrackedEntityAttributeValueQuery byAttribute(String attribute) {
+    this.attribute = attribute;
+    return this.where(attribute: 'attribute', value: attribute);
+  }
+
+  TrackedEntityAttributeValueQuery byTrackedEntityInstance(
+      String trackedEntityInstance) {
+    this.trackedEntityInstance = trackedEntityInstance;
+    return this.where(
+        attribute: 'trackedEntityInstance', value: trackedEntityInstance);
+  }
 }
