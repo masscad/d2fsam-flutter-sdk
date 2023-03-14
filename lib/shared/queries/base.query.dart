@@ -86,7 +86,7 @@ class BaseQuery<T extends BaseEntity> {
 
     return this;
   }
-
+  
   // NMC
   whereNotIn(
       {required String attribute,
@@ -104,7 +104,7 @@ class BaseQuery<T extends BaseEntity> {
 
     return this;
   }
-
+  
   whereNeq({required String attribute, @required dynamic value}) {
     this.filters?.add(QueryFilter(
         attribute: attribute, condition: QueryCondition.Neq, value: value));
@@ -112,7 +112,7 @@ class BaseQuery<T extends BaseEntity> {
     return this;
   }
   //
-  
+
   like({required String attribute, required dynamic value}) {
     this.filters?.add(QueryFilter(
         attribute: attribute, condition: QueryCondition.Like, value: value));
