@@ -73,5 +73,6 @@ enum ValueType {
 
   static ValueType? valueOf(String? str) =>
       ValueType.values.firstWhere((e) => e.toString() == 'ValueType.' + '$str',
-          orElse: () => TEXT);
+          orElse: () => throw ArgumentError(
+              'ValueTypeOfString There is no ValueType of Type: $str'));
 }
