@@ -58,6 +58,12 @@ class ProgramStage extends IdentifiableEntity {
   @OneToMany(table: ProgramStageDataElement)
   List<ProgramStageDataElement>? programStageDataElements;
 
+  @Column(type: ColumnType.TEXT, nullable: true)
+  String? reportDateToUse;
+
+  @Column(type: ColumnType.TEXT, nullable: true)
+  String? periodType;
+
   ProgramStage(
       {required String id,
       String? created,
@@ -83,6 +89,8 @@ class ProgramStage extends IdentifiableEntity {
       this.programStageSections,
       required this.repeatable,
       this.description,
+      this.reportDateToUse,
+      this.periodType,
       required dirty})
       : super(
             id: id,
@@ -139,6 +147,8 @@ class ProgramStage extends IdentifiableEntity {
           .toList(),
       repeatable: jsonData['repeatable'],
       sortOrder: jsonData['sortOrder'],
+      reportDateToUse: jsonData['reportDateToUse'] ?? 'incidentDate',
+      periodType: jsonData['periodType'],
     );
   }
 
@@ -170,6 +180,8 @@ class ProgramStage extends IdentifiableEntity {
     data['programStageSections'] = this.programStageSections;
     data['repeatable'] = this.repeatable;
     data['sortOrder'] = this.sortOrder;
+    data['reportDateToUse'] = this.reportDateToUse;
+    data['periodType'] = this.periodType;
     return data;
   }
 }
