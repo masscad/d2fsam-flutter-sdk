@@ -13,7 +13,7 @@ class OptionGroup extends IdentifiableEntity {
   dynamic optionSet;
 
   @Column(nullable: true)
-  Object? options;
+  String? options;
 
   OptionGroup(
       {required String id,
@@ -39,7 +39,7 @@ class OptionGroup extends IdentifiableEntity {
         optionSet: jsonData['optionSet'],
         description: jsonData['description'],
         displayName: jsonData['displayName'],
-        options: jsonData['options']?.toString() ?? null,
+        options: jsonData['options'].toString(),
         dirty: jsonData['dirty']);
   }
 
