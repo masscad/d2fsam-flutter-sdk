@@ -1,7 +1,9 @@
 enum QueryCondition {
+  // NMC
+  Nin,
+  Neq,
+  //
   In,
-  // NMC implement
-  NotIn,
   Equal,
   Like,
   Ilike,
