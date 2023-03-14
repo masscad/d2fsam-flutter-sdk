@@ -12,8 +12,8 @@ class OptionGroup extends IdentifiableEntity {
   @ManyToOne(table: OptionSet, joinColumnName: 'optionSet')
   dynamic optionSet;
 
-  @OneToMany(table: Option)
-  List<Option>? options;
+  @Column(nullable: true)
+  Object? options;
 
   OptionGroup(
       {required String id,
@@ -39,6 +39,7 @@ class OptionGroup extends IdentifiableEntity {
         optionSet: jsonData['optionSet'],
         description: jsonData['description'],
         displayName: jsonData['displayName'],
+        options: jsonData['options']?.toString() ?? null,
         dirty: jsonData['dirty']);
   }
 
@@ -50,6 +51,7 @@ class OptionGroup extends IdentifiableEntity {
     data['optionSet'] = this.optionSet;
     data['description'] = this.description;
     data['displayName'] = this.displayName;
+    data['options'] = this.options;
     data['dirty'] = this.dirty;
     return data;
   }
