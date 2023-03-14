@@ -58,11 +58,15 @@ class ProgramStage extends IdentifiableEntity {
   @OneToMany(table: ProgramStageDataElement)
   List<ProgramStageDataElement>? programStageDataElements;
 
+  // NMC
   @Column(type: ColumnType.TEXT, nullable: true)
   String? reportDateToUse;
 
   @Column(type: ColumnType.TEXT, nullable: true)
   String? periodType;
+
+  @Column(nullable: true)
+  bool? openAfterEnrollment;
 
   ProgramStage(
       {required String id,
@@ -91,6 +95,7 @@ class ProgramStage extends IdentifiableEntity {
       this.description,
       this.reportDateToUse,
       this.periodType,
+      this.openAfterEnrollment,
       required dirty})
       : super(
             id: id,
@@ -149,6 +154,7 @@ class ProgramStage extends IdentifiableEntity {
       sortOrder: jsonData['sortOrder'],
       reportDateToUse: jsonData['reportDateToUse'] ?? 'incidentDate',
       periodType: jsonData['periodType'],
+      openAfterEnrollment: jsonData['openAfterEnrollment'],
     );
   }
 
@@ -182,6 +188,7 @@ class ProgramStage extends IdentifiableEntity {
     data['sortOrder'] = this.sortOrder;
     data['reportDateToUse'] = this.reportDateToUse;
     data['periodType'] = this.periodType;
+    data['openAfterEnrollment'] = this.openAfterEnrollment;
     return data;
   }
 }
