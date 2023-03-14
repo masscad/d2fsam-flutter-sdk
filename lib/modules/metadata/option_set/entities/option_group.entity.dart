@@ -39,7 +39,15 @@ class OptionGroup extends IdentifiableEntity {
         optionSet: jsonData['optionSet'],
         description: jsonData['description'],
         displayName: jsonData['displayName'],
-        options: jsonData['options'],
+        options: jsonData['options']
+            .map<OptionGroupOption>((option) => OptionGroupOption(
+            id: '${jsonData['id']}_${option['id']}',
+            code: '${jsonData['id']}_${option['code']}',
+            name: '${jsonData['id']}_${option['name']}',
+            option: option['id'],
+            optionGroup: jsonData['id'],
+            dirty: jsonData['dirty'] ?? false))
+            .toList(),
         dirty: jsonData['dirty']);
   }
 
@@ -51,7 +59,7 @@ class OptionGroup extends IdentifiableEntity {
         optionSet: jsonData['optionSet'],
         description: jsonData['description'],
         displayName: jsonData['displayName'],
-        options: jsonData['organisationUnits']
+        options: jsonData['options']
             .map<OptionGroupOption>((option) => OptionGroupOption(
                 id: '${jsonData['id']}_${option['id']}',
                 code: '${jsonData['id']}_${option['code']}',

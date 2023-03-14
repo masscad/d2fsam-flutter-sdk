@@ -4,11 +4,7 @@ import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 import 'package:d2_remote/core/utilities/repository.dart';
 import 'package:d2_remote/modules/metadata/option_set/entities/option_group.entity.dart';
 import 'package:d2_remote/modules/metadata/option_set/entities/option_group_option.entity.dart';
-import 'package:d2_remote/shared/models/request_progress.model.dart';
 import 'package:d2_remote/shared/queries/base.query.dart';
-import 'package:d2_remote/shared/utilities/http_client.util.dart';
-import 'package:d2_remote/shared/utilities/query_filter.util.dart';
-import 'package:dio/dio.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -40,60 +36,58 @@ class OptionGroupQuery extends BaseQuery<OptionGroup> {
     return this;
   }
 
-  @override
-  Future<List<OptionGroup>?> download(
-      Function(RequestProgress, bool) callback,
-      {Dio? dioTestClient}) async {
-
-    final dhisUrl = await this.dhisUrl();
-
-    final response = await HttpClient.get(dhisUrl,
-        database: this.database, dioTestClient: dioTestClient);
-
-    List data = response.body[this.apiResourceName]?.toList();
-
-    callback(
-        RequestProgress(
-            resourceName: this.apiResourceName as String,
-            message:
-            '${data.length} ${this.apiResourceName?.toLowerCase()} downloaded successfully',
-            status: '',
-            percentage: 50),
-        false);
-
-    this.data = data.map((dataItem) {
-      dataItem['dirty'] = false;
-      return OptionGroup.fromApi(dataItem);
-    }).toList();
-
-    callback(
-        RequestProgress(
-            resourceName: this.apiResourceName as String,
-            message:
-            'Saving ${data.length} ${this.apiResourceName?.toLowerCase()} into phone database...',
-            status: '',
-            percentage: 51),
-        false);
-
-    await this.save();
-
-    callback(
-        RequestProgress(
-            resourceName: this.apiResourceName as String,
-            message:
-            '${data.length} ${this.apiResourceName?.toLowerCase()} successifully saved into the database',
-            status: '',
-            percentage: 100),
-        true);
-
-    return this.data;
-  }
+  // @override
+  // Future<List<OptionGroup>?> download(
+  //     Function(RequestProgress, bool) callback,
+  //     {Dio? dioTestClient}) async {
+  //
+  //   final dhisUrl = await this.dhisUrl();
+  //
+  //   final response = await HttpClient.get(dhisUrl,
+  //       database: this.database, dioTestClient: dioTestClient);
+  //
+  //   List data = response.body[this.apiResourceName]?.toList();
+  //
+  //   callback(
+  //       RequestProgress(
+  //           resourceName: this.apiResourceName as String,
+  //           message:
+  //           '${data.length} ${this.apiResourceName?.toLowerCase()} downloaded successfully',
+  //           status: '',
+  //           percentage: 50),
+  //       false);
+  //
+  //   this.data = data.map((dataItem) {
+  //     dataItem['dirty'] = false;
+  //     return OptionGroup.fromApi(dataItem);
+  //   }).toList();
+  //
+  //   callback(
+  //       RequestProgress(
+  //           resourceName: this.apiResourceName as String,
+  //           message:
+  //           'Saving ${data.length} ${this.apiResourceName?.toLowerCase()} into phone database...',
+  //           status: '',
+  //           percentage: 51),
+  //       false);
+  //
+  //   await this.save();
+  //
+  //   callback(
+  //       RequestProgress(
+  //           resourceName: this.apiResourceName as String,
+  //           message:
+  //           '${data.length} ${this.apiResourceName?.toLowerCase()} successifully saved into the database',
+  //           status: '',
+  //           percentage: 100),
+  //       true);
+  //
+  //   return this.data;
+  // }
 
   @override
   Future<String> dhisUrl() {
-    final apiFilter =
-        QueryFilter.getApiFilters(this.repository.columns, this.filters);
     return Future.value(
-        'optionGroups.json${apiFilter != null ? '?$apiFilter&' : '?'}fields=id,name,displayName,shortName,lastUpdated,created,code,dirty,description,optionSet[id,code,name,shortName,displayName,created,lastUpdated],options[id,code,name,description,sortOrder,displayName,lastUpdated,created]&paging=false');
+        'optionGroups.json?fields=id,name,displayName,shortName,lastUpdated,created,code,dirty,description,optionSet[id,code,name,shortName,displayName,created,lastUpdated],options[id,code,name,description,sortOrder,displayName,lastUpdated,created]&paging=false');
   }
 }
