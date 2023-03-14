@@ -19,16 +19,16 @@ enum PeriodType {
   FinancialNov(-4, 1, "\\b(\\d{4})Nov\\b", 18);
 
   ///////////////////////////
-  final int _defaultStartPeriods;
-  final int _defaultEndPeriods;
-  final String _pattern;
-  final int _sortOrder;
+  final int defaultStartPeriods;
+  final int defaultEndPeriods;
+  final String pattern;
+  final int sortOrder;
 
-  const PeriodType(this._defaultEndPeriods, this._defaultStartPeriods,
-      this._pattern, this._sortOrder);
+  const PeriodType(this.defaultEndPeriods, this.defaultStartPeriods,
+      this.pattern, this.sortOrder);
 }
 
 PeriodType periodTypeFromPeriodId(String periodId) => PeriodType.values
-    .firstWhere((periodType) => RegExp(periodType._pattern).hasMatch(periodId),
+    .firstWhere((periodType) => RegExp(periodType.pattern).hasMatch(periodId),
         orElse: throw ArgumentError(
             'The period id $periodId does not match any period type'));
