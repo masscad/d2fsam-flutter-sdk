@@ -35,7 +35,7 @@ void main() async {
   final dioAdapter = DioAdapter(dio: dio);
 
   dioAdapter.onGet(
-    'https://play.dhis2.org/2.35.11/api/events.json?fields=event,eventDate,dueDate,program,programStage,project,activity,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&project=ProzpKrYNg8&activity=ActzpKrYNg8&orgUnit=DiszpKrYNg8&program=IpHINAT79UW&programStage=ZzYYXq4fJie&order=eventDate:desc&pageSize=100&page=1',
+    'https://play.dhis2.org/2.35.11/api/events.json?fields=event,eventDate,dueDate,program,programStage,project,activity,orgUnit,trackedEntityInstance,enrollment,enrollmentStatus,status,attributeCategoryOptions,lastUpdated,created,followup,deleted,attributeOptionCombo,dataValues,createdAtClient,lastUpdatedAtClient,completedDate[dataElement,value,lastUpdated,created,storedBy,providedElseWhere]&project=ProzpKrYNg8&activity=ActzpKrYNg8&orgUnit=DiszpKrYNg8&program=IpHINAT79UW&programStage=ZzYYXq4fJie&order=eventDate:desc&pageSize=100&page=1',
     (server) => server.reply(200, sampleEvents),
   );
 

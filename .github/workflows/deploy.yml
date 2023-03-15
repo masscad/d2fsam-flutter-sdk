@@ -1,6 +1,6 @@
 name: Flutter SDK CI
 on:
-  pull_request:
+  push:
     branches:
       - develop
 jobs:

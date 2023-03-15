@@ -78,6 +78,16 @@ class Event extends IdentifiableEntity {
   @OneToMany(table: EventDataValue)
   List<EventDataValue>? dataValues;
 
+  // NMC ///
+  @Column(nullable: true)
+  String? createdAtClient;
+
+  @Column(nullable: true)
+  String? lastUpdatedAtClient;
+
+  @Column(nullable: true)
+  String? completedDate;
+
   Event(
       {String? id,
       String? name,
@@ -104,7 +114,10 @@ class Event extends IdentifiableEntity {
       this.eventType,
       required this.programStage,
       this.enrollment,
-      this.dataValues})
+      this.dataValues,
+      this.createdAtClient,
+      this.lastUpdatedAtClient,
+      this.completedDate})
       : super(
             id: id,
             name: name,
@@ -150,6 +163,9 @@ class Event extends IdentifiableEntity {
                   "dirty": json['dirty']
                 }))
             .toList(),
+        createdAtClient: json['createdAtClient'],
+        lastUpdatedAtClient: json['lastUpdatedAtClient'],
+        completedDate: json['completedDate'],
         dirty: json['dirty']);
   }
 
@@ -182,6 +198,9 @@ class Event extends IdentifiableEntity {
     data['programStage'] = this.programStage;
     data['enrollment'] = this.enrollment ?? '';
     data['dataValues'] = this.dataValues;
+    data['createdAtClient'] = this.createdAtClient;
+    data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
+    data['completedDate'] = this.lastUpdatedAtClient;
     data['dirty'] = this.dirty;
     return data;
   }
@@ -199,7 +218,10 @@ class Event extends IdentifiableEntity {
       "coordinate": event.coordinate,
       "dataValues": (event.dataValues ?? [])
           .map((event) => EventDataValue.toUpload(event))
-          .toList()
+          .toList(),
+      // "createdAtClient": event.createdAtClient,
+      // "lastUpdatedAtClient": event.lastUpdatedAtClient,
+      // "completedDate": event.completedDate,
     };
 
     if (event.activity != null &&
