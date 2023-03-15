@@ -113,6 +113,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -216,6 +219,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "value": "This needs repair."
             }
           ],
+          "lastUpdatedAtClient": null,
+          "completedDate": null,
+          "geometry": null,
           "relationships": [],
           "attributes": [],
           "events": [
@@ -256,6 +262,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -306,6 +315,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -348,6 +360,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -390,6 +405,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -553,6 +571,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -783,6 +804,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -822,6 +846,12 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -957,6 +987,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -1024,6 +1057,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -1126,6 +1162,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -1266,6 +1305,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -1371,6 +1413,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -1543,6 +1588,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -1610,6 +1658,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -1750,6 +1801,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -1852,6 +1906,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -1992,6 +2049,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -2097,6 +2157,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -2237,6 +2300,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -2260,6 +2326,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -2432,6 +2501,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -2499,6 +2571,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -2636,6 +2711,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -2721,6 +2799,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -2791,6 +2872,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -2969,6 +3053,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -3078,6 +3165,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -3215,6 +3305,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -3317,6 +3410,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -3457,6 +3553,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -3480,6 +3579,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -3617,6 +3719,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -3719,6 +3824,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -3812,6 +3920,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -3882,6 +3993,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -4054,6 +4168,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -4128,6 +4245,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -4304,6 +4424,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -4374,6 +4497,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -4484,6 +4610,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -4516,6 +4645,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -4609,6 +4741,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -4679,6 +4814,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -4819,6 +4957,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -4924,6 +5065,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -5061,6 +5205,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -5163,6 +5310,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -5303,6 +5453,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -5326,6 +5479,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -5463,6 +5619,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -5565,6 +5724,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -5737,6 +5899,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -5808,6 +5973,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -5980,6 +6148,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -6054,6 +6225,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -6191,6 +6365,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -6293,6 +6470,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -6447,6 +6627,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -6549,6 +6732,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -6686,6 +6872,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -6788,6 +6977,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -6960,6 +7152,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -7027,6 +7222,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }
@@ -7120,6 +7318,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
               "deleted": false,
               "attributeOptionCombo": "HllvX50cXC0",
               "dataValues": [],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             },
@@ -7190,6 +7391,9 @@ final Map<Object, dynamic> sampleTrackedEntityInstances = {
                   "providedElsewhere": false
                 }
               ],
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null,
               "notes": [],
               "relationships": []
             }

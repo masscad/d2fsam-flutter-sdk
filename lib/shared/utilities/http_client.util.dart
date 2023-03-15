@@ -62,6 +62,8 @@ class HttpClient {
       final Response<dynamic> response = await dioClient
           .post('${httpDetails.baseUrl}/api/$resourceUrl', data: data);
 
+      var str = '';
+
       return HttpResponse(
           statusCode: response.statusCode ?? 500, body: response.data);
     } on DioError catch (error) {

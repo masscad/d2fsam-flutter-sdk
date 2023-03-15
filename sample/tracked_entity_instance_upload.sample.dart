@@ -44,9 +44,16 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
                 {"dataElement": "wQLfBvPrXqq", "value": "NVP only"},
                 {"dataElement": "a3kGcGDCuk6", "value": "2"},
                 {"dataElement": "UXz7xuGCEhU", "value": "3228"}
-              ]
+              ],
+              "createdAtClient": "2017-08-07T15:47:22.165",
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null
             }
-          ]
+          ],
+          "createdAtClient": "2017-08-07T15:47:22.165",
+          "lastUpdatedAtClient": null,
+          "completedDate": null
         }
       ]
     },
@@ -72,7 +79,10 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
           "program": "IpHINAT79UW",
           "enrollmentDate": "2022-03-06T00:00:00.000",
           "incidentDate": "2022-03-04T00:00:00.000",
-          "events": []
+          "events": [],
+          "createdAtClient": "2016-03-06T05:49:28.340",
+          "lastUpdatedAtClient": null,
+          "completedDate": null
         },
         {
           "enrollment": "Yf47yST5FF2",
@@ -97,7 +107,11 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "dataValues": [
                 {"dataElement": "HmkXnHJxcD1", "value": "Relapse"},
                 {"dataElement": "D7m8vpzxHDJ", "value": "P+"}
-              ]
+              ],
+              "createdAtClient": "2016-11-03T10:32:13.965",
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null
             },
             {
               "event": "ZdRPhMckeJk",
@@ -113,7 +127,11 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
                 {"dataElement": "Vk1tzSQxvOR", "value": "true"},
                 {"dataElement": "lJTx9EZ1dk1", "value": "true"},
                 {"dataElement": "fCXKBdc27Bt", "value": "true"}
-              ]
+              ],
+              "createdAtClient": "2017-08-02T19:32:23.869",
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null
             },
             {
               "event": "DSKhD4VgQPQ",
@@ -128,7 +146,11 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "dataValues": [
                 {"dataElement": "yLIPuJHRgey", "value": "123"},
                 {"dataElement": "zocHNQIQBIN", "value": "NEG"}
-              ]
+              ],
+              "createdAtClient": "2017-08-02T19:32:37.385",
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null
             },
             {
               "event": "diebn6sFaCy",
@@ -143,9 +165,16 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "dataValues": [
                 {"dataElement": "yLIPuJHRgey", "value": "123"},
                 {"dataElement": "zocHNQIQBIN", "value": "POS"}
-              ]
+              ],
+              "createdAtClient": "2017-08-02T19:32:02.853",
+              "lastUpdatedAtClient": null,
+              "completedDate": null,
+              "geometry": null
             }
-          ]
+          ],
+          "createdAtClient": "2016-03-28T12:27:48.645",
+          "lastUpdatedAtClient": null,
+          "completedDate": null
         }
       ]
     }

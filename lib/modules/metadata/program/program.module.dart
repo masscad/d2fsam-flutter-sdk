@@ -10,6 +10,7 @@ import 'package:d2_remote/modules/metadata/program/queries/program_stage_section
 import 'package:d2_remote/modules/metadata/program/queries/program_stage_section_data_element.query.dart';
 import 'package:d2_remote/modules/metadata/program/queries/program_tracked_entity_attribute.query.dart';
 import 'package:d2_remote/modules/metadata/program/queries/tracked_entity_attribute.query.dart';
+import 'package:d2_remote/modules/metadata/program/queries/tracked_entity_type_attribute.query.dart';
 
 import 'queries/attribute_option.query.dart';
 import 'queries/program_stage_data_element_option.query.dart';
@@ -30,6 +31,7 @@ class ProgramModule {
     await ProgramSectionQuery().createTable();
     await TrackedEntityAttributeQuery().createTable();
     await ProgramSectionAttributeQuery().createTable();
+    await TrackedEntityTypeAttributeQuery().createTable();
   }
 
   ProgramQuery get program => ProgramQuery();
@@ -64,4 +66,7 @@ class ProgramModule {
 
   TrackedEntityAttributeQuery get trackedEntityAttribute =>
       TrackedEntityAttributeQuery();
+
+  TrackedEntityTypeAttributeQuery get trackedEntityTypeAttribute =>
+      TrackedEntityTypeAttributeQuery();
 }

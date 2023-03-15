@@ -19,6 +19,10 @@ final Map<Object, dynamic> sampleEventUpload = {
         {"dataElement": "a3kGcGDCuk6", "value": "2"},
         {"dataElement": "UXz7xuGCEhU", "value": "3228"}
       ],
+      "createdAtClient": "2017-08-07T15:47:22.165",
+      "lastUpdatedAtClient": null,
+      "completedDate": null,
+      "geometry": null,
       "program": "IpHINAT79UW"
     },
     {
@@ -39,6 +43,10 @@ final Map<Object, dynamic> sampleEventUpload = {
         {"dataElement": "a3kGcGDCuk6", "value": "1"},
         {"dataElement": "UXz7xuGCEhU", "value": "3190"}
       ],
+      "createdAtClient": "2017-08-06T21:20:49.244",
+      "lastUpdatedAtClient": null,
+      "completedDate": null,
+      "geometry": null,
       "program": "IpHINAT79UW"
     }
   ]
