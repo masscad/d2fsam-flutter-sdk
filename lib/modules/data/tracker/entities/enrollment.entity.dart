@@ -62,11 +62,17 @@ class Enrollment extends IdentifiableEntity {
   dynamic trackedEntityInstance;
 
   // NMC ///
-  // @Column(nullable: true)
-  // String? createdAtClient;
-  //
-  // @Column(nullable: true)
-  // String? lastUpdatedAtClient;
+  @Column(nullable: true)
+  String? createdAtClient;
+
+  @Column(nullable: true)
+  String? lastUpdatedAtClient;
+
+  @Column(nullable: true)
+  String? completedDate;
+
+  @Column(nullable: true)
+  bool? followup;
   /////
 
   Enrollment(
@@ -90,8 +96,10 @@ class Enrollment extends IdentifiableEntity {
       this.lastSyncDate,
       this.events,
       this.trackedEntityInstance,
-      /*this.createdAtClient,
-      this.lastUpdatedAtClient*/})
+      this.createdAtClient,
+      this.lastUpdatedAtClient,
+      this.completedDate,
+      this.followup})
       : super(
             id: id,
             name: name,
@@ -102,7 +110,7 @@ class Enrollment extends IdentifiableEntity {
     this.name = this.name ?? this.enrollment;
     this.incidentDate = this.incidentDate ?? this.created;
     this.enrollmentDate = this.enrollmentDate ?? this.created;
-    // this.createdAtClient = this.createdAtClient ?? this.created;
+    this.createdAtClient = this.createdAtClient ?? this.created;
   }
 
   factory Enrollment.fromJson(Map<String, dynamic> json) {
@@ -142,8 +150,10 @@ class Enrollment extends IdentifiableEntity {
                 }))
             .toList(),
         trackedEntityInstance: json['trackedEntityInstance'],
-        // createdAtClient: json['createdAtClient'],
-        // lastUpdatedAtClient: json['lastUpdatedAtClient'],
+        createdAtClient: json['createdAtClient'],
+        lastUpdatedAtClient: json['lastUpdatedAtClient'],
+        completedDate: json['completedDate'],
+        followup: json['followup'],
         dirty: json['dirty'] ?? false);
   }
 
@@ -174,8 +184,10 @@ class Enrollment extends IdentifiableEntity {
     data['dirty'] = this.dirty;
     data['created'] = this.created;
     data['lastUpdated'] = this.lastUpdated;
-    // data['createdAtClient'] = this.createdAtClient;
-    // data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
+    data['createdAtClient'] = this.createdAtClient;
+    data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
+    data['completedDate'] = this.lastUpdatedAtClient;
+    data['followup'] = this.followup;
 
     return data;
   }
