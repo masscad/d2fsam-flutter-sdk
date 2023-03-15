@@ -207,7 +207,10 @@ class Enrollment extends IdentifiableEntity {
       "program": enrollment.program,
       "enrollmentDate": enrollment.enrollmentDate,
       "incidentDate": enrollment.incidentDate,
-      "events": (filteredEvents).map((event) => Event.toUpload(event)).toList()
+      "events": (filteredEvents).map((event) => Event.toUpload(event)).toList(),
+      "createdAtClient": enrollment.createdAtClient,
+      "lastUpdatedAtClient": enrollment.lastUpdatedAtClient,
+      "completedDate": enrollment.completedDate,
     };
 
     if (enrollment.activity != null &&

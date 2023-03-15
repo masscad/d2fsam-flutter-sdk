@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
+import 'package:d2_remote/modules/data/tracker/models/geometry.dart';
 import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
@@ -82,6 +83,9 @@ class Event extends IdentifiableEntity {
   @Column(nullable: true)
   String? completedDate;
 
+  @Column(nullable: true, type: ColumnType.TEXT)
+  Geometry? geometry;
+
   // NMC
   @ManyToOne(joinColumnName: 'activity', table: Activity)
   dynamic activity;
@@ -118,7 +122,8 @@ class Event extends IdentifiableEntity {
       this.dataValues,
       this.createdAtClient,
       this.lastUpdatedAtClient,
-      this.completedDate})
+      this.completedDate,
+      this.geometry})
       : super(
             id: id,
             name: name,
@@ -133,6 +138,13 @@ class Event extends IdentifiableEntity {
     final dynamic lastSyncSummary = json['lastSyncSummary'] != null
         ? EventImportSummary.fromJson(jsonDecode(json['lastSyncSummary']))
         : null;
+
+    final Geometry? geometry = json["geometry"] != null
+        ? Geometry.fromJson(json["geometry"].runtimeType == String
+        ? jsonDecode(json["geometry"])
+        : json["geometry"])
+        : null;
+    
     return Event(
         id: json['event'],
         name: json['event'],
@@ -167,6 +179,7 @@ class Event extends IdentifiableEntity {
         createdAtClient: json['createdAtClient'],
         lastUpdatedAtClient: json['lastUpdatedAtClient'],
         completedDate: json['completedDate'],
+        geometry: geometry,
         dirty: json['dirty']);
   }
 
@@ -202,6 +215,8 @@ class Event extends IdentifiableEntity {
     data['createdAtClient'] = this.createdAtClient;
     data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
     data['completedDate'] = this.lastUpdatedAtClient;
+    data['geometry'] =
+    this.geometry != null ? jsonEncode(this.geometry?.geometryData) : null;
     data['dirty'] = this.dirty;
     return data;
   }
@@ -220,9 +235,10 @@ class Event extends IdentifiableEntity {
       "dataValues": (event.dataValues ?? [])
           .map((event) => EventDataValue.toUpload(event))
           .toList(),
-      // "createdAtClient": event.createdAtClient,
-      // "lastUpdatedAtClient": event.lastUpdatedAtClient,
-      // "completedDate": event.completedDate,
+      "createdAtClient": event.createdAtClient,
+      "lastUpdatedAtClient": event.lastUpdatedAtClient,
+      "completedDate": event.completedDate,
+      "geometry": event.geometry != null ? event.geometry?.toJson() : null,
     };
 
     if (event.activity != null &&
