@@ -15,12 +15,6 @@ class Event extends IdentifiableEntity {
   @Column()
   String? event;
 
-  @ManyToOne(joinColumnName: 'activity', table: Activity)
-  dynamic activity;
-
-  // @Column()
-  // String activity;
-
   @Column()
   String orgUnit;
 
@@ -88,6 +82,13 @@ class Event extends IdentifiableEntity {
   @Column(nullable: true)
   String? completedDate;
 
+  // NMC
+  @ManyToOne(joinColumnName: 'activity', table: Activity)
+  dynamic activity;
+
+  // @Column()
+  // String? program;
+  //
   Event(
       {String? id,
       String? name,
