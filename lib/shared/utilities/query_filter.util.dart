@@ -32,6 +32,16 @@ class QueryFilter {
               filter.value is List ? filter.value : [filter.value];
           return '${filter.attribute} IN (${values.map((value) => '${QueryFilter.getTypedValue(attributeColumn, value)}').join(',')})';
 
+        // NMC
+        case QueryCondition.Nin:
+          final List<String> values =
+          filter.value is List ? filter.value : [filter.value];
+          return '${filter.attribute} NOT IN (${values.map((value) => '${QueryFilter.getTypedValue(attributeColumn, value)}').join(',')})';
+
+        case QueryCondition.Neq:
+          return '${filter.attribute} != ${QueryFilter.getTypedValue(attributeColumn, filter.value)}';
+        //
+
         case QueryCondition.Equal:
           return '${filter.attribute} = ${QueryFilter.getTypedValue(attributeColumn, filter.value)}';
 
@@ -74,6 +84,16 @@ class QueryFilter {
           final List<String> values =
               filter.value is List ? filter.value : [filter.value];
           return 'filter=${filter.attribute}${attributeColumn.relation?.referencedColumn != null ? '.${attributeColumn.relation?.referencedColumn}' : ''}:in:[${values.join(',')}]';
+
+        // NMC
+        case QueryCondition.Nin:
+          final List<String> values =
+          filter.value is List ? filter.value : [filter.value];
+          return 'filter=${filter.attribute}${attributeColumn.relation?.referencedColumn != null ? '.${attributeColumn.relation?.referencedColumn}' : ''}:!in:[${values.join(',')}]';
+
+        case QueryCondition.Neq:
+          return 'filter=${filter.attribute}:!eq:${filter.value}';
+        //
 
         case QueryCondition.Equal:
           return 'filter=${filter.attribute}:eq:${filter.value}';

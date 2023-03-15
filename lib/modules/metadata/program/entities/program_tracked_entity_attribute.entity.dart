@@ -55,6 +55,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
   bool? allowFutureDate;
 
   @Column(nullable: true)
+  bool? orgunitScope;
+
+  @Column(nullable: true)
   String? description;
 
   ProgramTrackedEntityAttribute(
@@ -77,6 +80,7 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
       this.options,
       this.allowFutureDate,
       this.description,
+      this.orgunitScope,
       required bool dirty})
       : super(id: id, name: name, displayName: displayName, dirty: dirty);
 
@@ -123,6 +127,8 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
             .toList(),
         allowFutureDate: jsonData['allowFutureDate'],
         description: jsonData['description'],
+        orgunitScope: jsonData['orgunitScope'] ??
+            jsonData['trackedEntityAttribute']?['orgunitScope'],
         dirty: jsonData['dirty']);
   }
 
@@ -147,6 +153,7 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
     data['optionSetValueCount'] = this.optionSetValueCount;
     data['allowFutureDate'] = this.allowFutureDate;
     data['description'] = this.description;
+    data['orgunitScope'] = this.orgunitScope;
     return data;
   }
 }

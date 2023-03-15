@@ -10,6 +10,12 @@ import 'package:sqflite/sqflite.dart';
 
 class ProgramStageQuery extends BaseQuery<ProgramStage> {
   ProgramStageQuery({Database? database}) : super(database: database);
+  String? program;
+
+  ProgramStageQuery byProgram(String program) {
+    this.program = program;
+    return where(attribute: 'program', value: program);
+  }
 
   ProgramStageQuery withProgram() {
     final program = Repository<Program>();

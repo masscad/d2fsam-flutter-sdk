@@ -86,6 +86,32 @@ class BaseQuery<T extends BaseEntity> {
 
     return this;
   }
+  
+  // NMC
+  whereNotIn(
+      {required String attribute,
+        required List<String> values,
+        required bool merge}) {
+    if (merge) {
+      this.filters?.add(QueryFilter(
+          attribute: attribute, condition: QueryCondition.Nin, value: values));
+    } else {
+      this.filters = [
+        QueryFilter(
+            attribute: attribute, condition: QueryCondition.Nin, value: values)
+      ];
+    }
+
+    return this;
+  }
+  
+  whereNeq({required String attribute, @required dynamic value}) {
+    this.filters?.add(QueryFilter(
+        attribute: attribute, condition: QueryCondition.Neq, value: value));
+
+    return this;
+  }
+  //
 
   like({required String attribute, required dynamic value}) {
     this.filters?.add(QueryFilter(

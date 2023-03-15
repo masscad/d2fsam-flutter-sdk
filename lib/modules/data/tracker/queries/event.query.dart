@@ -93,7 +93,6 @@ class EventQuery extends BaseQuery<Event> {
   Future create() async {
     Event event = Event(
         activity: this.activity,
-        // activity: this.activity as String,
         orgUnit: this.orgUnit as String,
         status: 'ACTIVE',
         enrollment: this.enrollment ?? '',
