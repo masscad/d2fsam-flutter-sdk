@@ -144,7 +144,7 @@ class Event extends IdentifiableEntity {
         ? jsonDecode(json["geometry"])
         : json["geometry"])
         : null;
-    
+
     return Event(
         id: json['event'],
         name: json['event'],

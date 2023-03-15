@@ -60,6 +60,15 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
   @Column(nullable: true)
   String? description;
 
+  @Column(nullable: true)
+  bool? searchable;
+
+  @Column(nullable: true)
+  String? defaultValue;
+
+  @Column(nullable: true)
+  String? renderType;
+
   ProgramTrackedEntityAttribute(
       {required String id,
       required this.attribute,
@@ -81,6 +90,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
       this.allowFutureDate,
       this.description,
       this.orgunitScope,
+      this.searchable,
+      this.defaultValue,
+      this.renderType,
       required bool dirty})
       : super(id: id, name: name, displayName: displayName, dirty: dirty);
 
@@ -88,8 +100,14 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
       Map<String, dynamic> jsonData) {
     final optionSetValueCount =
         jsonData['trackedEntityAttribute']?['optionSet']?['options']?.length;
+
     final attribute =
         jsonData['attribute'] ?? jsonData['trackedEntityAttribute']?['id'];
+
+    final renderType = jsonData['renderType'] is String
+        ? jsonData['renderType']
+        : jsonData['renderType']?['MOBILE']?['type'];
+
     return ProgramTrackedEntityAttribute(
         id: jsonData['id'],
         attribute: attribute,
@@ -129,6 +147,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
         description: jsonData['description'],
         orgunitScope: jsonData['orgunitScope'] ??
             jsonData['trackedEntityAttribute']?['orgunitScope'],
+        searchable: jsonData['searchable'],
+        defaultValue: jsonData['defaultValue'],
+        renderType: renderType,
         dirty: jsonData['dirty']);
   }
 
@@ -154,6 +175,9 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
     data['allowFutureDate'] = this.allowFutureDate;
     data['description'] = this.description;
     data['orgunitScope'] = this.orgunitScope;
+    data['searchable'] = this.searchable;
+    data['defaultValue'] = this.defaultValue;
+    data['renderType'] = this.renderType;
     return data;
   }
 }
