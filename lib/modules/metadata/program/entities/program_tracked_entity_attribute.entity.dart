@@ -126,7 +126,7 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
         generated: jsonData['generated'] ??
             jsonData['trackedEntityAttribute']?['generated'],
         isUnique: jsonData['isUnique'] ??
-            jsonData['trackedEntityAttribute']?['unique'],
+            jsonData['trackedEntityAttribute']?['unique'] ?? false,
         optionSetValue: jsonData['optionSetValue'] ??
             jsonData['trackedEntityAttribute']?['optionSetValue'],
         optionSetValueCount: optionSetValueCount,
@@ -147,7 +147,7 @@ class ProgramTrackedEntityAttribute extends IdentifiableEntity {
         description: jsonData['description'],
         orgunitScope: jsonData['orgunitScope'] ??
             jsonData['trackedEntityAttribute']?['orgunitScope'],
-        searchable: jsonData['searchable'],
+        searchable: jsonData['searchable'] ?? false,
         defaultValue: jsonData['defaultValue'],
         renderType: renderType,
         dirty: jsonData['dirty']);
