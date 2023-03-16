@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'letter_failure.freezed.dart';
 
 @freezed
-abstract class LetterFailure with _$LetterFailure implements Exception {
+class LetterFailure with _$LetterFailure implements Exception {
   @Implements<Exception>()
   const factory LetterFailure.stringIsNotALetterException([dynamic message]) =
       StringIsNotALetterException;

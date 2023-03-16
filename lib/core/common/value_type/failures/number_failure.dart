@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'number_failure.freezed.dart';
 
 @freezed
-abstract class NumberFailure with _$NumberFailure implements Exception {
+class NumberFailure with _$NumberFailure implements Exception {
   @Implements<Exception>()
   const factory NumberFailure.scientificNotationException([dynamic message]) =
       ScientificNotationException;

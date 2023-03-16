@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'unit_interval_failure.freezed.dart';
 
 @freezed
-abstract class UnitIntervalFailure
+class UnitIntervalFailure
     with _$UnitIntervalFailure
     implements Exception {
   @Implements<Exception>()

@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'integer_positive_failure.freezed.dart';
 
 @freezed
-abstract class IntegerPositiveFailure
+class IntegerPositiveFailure
     with _$IntegerPositiveFailure
     implements Exception {
   @Implements<Exception>()

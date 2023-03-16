@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'percentage_failure.freezed.dart';
 
 @freezed
-abstract class PercentageFailure with _$PercentageFailure implements Exception {
+class PercentageFailure with _$PercentageFailure implements Exception {
   @Implements<Exception>()
   const factory PercentageFailure.numberFormatException([dynamic message]) =
       NumberFormatException;

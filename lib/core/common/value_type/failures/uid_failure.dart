@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'uid_failure.freezed.dart';
 
 @freezed
-abstract class UidFailure with _$UidFailure implements Exception {
+class UidFailure with _$UidFailure implements Exception {
   @Implements<Exception>()
   const factory UidFailure.moreThanElevenCharsException([dynamic message]) =
       MoreThanElevenCharsException;

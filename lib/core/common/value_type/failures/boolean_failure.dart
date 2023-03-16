@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'boolean_failure.freezed.dart';
 
 @freezed
-abstract class BooleanFailure with _$BooleanFailure implements Exception {
+class BooleanFailure with _$BooleanFailure implements Exception {
   @Implements<Exception>()
   const factory BooleanFailure.oneIsNotTrueException([dynamic message]) =
       OneIsNotTrueException;

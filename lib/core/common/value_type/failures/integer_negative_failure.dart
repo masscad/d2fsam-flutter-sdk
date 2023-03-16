@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'integer_negative_failure.freezed.dart';
 
 @freezed
-abstract class IntegerNegativeFailure with _$IntegerNegativeFailure implements Exception {
+class IntegerNegativeFailure with _$IntegerNegativeFailure implements Exception {
   @Implements<Exception>()
   const factory IntegerNegativeFailure.numberFormatException([dynamic message]) =
   NumberFormatException;
