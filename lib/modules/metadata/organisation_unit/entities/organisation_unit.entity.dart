@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:d2_remote/core/annotations/column.annotation.dart';
 import 'package:d2_remote/core/annotations/entity.annotation.dart';
 import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
@@ -24,6 +26,11 @@ class OrganisationUnit extends IdentifiableEntity {
   @Column(name: 'parent', nullable: true)
   Object? parent;
 
+  // NMC
+  @Column()
+  String? ancestors;
+  //
+
   OrganisationUnit(
       {required String id,
       String? created,
@@ -38,6 +45,7 @@ class OrganisationUnit extends IdentifiableEntity {
       required this.openingDate,
       this.parent,
       this.geometry,
+      this.ancestors,
       required dirty})
       : super(
             id: id,
@@ -51,6 +59,9 @@ class OrganisationUnit extends IdentifiableEntity {
 
   factory OrganisationUnit.fromJson(Map<String, dynamic> json) {
     final parent = json['parent'];
+    
+    final jsonEncoder = JsonEncoder();
+    final ancestors = jsonEncoder.convert(json['ancestors'] ?? []);
     return OrganisationUnit(
         id: json['id'],
         name: json['name'],
@@ -68,7 +79,8 @@ class OrganisationUnit extends IdentifiableEntity {
             ? parent is String
                 ? parent
                 : parent['id'] ?? parent
-            : null);
+            : null,
+        ancestors: ancestors);
   }
 
   Map<String, dynamic> toJson() {
