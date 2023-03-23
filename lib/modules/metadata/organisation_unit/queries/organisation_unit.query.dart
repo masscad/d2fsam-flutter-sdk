@@ -4,6 +4,7 @@ import 'package:d2_remote/modules/metadata/organisation_unit/entities/organisati
 import 'package:d2_remote/shared/models/request_progress.model.dart';
 import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:d2_remote/shared/utilities/http_client.util.dart';
+import 'package:d2_remote/shared/utilities/query_filter.util.dart';
 import 'package:dio/dio.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -27,7 +28,7 @@ class OrganisationUnitQuery extends BaseQuery<OrganisationUnit> {
     callback(
         RequestProgress(
             resourceName: this.apiResourceName as String,
-            message: 'Ferching user assigned organisation units....',
+            message: 'Fetching user assigned organisation units....',
             status: '',
             percentage: 0),
         false);
@@ -92,11 +93,19 @@ class OrganisationUnitQuery extends BaseQuery<OrganisationUnit> {
         RequestProgress(
             resourceName: this.apiResourceName as String,
             message:
-                '${data.length} ${this.apiResourceName?.toLowerCase()} successifully saved into the database',
+                '${data.length} ${this.apiResourceName?.toLowerCase()} successfully saved into the database',
             status: '',
             percentage: 100),
         true);
 
     return this.data;
+  }
+
+  @override
+  Future<String> dhisUrl() {
+    final apiFilter =
+    QueryFilter.getApiFilters(this.repository.columns, this.filters);
+    return Future.value(
+        'organisationUnits.json${apiFilter != null ? '?$apiFilter&' : '?'}fields=id,dirty,lastUpdated,created,name,displayName,shortName,code,level,path,externalAccess,openingDate,geometry,parent,ancestors[id,name,displayName,level,path,openingDate]&paging=false');
   }
 }

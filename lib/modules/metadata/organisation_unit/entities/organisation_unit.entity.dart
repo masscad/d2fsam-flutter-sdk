@@ -59,7 +59,7 @@ class OrganisationUnit extends IdentifiableEntity {
 
   factory OrganisationUnit.fromJson(Map<String, dynamic> json) {
     final parent = json['parent'];
-    
+
     final jsonEncoder = JsonEncoder();
     final ancestors = jsonEncoder.convert(json['ancestors'] ?? []);
     return OrganisationUnit(
