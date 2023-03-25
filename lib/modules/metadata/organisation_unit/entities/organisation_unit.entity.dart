@@ -27,7 +27,7 @@ class OrganisationUnit extends IdentifiableEntity {
   Object? parent;
 
   // NMC
-  @Column()
+  @Column(nullable: true)
   String? ancestors;
   //
 
@@ -45,7 +45,7 @@ class OrganisationUnit extends IdentifiableEntity {
       required this.openingDate,
       this.parent,
       this.geometry,
-      this.ancestors,
+      this.ancestors = '[]',
       required dirty})
       : super(
             id: id,

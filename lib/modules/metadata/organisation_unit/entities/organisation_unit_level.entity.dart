@@ -36,7 +36,6 @@ class OrganisationUnitLevel extends IdentifiableEntity {
             dirty: dirty);
 
   factory OrganisationUnitLevel.fromJson(Map<String, dynamic> json) {
-    final parent = json['parent'];
     return OrganisationUnitLevel(
         id: json['id'],
         name: json['name'],
