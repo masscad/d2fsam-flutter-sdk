@@ -4,7 +4,9 @@ import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
-@Entity(tableName: 'organisationunitlevel', apiResourceName: 'organisationUnitLevels')
+@Entity(
+    tableName: 'organisationunitlevel',
+    apiResourceName: 'organisationUnitLevels')
 class OrganisationUnitLevel extends IdentifiableEntity {
   @Column(type: ColumnType.INTEGER)
   int? level;
@@ -12,15 +14,11 @@ class OrganisationUnitLevel extends IdentifiableEntity {
   @Column(type: ColumnType.INTEGER)
   int? offlineLevels;
 
-
-
   OrganisationUnitLevel(
       {required String id,
       String? created,
       String? lastUpdated,
       required String name,
-      required String shortName,
-      String? code,
       String? displayName,
       required this.level,
       this.offlineLevels,
@@ -28,9 +26,7 @@ class OrganisationUnitLevel extends IdentifiableEntity {
       : super(
             id: id,
             name: name,
-            shortName: shortName,
             displayName: displayName,
-            code: code,
             created: created,
             lastUpdated: lastUpdated,
             dirty: dirty);
@@ -41,8 +37,6 @@ class OrganisationUnitLevel extends IdentifiableEntity {
         name: json['name'],
         level: json['level'],
         created: json['created'],
-        shortName: json['shortName'],
-        code: json['code'],
         offlineLevels: json['offlineLevels'],
         displayName: json['displayName'],
         dirty: json['dirty']);
@@ -55,8 +49,6 @@ class OrganisationUnitLevel extends IdentifiableEntity {
     data['level'] = this.level;
     data['created'] = this.created;
     data['name'] = this.name;
-    data['shortName'] = this.shortName;
-    data['code'] = this.code;
     data['offlineLevels'] = this.offlineLevels;
     data['displayName'] = this.displayName;
     data['dirty'] = this.dirty;
