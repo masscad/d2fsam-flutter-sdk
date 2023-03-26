@@ -176,13 +176,14 @@ class User extends IdentifiableEntity {
                 dirty: jsonData['dirty'] ?? false))
             .toList(),
         teams: jsonData['teams']
-            .map<UserTeam>((team) => UserTeam(
-                id: '${jsonData['id']}_${team['id']}',
-                name: '${jsonData['id']}_${team['id']}',
-                team: team['id'],
-                user: jsonData['id'],
-                dirty: jsonData['dirty'] ?? false))
-            .toList(),
+                ?.map<UserTeam>((team) => UserTeam(
+                    id: '${jsonData['id']}_${team['id']}',
+                    name: '${jsonData['id']}_${team['id']}',
+                    team: team['id'],
+                    user: jsonData['id'],
+                    dirty: jsonData['dirty'] ?? false))
+                .toList() ??
+            [],
         authorities: (jsonData['authorities'] ?? [])
             .map<UserAuthority>((authority) => UserAuthority(
                 id: '${jsonData['id']}_$authority',
