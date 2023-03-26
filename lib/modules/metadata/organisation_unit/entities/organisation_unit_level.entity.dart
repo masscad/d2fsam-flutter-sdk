@@ -11,7 +11,7 @@ class OrganisationUnitLevel extends IdentifiableEntity {
   @Column(type: ColumnType.INTEGER)
   int? level;
 
-  @Column(type: ColumnType.INTEGER)
+  @Column(type: ColumnType.INTEGER, nullable: true)
   int? offlineLevels;
 
   OrganisationUnitLevel(
