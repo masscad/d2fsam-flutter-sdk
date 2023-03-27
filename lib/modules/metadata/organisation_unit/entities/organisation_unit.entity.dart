@@ -98,6 +98,7 @@ class OrganisationUnit extends IdentifiableEntity {
     data['openingDate'] = this.openingDate;
     data['dirty'] = this.dirty;
     data['geometry'] = this.geometry;
+    data['ancestors'] = this.ancestors;
     if (this.parent != null) {
       data['parent'] = this.parent;
     }
