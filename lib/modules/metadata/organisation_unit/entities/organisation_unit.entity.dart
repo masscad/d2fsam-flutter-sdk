@@ -73,7 +73,7 @@ class OrganisationUnit extends IdentifiableEntity {
         displayName: json['displayName'],
         externalAccess: json['externalAccess'],
         openingDate: json['openingDate'],
-        dirty: json['dirty'],
+        dirty: json['dirty'] ?? false,
         geometry: json['geometry']?.toString() ?? null,
         parent: parent != null
             ? parent is String
