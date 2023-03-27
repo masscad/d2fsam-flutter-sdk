@@ -27,7 +27,7 @@ class OrganisationUnit extends IdentifiableEntity {
   Object? parent;
 
   // NMC
-  @Column(nullable: true, nullable: true)
+  @Column(nullable: true)
   String? ancestors;
   //
 
