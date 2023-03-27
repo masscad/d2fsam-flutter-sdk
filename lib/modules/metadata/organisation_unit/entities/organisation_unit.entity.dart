@@ -36,7 +36,7 @@ class OrganisationUnit extends IdentifiableEntity {
       String? created,
       String? lastUpdated,
       required String name,
-      required String shortName,
+      required String? shortName,
       String? code,
       String? displayName,
       required this.level,
