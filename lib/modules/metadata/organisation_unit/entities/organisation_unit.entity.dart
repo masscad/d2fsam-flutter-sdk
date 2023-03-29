@@ -32,6 +32,9 @@ class OrganisationUnit extends IdentifiableEntity {
 
   @Column()
   String? closedDate;
+
+  @Column(nullable: true)
+  String? programs;
   //
 
   OrganisationUnit(
@@ -50,6 +53,7 @@ class OrganisationUnit extends IdentifiableEntity {
       this.geometry,
       this.ancestors,
       this.closedDate,
+      this.programs,
       required dirty})
       : super(
             id: id,
@@ -66,6 +70,8 @@ class OrganisationUnit extends IdentifiableEntity {
 
     final jsonEncoder = JsonEncoder();
     final ancestors = jsonEncoder.convert(json['ancestors'] ?? []);
+    final programs = jsonEncoder
+        .convert(json['programs']?.map((p) => p['id']).toList() ?? []);
     return OrganisationUnit(
         id: json['id'],
         name: json['name'],
@@ -85,6 +91,7 @@ class OrganisationUnit extends IdentifiableEntity {
                 : parent['id'] ?? parent
             : null,
         ancestors: ancestors,
+        programs: programs,
         closedDate: json['closedDate']);
   }
 
@@ -105,6 +112,7 @@ class OrganisationUnit extends IdentifiableEntity {
     data['geometry'] = this.geometry;
     data['ancestors'] = this.ancestors;
     data['closedDate'] = this.closedDate;
+    data['programs'] = this.programs;
     if (this.parent != null) {
       data['parent'] = this.parent;
     }
