@@ -5,7 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'd2_error.freezed.dart';
 
 @freezed
-class D2Error with _$D2Error implements Exception {
+class D2Error with _$D2Error implements CaughtException {
   const factory D2Error({
     String? url,
     D2ErrorComponent? errorComponent,

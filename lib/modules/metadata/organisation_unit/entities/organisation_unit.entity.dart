@@ -29,6 +29,9 @@ class OrganisationUnit extends IdentifiableEntity {
   // NMC
   @Column(nullable: true)
   String? ancestors;
+
+  @Column()
+  String? closedDate;
   //
 
   OrganisationUnit(
@@ -46,6 +49,7 @@ class OrganisationUnit extends IdentifiableEntity {
       this.parent,
       this.geometry,
       this.ancestors,
+      this.closedDate,
       required dirty})
       : super(
             id: id,
@@ -80,7 +84,8 @@ class OrganisationUnit extends IdentifiableEntity {
                 ? parent
                 : parent['id'] ?? parent
             : null,
-        ancestors: ancestors);
+        ancestors: ancestors,
+        closedDate: json['closedDate']);
   }
 
   Map<String, dynamic> toJson() {
@@ -99,6 +104,7 @@ class OrganisationUnit extends IdentifiableEntity {
     data['dirty'] = this.dirty;
     data['geometry'] = this.geometry;
     data['ancestors'] = this.ancestors;
+    data['closedDate'] = this.closedDate;
     if (this.parent != null) {
       data['parent'] = this.parent;
     }
