@@ -37,7 +37,9 @@ void main() async {
       'openingDate TEXT NOT NULL',
       'geometry TEXT',
       'parent TEXT',
-      'ancestors TEXT'
+      'ancestors TEXT',
+      'closedDate TEXT',
+      'programs TEXT'
     ]);
   });
 
@@ -49,7 +51,7 @@ void main() async {
 
   test('should return create query expression', () {
     expect(repository.createQuery,
-        'CREATE TABLE IF NOT EXISTS organisationunit (id TEXT PRIMARY KEY NOT NULL, dirty BOOLEAN NOT NULL, lastUpdated TEXT, created TEXT, name TEXT NOT NULL, displayName TEXT, shortName TEXT, code TEXT, level INTEGER NOT NULL, path TEXT NOT NULL, externalAccess BOOLEAN, openingDate TEXT NOT NULL, geometry TEXT, parent TEXT, ancestors TEXT)');
+        'CREATE TABLE IF NOT EXISTS organisationunit (id TEXT PRIMARY KEY NOT NULL, dirty BOOLEAN NOT NULL, lastUpdated TEXT, created TEXT, name TEXT NOT NULL, displayName TEXT, shortName TEXT, code TEXT, level INTEGER NOT NULL, path TEXT NOT NULL, externalAccess BOOLEAN, openingDate TEXT NOT NULL, geometry TEXT, parent TEXT, ancestors TEXT, closedDate TEXT, programs TEXT)');
   });
 
   await repository.create(database: db);

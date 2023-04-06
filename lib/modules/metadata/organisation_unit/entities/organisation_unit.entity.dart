@@ -30,7 +30,7 @@ class OrganisationUnit extends IdentifiableEntity {
   @Column(nullable: true)
   String? ancestors;
 
-  @Column()
+  @Column(nullable: true)
   String? closedDate;
 
   @Column(nullable: true)
@@ -70,8 +70,12 @@ class OrganisationUnit extends IdentifiableEntity {
 
     final jsonEncoder = JsonEncoder();
     final ancestors = jsonEncoder.convert(json['ancestors'] ?? []);
-    final programs = jsonEncoder
-        .convert(json['programs']?.map((p) => p['id']).toList() ?? []);
+    final progs = json['programs'];
+    String? programs;
+    if(progs is List) {
+      programs = jsonEncoder.convert(progs.map((p) => p['id']).toList());
+    }
+
     return OrganisationUnit(
         id: json['id'],
         name: json['name'],
