@@ -14,6 +14,7 @@ import 'package:d2_remote/modules/metadata/program/queries/tracked_entity_type_a
 
 import 'queries/attribute_option.query.dart';
 import 'queries/program_stage_data_element_option.query.dart';
+import 'queries/tracked_entity_type.query.dart';
 
 class ProgramModule {
   static createTables() async {
@@ -32,6 +33,7 @@ class ProgramModule {
     await TrackedEntityAttributeQuery().createTable();
     await ProgramSectionAttributeQuery().createTable();
     await TrackedEntityTypeAttributeQuery().createTable();
+    await TrackedEntityTypeQuery().createTable();
   }
 
   ProgramQuery get program => ProgramQuery();
@@ -69,4 +71,7 @@ class ProgramModule {
 
   TrackedEntityTypeAttributeQuery get trackedEntityTypeAttribute =>
       TrackedEntityTypeAttributeQuery();
+
+  TrackedEntityTypeQuery get trackedEntityType =>
+      TrackedEntityTypeQuery();
 }
