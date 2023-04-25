@@ -90,9 +90,9 @@ class Event extends IdentifiableEntity {
   @ManyToOne(joinColumnName: 'activity', table: Activity)
   dynamic activity;
 
-  // @Column()
-  // String? program;
-  //
+  @Column(nullable: true)
+  String? program;
+
   Event(
       {String? id,
       String? name,
@@ -123,6 +123,8 @@ class Event extends IdentifiableEntity {
       this.createdAtClient,
       this.lastUpdatedAtClient,
       this.completedDate,
+      // NMC
+      this.program,
       this.geometry})
       : super(
             id: id,
@@ -179,6 +181,7 @@ class Event extends IdentifiableEntity {
         createdAtClient: json['createdAtClient'],
         lastUpdatedAtClient: json['lastUpdatedAtClient'],
         completedDate: json['completedDate'],
+        program: json['program'],
         geometry: geometry,
         dirty: json['dirty']);
   }
@@ -215,6 +218,7 @@ class Event extends IdentifiableEntity {
     data['createdAtClient'] = this.createdAtClient;
     data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
     data['completedDate'] = this.lastUpdatedAtClient;
+    data['program'] = this.program;
     data['geometry'] =
     this.geometry != null ? jsonEncode(this.geometry?.geometryData) : null;
     data['dirty'] = this.dirty;
@@ -238,6 +242,7 @@ class Event extends IdentifiableEntity {
       "createdAtClient": event.createdAtClient,
       "lastUpdatedAtClient": event.lastUpdatedAtClient,
       "completedDate": event.completedDate,
+      "program": event.program,
       "geometry": event.geometry != null ? event.geometry?.toJson() : null,
     };
 

@@ -68,7 +68,8 @@ class EventQuery extends BaseQuery<Event> {
 
   EventQuery byProgram(String program) {
     this.program = program;
-    return this;
+    // NMC
+    return this.where(attribute: 'program', value: program);
   }
 
   EventQuery byProgramStage(String programStage) {
