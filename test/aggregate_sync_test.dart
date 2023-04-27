@@ -71,8 +71,8 @@ void main() async {
       .save();
 
   DataValueSet updatedDataValueSet = await DataValueSetQuery()
-      .withDataValues()
       .byId('BfMAe6Itzgt_bG0PlyD0iP3_202201')
+      .withDataValues()
       .getOne();
 
   test('should not replace existing local data', () {

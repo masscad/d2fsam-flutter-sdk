@@ -66,9 +66,9 @@ class TrackerRuleEngine {
 
     TrackedEntityInstance updatedTrackedEntityInstance =
         await TrackedEntityInstanceQuery()
+            .byId(trackedEntityInstance.id as String)
             .withAttributes()
             .withEnrollments()
-            .byId(trackedEntityInstance.id as String)
             .getOne();
 
     return TrackerRuleResult(
