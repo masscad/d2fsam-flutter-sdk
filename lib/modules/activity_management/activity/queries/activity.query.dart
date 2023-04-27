@@ -7,6 +7,8 @@ import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.METADATA)
 class ActivityQuery extends BaseQuery<Activity> {
   ActivityQuery({Database? database}) : super(database: database);
 

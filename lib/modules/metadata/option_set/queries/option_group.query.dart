@@ -1,6 +1,3 @@
-import 'package:d2_remote/core/annotations/column.annotation.dart';
-import 'package:d2_remote/core/annotations/entity.annotation.dart';
-import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 import 'package:d2_remote/core/utilities/repository.dart';
 import 'package:d2_remote/modules/metadata/option_set/entities/option_group.entity.dart';
 import 'package:d2_remote/modules/metadata/option_set/entities/option_group_option.entity.dart';
@@ -8,6 +5,10 @@ import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../../../core/annotations/index.dart';
+
+@AnnotationReflectable
+@Query(type: QueryType.METADATA)
 class OptionGroupQuery extends BaseQuery<OptionGroup> {
   OptionGroupQuery({Database? database}) : super(database: database);
 

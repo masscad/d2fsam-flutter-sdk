@@ -12,6 +12,8 @@ import 'package:queue/queue.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.METADATA)
 class DataValueSetQuery extends BaseQuery<DataValueSet> {
   String? orgUnit;
   String? dataSet;

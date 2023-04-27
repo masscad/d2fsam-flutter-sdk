@@ -8,8 +8,11 @@ import 'package:dio/dio.dart';
 import 'package:queue/queue.dart';
 import 'package:sqflite/sqflite.dart';
 
+import '../../../../core/annotations/index.dart';
 import '../entities/event.entity.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.DATA)
 class EnrollmentQuery extends BaseQuery<Enrollment> {
   EnrollmentQuery({Database? database}) : super(database: database);
 

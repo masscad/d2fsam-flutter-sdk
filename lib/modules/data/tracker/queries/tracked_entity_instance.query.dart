@@ -28,6 +28,8 @@ import 'package:queue/queue.dart';
 import 'package:reflectable/mirrors.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.DATA)
 class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
   String? activity;
   String? orgUnit;
@@ -210,9 +212,8 @@ class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
         .withAttributes()
         .getOne();
 
-    final Activity activity = await ActivityQuery()
-        .byId(this.activity as String)
-        .getOne();
+    final Activity activity =
+        await ActivityQuery().byId(this.activity as String).getOne();
 
     TrackedEntityInstance trackedEntityInstance = TrackedEntityInstance(
       orgUnit: this.orgUnit as String,

@@ -15,6 +15,7 @@ import 'package:flutter/foundation.dart';
 import 'package:reflectable/mirrors.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
 class BaseQuery<T extends BaseEntity> {
   Database? database;
   late Repository repository;

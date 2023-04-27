@@ -16,6 +16,8 @@ import 'package:queue/queue.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.DATA)
 class EventQuery extends BaseQuery<Event> {
   String? project;
   String? activity;

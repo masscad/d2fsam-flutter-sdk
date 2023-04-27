@@ -11,7 +11,9 @@ class AnnotationReflection extends Reflectable {
             staticInvokeCapability,
             typeRelationsCapability,
             typeCapability,
-            superclassQuantifyCapability);
+            superclassQuantifyCapability,
+            // NMC
+            libraryCapability);
 }
 
 const AnnotationReflectable = AnnotationReflection();

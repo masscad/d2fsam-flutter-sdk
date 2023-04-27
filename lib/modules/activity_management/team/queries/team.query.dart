@@ -11,6 +11,8 @@ import 'package:dio/dio.dart';
 import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.METADATA)
 class TeamQuery extends BaseQuery<Team> {
   TeamQuery({Database? database}) : super(database: database);
 
