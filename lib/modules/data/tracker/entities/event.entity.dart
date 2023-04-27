@@ -181,8 +181,8 @@ class Event extends IdentifiableEntity {
         createdAtClient: json['createdAtClient'],
         lastUpdatedAtClient: json['lastUpdatedAtClient'],
         completedDate: json['completedDate'],
-        program: json['program'],
         geometry: geometry,
+        program: json['program'],
         dirty: json['dirty']);
   }
 
@@ -218,9 +218,9 @@ class Event extends IdentifiableEntity {
     data['createdAtClient'] = this.createdAtClient;
     data['lastUpdatedAtClient'] = this.lastUpdatedAtClient;
     data['completedDate'] = this.lastUpdatedAtClient;
-    data['program'] = this.program;
     data['geometry'] =
     this.geometry != null ? jsonEncode(this.geometry?.geometryData) : null;
+    data['program'] = this.program;
     data['dirty'] = this.dirty;
     return data;
   }
@@ -242,8 +242,8 @@ class Event extends IdentifiableEntity {
       "createdAtClient": event.createdAtClient,
       "lastUpdatedAtClient": event.lastUpdatedAtClient,
       "completedDate": event.completedDate,
-      "program": event.program,
       "geometry": event.geometry != null ? event.geometry?.toJson() : null,
+      "program": event.program,
     };
 
     if (event.activity != null &&

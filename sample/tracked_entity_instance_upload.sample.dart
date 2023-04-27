@@ -48,7 +48,8 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "createdAtClient": "2017-08-07T15:47:22.165",
               "lastUpdatedAtClient": null,
               "completedDate": null,
-              "geometry": null
+              "geometry": null,
+              "program": "IpHINAT79UW"
             }
           ],
           "createdAtClient": "2017-08-07T15:47:22.165",
@@ -111,7 +112,8 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "createdAtClient": "2016-11-03T10:32:13.965",
               "lastUpdatedAtClient": null,
               "completedDate": null,
-              "geometry": null
+              "geometry": null,
+              "program": "ur1Edk5Oe2n"
             },
             {
               "event": "ZdRPhMckeJk",
@@ -131,7 +133,8 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "createdAtClient": "2017-08-02T19:32:23.869",
               "lastUpdatedAtClient": null,
               "completedDate": null,
-              "geometry": null
+              "geometry": null,
+              "program": "ur1Edk5Oe2n"
             },
             {
               "event": "DSKhD4VgQPQ",
@@ -150,7 +153,8 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "createdAtClient": "2017-08-02T19:32:37.385",
               "lastUpdatedAtClient": null,
               "completedDate": null,
-              "geometry": null
+              "geometry": null,
+              "program": "ur1Edk5Oe2n"
             },
             {
               "event": "diebn6sFaCy",
@@ -169,7 +173,8 @@ final Map<Object, dynamic> sampleTrackedEntityInstanceUpload = {
               "createdAtClient": "2017-08-02T19:32:02.853",
               "lastUpdatedAtClient": null,
               "completedDate": null,
-              "geometry": null
+              "geometry": null,
+              "program": "ur1Edk5Oe2n"
             }
           ],
           "createdAtClient": "2016-03-28T12:27:48.645",
