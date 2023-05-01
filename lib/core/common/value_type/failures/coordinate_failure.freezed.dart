@@ -17,19 +17,23 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$CoordinateFailure {
   String get message => throw _privateConstructorUsedError;
+
   CaughtException? get cause => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
         coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
         coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -37,18 +41,21 @@ mixin _$CoordinateFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoordinateMalformedException value)
         coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CoordinateMalformedException value)?
         coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoordinateMalformedException value)?
@@ -67,6 +74,7 @@ abstract class $CoordinateFailureCopyWith<$Res> {
   factory $CoordinateFailureCopyWith(
           CoordinateFailure value, $Res Function(CoordinateFailure) then) =
       _$CoordinateFailureCopyWithImpl<$Res, CoordinateFailure>;
+
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -78,6 +86,7 @@ class _$CoordinateFailureCopyWithImpl<$Res, $Val extends CoordinateFailure>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -107,6 +116,7 @@ abstract class _$$CoordinateMalformedExceptionCopyWith<$Res>
           _$CoordinateMalformedException value,
           $Res Function(_$CoordinateMalformedException) then) =
       __$$CoordinateMalformedExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -243,8 +253,10 @@ abstract class CoordinateMalformedException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$CoordinateMalformedExceptionCopyWith<_$CoordinateMalformedException>

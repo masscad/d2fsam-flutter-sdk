@@ -17,7 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UnitIntervalFailure {
   String get message => throw _privateConstructorUsedError;
+
   CaughtException? get cause => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -30,6 +32,7 @@ mixin _$UnitIntervalFailure {
         smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -42,6 +45,7 @@ mixin _$UnitIntervalFailure {
         smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -55,6 +59,7 @@ mixin _$UnitIntervalFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ScientificNotationException value)
@@ -67,6 +72,7 @@ mixin _$UnitIntervalFailure {
         smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ScientificNotationException value)?
@@ -76,6 +82,7 @@ mixin _$UnitIntervalFailure {
     TResult? Function(SmallerThanZeroException value)? smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ScientificNotationException value)?
@@ -97,6 +104,7 @@ abstract class $UnitIntervalFailureCopyWith<$Res> {
   factory $UnitIntervalFailureCopyWith(
           UnitIntervalFailure value, $Res Function(UnitIntervalFailure) then) =
       _$UnitIntervalFailureCopyWithImpl<$Res, UnitIntervalFailure>;
+
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -108,6 +116,7 @@ class _$UnitIntervalFailureCopyWithImpl<$Res, $Val extends UnitIntervalFailure>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -137,6 +146,7 @@ abstract class _$$ScientificNotationExceptionCopyWith<$Res>
           _$ScientificNotationException value,
           $Res Function(_$ScientificNotationException) then) =
       __$$ScientificNotationExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -302,8 +312,10 @@ abstract class ScientificNotationException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$ScientificNotationExceptionCopyWith<_$ScientificNotationException>
@@ -316,6 +328,7 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
   factory _$$NumberFormatExceptionCopyWith(_$NumberFormatException value,
           $Res Function(_$NumberFormatException) then) =
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -479,8 +492,10 @@ abstract class NumberFormatException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -493,6 +508,7 @@ abstract class _$$GreaterThanOneExceptionCopyWith<$Res>
   factory _$$GreaterThanOneExceptionCopyWith(_$GreaterThanOneException value,
           $Res Function(_$GreaterThanOneException) then) =
       __$$GreaterThanOneExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -656,8 +672,10 @@ abstract class GreaterThanOneException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$GreaterThanOneExceptionCopyWith<_$GreaterThanOneException> get copyWith =>
@@ -670,6 +688,7 @@ abstract class _$$SmallerThanZeroExceptionCopyWith<$Res>
   factory _$$SmallerThanZeroExceptionCopyWith(_$SmallerThanZeroException value,
           $Res Function(_$SmallerThanZeroException) then) =
       __$$SmallerThanZeroExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -834,8 +853,10 @@ abstract class SmallerThanZeroException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$SmallerThanZeroExceptionCopyWith<_$SmallerThanZeroException>

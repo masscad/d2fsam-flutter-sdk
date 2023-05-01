@@ -83,8 +83,8 @@ class _SuccessResult<S, E> extends Result<S, E> {
   _SuccessResult(this._value);
 
   @override
-  _SuccessResult<T, E> either<T>(E Function(E error) fnFailure,
-      T Function(S data) fnData) {
+  _SuccessResult<T, E> either<T>(
+      E Function(E error) fnFailure, T Function(S data) fnData) {
     return _SuccessResult<T, E>(fnData(_value));
   }
 
@@ -112,8 +112,8 @@ class _FailureResult<S, E> extends Result<S, E> {
   _FailureResult(this._value);
 
   @override
-  _FailureResult<T, E> either<T>(E Function(E error) fnFailure,
-      T Function(S data) fnData) {
+  _FailureResult<T, E> either<T>(
+      E Function(E error) fnFailure, T Function(S data) fnData) {
     return _FailureResult<T, E>(fnFailure(_value));
   }
 

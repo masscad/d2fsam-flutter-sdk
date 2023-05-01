@@ -17,7 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$NumberFailure {
   String get message => throw _privateConstructorUsedError;
+
   CaughtException? get cause => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -28,6 +30,7 @@ mixin _$NumberFailure {
         leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -38,6 +41,7 @@ mixin _$NumberFailure {
         leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -49,6 +53,7 @@ mixin _$NumberFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ScientificNotationException value)
@@ -58,6 +63,7 @@ mixin _$NumberFailure {
     required TResult Function(LeadingZeroException value) leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ScientificNotationException value)?
@@ -66,6 +72,7 @@ mixin _$NumberFailure {
     TResult? Function(LeadingZeroException value)? leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ScientificNotationException value)?
@@ -86,6 +93,7 @@ abstract class $NumberFailureCopyWith<$Res> {
   factory $NumberFailureCopyWith(
           NumberFailure value, $Res Function(NumberFailure) then) =
       _$NumberFailureCopyWithImpl<$Res, NumberFailure>;
+
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -97,6 +105,7 @@ class _$NumberFailureCopyWithImpl<$Res, $Val extends NumberFailure>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -126,6 +135,7 @@ abstract class _$$ScientificNotationExceptionCopyWith<$Res>
           _$ScientificNotationException value,
           $Res Function(_$ScientificNotationException) then) =
       __$$ScientificNotationExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -279,8 +289,10 @@ abstract class ScientificNotationException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$ScientificNotationExceptionCopyWith<_$ScientificNotationException>
@@ -293,6 +305,7 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
   factory _$$NumberFormatExceptionCopyWith(_$NumberFormatException value,
           $Res Function(_$NumberFormatException) then) =
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -445,8 +458,10 @@ abstract class NumberFormatException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -459,6 +474,7 @@ abstract class _$$LeadingZeroExceptionCopyWith<$Res>
   factory _$$LeadingZeroExceptionCopyWith(_$LeadingZeroException value,
           $Res Function(_$LeadingZeroException) then) =
       __$$LeadingZeroExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -611,8 +627,10 @@ abstract class LeadingZeroException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$LeadingZeroExceptionCopyWith<_$LeadingZeroException> get copyWith =>

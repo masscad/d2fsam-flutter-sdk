@@ -17,7 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$BooleanFailure {
   String get message => throw _privateConstructorUsedError;
+
   CaughtException? get cause => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -28,6 +30,7 @@ mixin _$BooleanFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -38,6 +41,7 @@ mixin _$BooleanFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -49,6 +53,7 @@ mixin _$BooleanFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OneIsNotTrueException value)
@@ -59,6 +64,7 @@ mixin _$BooleanFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OneIsNotTrueException value)? oneIsNotTrueException,
@@ -67,6 +73,7 @@ mixin _$BooleanFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OneIsNotTrueException value)? oneIsNotTrueException,
@@ -87,6 +94,7 @@ abstract class $BooleanFailureCopyWith<$Res> {
   factory $BooleanFailureCopyWith(
           BooleanFailure value, $Res Function(BooleanFailure) then) =
       _$BooleanFailureCopyWithImpl<$Res, BooleanFailure>;
+
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -98,6 +106,7 @@ class _$BooleanFailureCopyWithImpl<$Res, $Val extends BooleanFailure>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -126,6 +135,7 @@ abstract class _$$OneIsNotTrueExceptionCopyWith<$Res>
   factory _$$OneIsNotTrueExceptionCopyWith(_$OneIsNotTrueException value,
           $Res Function(_$OneIsNotTrueException) then) =
       __$$OneIsNotTrueExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -279,8 +289,10 @@ abstract class OneIsNotTrueException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$OneIsNotTrueExceptionCopyWith<_$OneIsNotTrueException> get copyWith =>
@@ -293,6 +305,7 @@ abstract class _$$ZeroIsNotFalseExceptionCopyWith<$Res>
   factory _$$ZeroIsNotFalseExceptionCopyWith(_$ZeroIsNotFalseException value,
           $Res Function(_$ZeroIsNotFalseException) then) =
       __$$ZeroIsNotFalseExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -446,8 +459,10 @@ abstract class ZeroIsNotFalseException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$ZeroIsNotFalseExceptionCopyWith<_$ZeroIsNotFalseException> get copyWith =>
@@ -461,6 +476,7 @@ abstract class _$$BooleanMalformedExceptionCopyWith<$Res>
           _$BooleanMalformedException value,
           $Res Function(_$BooleanMalformedException) then) =
       __$$BooleanMalformedExceptionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -614,8 +630,10 @@ abstract class BooleanMalformedException
 
   @override
   String get message;
+
   @override
   CaughtException? get cause;
+
   @override
   @JsonKey(ignore: true)
   _$$BooleanMalformedExceptionCopyWith<_$BooleanMalformedException>
