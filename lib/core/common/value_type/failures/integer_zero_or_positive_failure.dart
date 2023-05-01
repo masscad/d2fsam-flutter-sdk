@@ -1,24 +1,30 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'integer_zero_or_positive_failure.freezed.dart';
 
 @freezed
 class IntegerZeroOrPositiveFailure
     with _$IntegerZeroOrPositiveFailure
-    implements Exception {
-  @Implements<Exception>()
+    implements ThrowableException {
+  @Implements<ThrowableException>()
   const factory IntegerZeroOrPositiveFailure.numberFormatException(
-      [dynamic message]) = NumberFormatException;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = NumberFormatException;
 
-  @Implements<Exception>()
+  @Implements<ThrowableException>()
   const factory IntegerZeroOrPositiveFailure.integerOverflow(
-      [dynamic message]) = IntegerOverflow;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = IntegerOverflow;
 
-  @Implements<Exception>()
+  @Implements<ThrowableException>()
   const factory IntegerZeroOrPositiveFailure.valueIsNegative(
-      [dynamic message]) = ValueIsNegative;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = ValueIsNegative;
 
-  @Implements<Exception>()
+  @Implements<ThrowableException>()
   const factory IntegerZeroOrPositiveFailure.leadingZeroException(
-      [dynamic message]) = LeadingZeroException;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = LeadingZeroException;
 }

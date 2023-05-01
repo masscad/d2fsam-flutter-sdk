@@ -16,26 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$BooleanFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) oneIsNotTrueException,
-    required TResult Function(dynamic message) zeroIsNotFalseException,
-    required TResult Function(dynamic message) booleanMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        oneIsNotTrueException,
+    required TResult Function(String message, CaughtException? cause)
+        zeroIsNotFalseException,
+    required TResult Function(String message, CaughtException? cause)
+        booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? oneIsNotTrueException,
-    TResult? Function(dynamic message)? zeroIsNotFalseException,
-    TResult? Function(dynamic message)? booleanMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult? Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult? Function(String message, CaughtException? cause)?
+        booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? oneIsNotTrueException,
-    TResult Function(dynamic message)? zeroIsNotFalseException,
-    TResult Function(dynamic message)? booleanMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult Function(String message, CaughtException? cause)?
+        booleanMalformedException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,7 +88,7 @@ abstract class $BooleanFailureCopyWith<$Res> {
           BooleanFailure value, $Res Function(BooleanFailure) then) =
       _$BooleanFailureCopyWithImpl<$Res, BooleanFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -95,12 +105,17 @@ class _$BooleanFailureCopyWithImpl<$Res, $Val extends BooleanFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -113,7 +128,7 @@ abstract class _$$OneIsNotTrueExceptionCopyWith<$Res>
       __$$OneIsNotTrueExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -128,12 +143,17 @@ class __$$OneIsNotTrueExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$OneIsNotTrueException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -141,27 +161,25 @@ class __$$OneIsNotTrueExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OneIsNotTrueException implements OneIsNotTrueException {
-  const _$OneIsNotTrueException([this.message]);
+  const _$OneIsNotTrueException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'BooleanFailure.oneIsNotTrueException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OneIsNotTrueException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -173,33 +191,42 @@ class _$OneIsNotTrueException implements OneIsNotTrueException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) oneIsNotTrueException,
-    required TResult Function(dynamic message) zeroIsNotFalseException,
-    required TResult Function(dynamic message) booleanMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        oneIsNotTrueException,
+    required TResult Function(String message, CaughtException? cause)
+        zeroIsNotFalseException,
+    required TResult Function(String message, CaughtException? cause)
+        booleanMalformedException,
   }) {
-    return oneIsNotTrueException(message);
+    return oneIsNotTrueException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? oneIsNotTrueException,
-    TResult? Function(dynamic message)? zeroIsNotFalseException,
-    TResult? Function(dynamic message)? booleanMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult? Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult? Function(String message, CaughtException? cause)?
+        booleanMalformedException,
   }) {
-    return oneIsNotTrueException?.call(message);
+    return oneIsNotTrueException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? oneIsNotTrueException,
-    TResult Function(dynamic message)? zeroIsNotFalseException,
-    TResult Function(dynamic message)? booleanMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult Function(String message, CaughtException? cause)?
+        booleanMalformedException,
     required TResult orElse(),
   }) {
     if (oneIsNotTrueException != null) {
-      return oneIsNotTrueException(message);
+      return oneIsNotTrueException(message, cause);
     }
     return orElse();
   }
@@ -244,12 +271,16 @@ class _$OneIsNotTrueException implements OneIsNotTrueException {
   }
 }
 
-abstract class OneIsNotTrueException implements BooleanFailure, Exception {
-  const factory OneIsNotTrueException([final dynamic message]) =
-      _$OneIsNotTrueException;
+abstract class OneIsNotTrueException
+    implements BooleanFailure, ThrowableException {
+  const factory OneIsNotTrueException(
+      [final String message,
+      final CaughtException? cause]) = _$OneIsNotTrueException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$OneIsNotTrueExceptionCopyWith<_$OneIsNotTrueException> get copyWith =>
@@ -264,7 +295,7 @@ abstract class _$$ZeroIsNotFalseExceptionCopyWith<$Res>
       __$$ZeroIsNotFalseExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -279,12 +310,17 @@ class __$$ZeroIsNotFalseExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ZeroIsNotFalseException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -292,27 +328,25 @@ class __$$ZeroIsNotFalseExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ZeroIsNotFalseException implements ZeroIsNotFalseException {
-  const _$ZeroIsNotFalseException([this.message]);
+  const _$ZeroIsNotFalseException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'BooleanFailure.zeroIsNotFalseException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ZeroIsNotFalseException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -324,33 +358,42 @@ class _$ZeroIsNotFalseException implements ZeroIsNotFalseException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) oneIsNotTrueException,
-    required TResult Function(dynamic message) zeroIsNotFalseException,
-    required TResult Function(dynamic message) booleanMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        oneIsNotTrueException,
+    required TResult Function(String message, CaughtException? cause)
+        zeroIsNotFalseException,
+    required TResult Function(String message, CaughtException? cause)
+        booleanMalformedException,
   }) {
-    return zeroIsNotFalseException(message);
+    return zeroIsNotFalseException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? oneIsNotTrueException,
-    TResult? Function(dynamic message)? zeroIsNotFalseException,
-    TResult? Function(dynamic message)? booleanMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult? Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult? Function(String message, CaughtException? cause)?
+        booleanMalformedException,
   }) {
-    return zeroIsNotFalseException?.call(message);
+    return zeroIsNotFalseException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? oneIsNotTrueException,
-    TResult Function(dynamic message)? zeroIsNotFalseException,
-    TResult Function(dynamic message)? booleanMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult Function(String message, CaughtException? cause)?
+        booleanMalformedException,
     required TResult orElse(),
   }) {
     if (zeroIsNotFalseException != null) {
-      return zeroIsNotFalseException(message);
+      return zeroIsNotFalseException(message, cause);
     }
     return orElse();
   }
@@ -395,12 +438,16 @@ class _$ZeroIsNotFalseException implements ZeroIsNotFalseException {
   }
 }
 
-abstract class ZeroIsNotFalseException implements BooleanFailure, Exception {
-  const factory ZeroIsNotFalseException([final dynamic message]) =
-      _$ZeroIsNotFalseException;
+abstract class ZeroIsNotFalseException
+    implements BooleanFailure, ThrowableException {
+  const factory ZeroIsNotFalseException(
+      [final String message,
+      final CaughtException? cause]) = _$ZeroIsNotFalseException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ZeroIsNotFalseExceptionCopyWith<_$ZeroIsNotFalseException> get copyWith =>
@@ -416,7 +463,7 @@ abstract class _$$BooleanMalformedExceptionCopyWith<$Res>
       __$$BooleanMalformedExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -431,12 +478,17 @@ class __$$BooleanMalformedExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$BooleanMalformedException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -444,27 +496,25 @@ class __$$BooleanMalformedExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BooleanMalformedException implements BooleanMalformedException {
-  const _$BooleanMalformedException([this.message]);
+  const _$BooleanMalformedException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'BooleanFailure.booleanMalformedException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BooleanMalformedException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -476,33 +526,42 @@ class _$BooleanMalformedException implements BooleanMalformedException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) oneIsNotTrueException,
-    required TResult Function(dynamic message) zeroIsNotFalseException,
-    required TResult Function(dynamic message) booleanMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        oneIsNotTrueException,
+    required TResult Function(String message, CaughtException? cause)
+        zeroIsNotFalseException,
+    required TResult Function(String message, CaughtException? cause)
+        booleanMalformedException,
   }) {
-    return booleanMalformedException(message);
+    return booleanMalformedException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? oneIsNotTrueException,
-    TResult? Function(dynamic message)? zeroIsNotFalseException,
-    TResult? Function(dynamic message)? booleanMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult? Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult? Function(String message, CaughtException? cause)?
+        booleanMalformedException,
   }) {
-    return booleanMalformedException?.call(message);
+    return booleanMalformedException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? oneIsNotTrueException,
-    TResult Function(dynamic message)? zeroIsNotFalseException,
-    TResult Function(dynamic message)? booleanMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        oneIsNotTrueException,
+    TResult Function(String message, CaughtException? cause)?
+        zeroIsNotFalseException,
+    TResult Function(String message, CaughtException? cause)?
+        booleanMalformedException,
     required TResult orElse(),
   }) {
     if (booleanMalformedException != null) {
-      return booleanMalformedException(message);
+      return booleanMalformedException(message, cause);
     }
     return orElse();
   }
@@ -547,12 +606,16 @@ class _$BooleanMalformedException implements BooleanMalformedException {
   }
 }
 
-abstract class BooleanMalformedException implements BooleanFailure, Exception {
-  const factory BooleanMalformedException([final dynamic message]) =
-      _$BooleanMalformedException;
+abstract class BooleanMalformedException
+    implements BooleanFailure, ThrowableException {
+  const factory BooleanMalformedException(
+      [final String message,
+      final CaughtException? cause]) = _$BooleanMalformedException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$BooleanMalformedExceptionCopyWith<_$BooleanMalformedException>

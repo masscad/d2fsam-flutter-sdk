@@ -16,26 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UidFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) moreThanElevenCharsException,
-    required TResult Function(dynamic message) lessThanElevenCharsException,
-    required TResult Function(dynamic message) malformedUidException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        lessThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? moreThanElevenCharsException,
-    TResult? Function(dynamic message)? lessThanElevenCharsException,
-    TResult? Function(dynamic message)? malformedUidException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? moreThanElevenCharsException,
-    TResult Function(dynamic message)? lessThanElevenCharsException,
-    TResult Function(dynamic message)? malformedUidException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUidException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,7 +90,7 @@ abstract class $UidFailureCopyWith<$Res> {
           UidFailure value, $Res Function(UidFailure) then) =
       _$UidFailureCopyWithImpl<$Res, UidFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -97,12 +107,17 @@ class _$UidFailureCopyWithImpl<$Res, $Val extends UidFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -116,7 +131,7 @@ abstract class _$$MoreThanElevenCharsExceptionCopyWith<$Res>
       __$$MoreThanElevenCharsExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -132,12 +147,17 @@ class __$$MoreThanElevenCharsExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MoreThanElevenCharsException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -145,27 +165,26 @@ class __$$MoreThanElevenCharsExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MoreThanElevenCharsException implements MoreThanElevenCharsException {
-  const _$MoreThanElevenCharsException([this.message]);
+  const _$MoreThanElevenCharsException(
+      [this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UidFailure.moreThanElevenCharsException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MoreThanElevenCharsException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -177,33 +196,42 @@ class _$MoreThanElevenCharsException implements MoreThanElevenCharsException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) moreThanElevenCharsException,
-    required TResult Function(dynamic message) lessThanElevenCharsException,
-    required TResult Function(dynamic message) malformedUidException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        lessThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUidException,
   }) {
-    return moreThanElevenCharsException(message);
+    return moreThanElevenCharsException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? moreThanElevenCharsException,
-    TResult? Function(dynamic message)? lessThanElevenCharsException,
-    TResult? Function(dynamic message)? malformedUidException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUidException,
   }) {
-    return moreThanElevenCharsException?.call(message);
+    return moreThanElevenCharsException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? moreThanElevenCharsException,
-    TResult Function(dynamic message)? lessThanElevenCharsException,
-    TResult Function(dynamic message)? malformedUidException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUidException,
     required TResult orElse(),
   }) {
     if (moreThanElevenCharsException != null) {
-      return moreThanElevenCharsException(message);
+      return moreThanElevenCharsException(message, cause);
     }
     return orElse();
   }
@@ -250,12 +278,16 @@ class _$MoreThanElevenCharsException implements MoreThanElevenCharsException {
   }
 }
 
-abstract class MoreThanElevenCharsException implements UidFailure, Exception {
-  const factory MoreThanElevenCharsException([final dynamic message]) =
-      _$MoreThanElevenCharsException;
+abstract class MoreThanElevenCharsException
+    implements UidFailure, ThrowableException {
+  const factory MoreThanElevenCharsException(
+      [final String message,
+      final CaughtException? cause]) = _$MoreThanElevenCharsException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MoreThanElevenCharsExceptionCopyWith<_$MoreThanElevenCharsException>
@@ -271,7 +303,7 @@ abstract class _$$LessThanElevenCharsExceptionCopyWith<$Res>
       __$$LessThanElevenCharsExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -287,12 +319,17 @@ class __$$LessThanElevenCharsExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$LessThanElevenCharsException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -300,27 +337,26 @@ class __$$LessThanElevenCharsExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LessThanElevenCharsException implements LessThanElevenCharsException {
-  const _$LessThanElevenCharsException([this.message]);
+  const _$LessThanElevenCharsException(
+      [this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UidFailure.lessThanElevenCharsException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LessThanElevenCharsException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -332,33 +368,42 @@ class _$LessThanElevenCharsException implements LessThanElevenCharsException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) moreThanElevenCharsException,
-    required TResult Function(dynamic message) lessThanElevenCharsException,
-    required TResult Function(dynamic message) malformedUidException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        lessThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUidException,
   }) {
-    return lessThanElevenCharsException(message);
+    return lessThanElevenCharsException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? moreThanElevenCharsException,
-    TResult? Function(dynamic message)? lessThanElevenCharsException,
-    TResult? Function(dynamic message)? malformedUidException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUidException,
   }) {
-    return lessThanElevenCharsException?.call(message);
+    return lessThanElevenCharsException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? moreThanElevenCharsException,
-    TResult Function(dynamic message)? lessThanElevenCharsException,
-    TResult Function(dynamic message)? malformedUidException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUidException,
     required TResult orElse(),
   }) {
     if (lessThanElevenCharsException != null) {
-      return lessThanElevenCharsException(message);
+      return lessThanElevenCharsException(message, cause);
     }
     return orElse();
   }
@@ -405,12 +450,16 @@ class _$LessThanElevenCharsException implements LessThanElevenCharsException {
   }
 }
 
-abstract class LessThanElevenCharsException implements UidFailure, Exception {
-  const factory LessThanElevenCharsException([final dynamic message]) =
-      _$LessThanElevenCharsException;
+abstract class LessThanElevenCharsException
+    implements UidFailure, ThrowableException {
+  const factory LessThanElevenCharsException(
+      [final String message,
+      final CaughtException? cause]) = _$LessThanElevenCharsException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$LessThanElevenCharsExceptionCopyWith<_$LessThanElevenCharsException>
@@ -425,7 +474,7 @@ abstract class _$$MalformedUidExceptionCopyWith<$Res>
       __$$MalformedUidExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -440,12 +489,17 @@ class __$$MalformedUidExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MalformedUidException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -453,27 +507,25 @@ class __$$MalformedUidExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MalformedUidException implements MalformedUidException {
-  const _$MalformedUidException([this.message]);
+  const _$MalformedUidException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UidFailure.malformedUidException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MalformedUidException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -485,33 +537,42 @@ class _$MalformedUidException implements MalformedUidException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) moreThanElevenCharsException,
-    required TResult Function(dynamic message) lessThanElevenCharsException,
-    required TResult Function(dynamic message) malformedUidException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        lessThanElevenCharsException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUidException,
   }) {
-    return malformedUidException(message);
+    return malformedUidException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? moreThanElevenCharsException,
-    TResult? Function(dynamic message)? lessThanElevenCharsException,
-    TResult? Function(dynamic message)? malformedUidException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUidException,
   }) {
-    return malformedUidException?.call(message);
+    return malformedUidException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? moreThanElevenCharsException,
-    TResult Function(dynamic message)? lessThanElevenCharsException,
-    TResult Function(dynamic message)? malformedUidException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        lessThanElevenCharsException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUidException,
     required TResult orElse(),
   }) {
     if (malformedUidException != null) {
-      return malformedUidException(message);
+      return malformedUidException(message, cause);
     }
     return orElse();
   }
@@ -558,12 +619,15 @@ class _$MalformedUidException implements MalformedUidException {
   }
 }
 
-abstract class MalformedUidException implements UidFailure, Exception {
-  const factory MalformedUidException([final dynamic message]) =
-      _$MalformedUidException;
+abstract class MalformedUidException implements UidFailure, ThrowableException {
+  const factory MalformedUidException(
+      [final String message,
+      final CaughtException? cause]) = _$MalformedUidException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MalformedUidExceptionCopyWith<_$MalformedUidException> get copyWith =>

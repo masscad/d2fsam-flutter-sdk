@@ -16,20 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PhoneNumberFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedPhoneNumberException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedPhoneNumberException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedPhoneNumberException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedPhoneNumberException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedPhoneNumberException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedPhoneNumberException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +68,7 @@ abstract class $PhoneNumberFailureCopyWith<$Res> {
           PhoneNumberFailure value, $Res Function(PhoneNumberFailure) then) =
       _$PhoneNumberFailureCopyWithImpl<$Res, PhoneNumberFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -81,12 +85,17 @@ class _$PhoneNumberFailureCopyWithImpl<$Res, $Val extends PhoneNumberFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -100,7 +109,7 @@ abstract class _$$MalformedPhoneNumberExceptionCopyWith<$Res>
       __$$MalformedPhoneNumberExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -117,12 +126,17 @@ class __$$MalformedPhoneNumberExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MalformedPhoneNumberException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -130,27 +144,26 @@ class __$$MalformedPhoneNumberExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MalformedPhoneNumberException implements MalformedPhoneNumberException {
-  const _$MalformedPhoneNumberException([this.message]);
+  const _$MalformedPhoneNumberException(
+      [this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'PhoneNumberFailure.malformedPhoneNumberException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MalformedPhoneNumberException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -162,27 +175,30 @@ class _$MalformedPhoneNumberException implements MalformedPhoneNumberException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedPhoneNumberException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedPhoneNumberException,
   }) {
-    return malformedPhoneNumberException(message);
+    return malformedPhoneNumberException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedPhoneNumberException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedPhoneNumberException,
   }) {
-    return malformedPhoneNumberException?.call(message);
+    return malformedPhoneNumberException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedPhoneNumberException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedPhoneNumberException,
     required TResult orElse(),
   }) {
     if (malformedPhoneNumberException != null) {
-      return malformedPhoneNumberException(message);
+      return malformedPhoneNumberException(message, cause);
     }
     return orElse();
   }
@@ -220,12 +236,15 @@ class _$MalformedPhoneNumberException implements MalformedPhoneNumberException {
 }
 
 abstract class MalformedPhoneNumberException
-    implements PhoneNumberFailure, Exception {
-  const factory MalformedPhoneNumberException([final dynamic message]) =
-      _$MalformedPhoneNumberException;
+    implements PhoneNumberFailure, ThrowableException {
+  const factory MalformedPhoneNumberException(
+      [final String message,
+      final CaughtException? cause]) = _$MalformedPhoneNumberException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MalformedPhoneNumberExceptionCopyWith<_$MalformedPhoneNumberException>

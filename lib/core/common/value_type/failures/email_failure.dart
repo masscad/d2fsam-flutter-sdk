@@ -1,10 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'email_failure.freezed.dart';
 
 @freezed
-class EmailFailure with _$EmailFailure implements Exception {
-  @Implements<Exception>()
-  const factory EmailFailure.malformedEmailException([dynamic message]) =
-  MalformedEmailException;
+class EmailFailure with _$EmailFailure implements ThrowableException {
+  @Implements<ThrowableException>()
+  const factory EmailFailure.malformedEmailException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = MalformedEmailException;
 }

@@ -1,28 +1,35 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'integer_positive_failure.freezed.dart';
 
 @freezed
 class IntegerPositiveFailure
     with _$IntegerPositiveFailure
-    implements Exception {
-  @Implements<Exception>()
+    implements ThrowableException {
+  @Implements<ThrowableException>()
   const factory IntegerPositiveFailure.numberFormatException(
-      [dynamic message]) = NumberFormatException;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = NumberFormatException;
 
-  @Implements<Exception>()
-  const factory IntegerPositiveFailure.integerOverflow([dynamic message]) =
-      IntegerOverflow;
+  @Implements<ThrowableException>()
+  const factory IntegerPositiveFailure.integerOverflow(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = IntegerOverflow;
 
-  @Implements<Exception>()
-  const factory IntegerPositiveFailure.valueIsZero([dynamic message]) =
-      ValueIsZero;
+  @Implements<ThrowableException>()
+  const factory IntegerPositiveFailure.valueIsZero(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = ValueIsZero;
 
-  @Implements<Exception>()
-  const factory IntegerPositiveFailure.valueIsNegative([dynamic message]) =
-      ValueIsNegative;
+  @Implements<ThrowableException>()
+  const factory IntegerPositiveFailure.valueIsNegative(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = ValueIsNegative;
 
-  @Implements<Exception>()
-  const factory IntegerPositiveFailure.leadingZeroException([dynamic message]) =
-      LeadingZeroException;
+  @Implements<ThrowableException>()
+  const factory IntegerPositiveFailure.leadingZeroException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = LeadingZeroException;
 }

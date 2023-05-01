@@ -1,20 +1,22 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/true_only_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class TrueOnlyValidator extends ValueTypeValidator<TrueOnlyFailure> {
   const TrueOnlyValidator();
 
   @override
-  Either<TrueOnlyFailure, String> validate(String value) {
+  Result<String, TrueOnlyFailure> validate(String value) {
     if (value == 'false') {
-      return left(const TrueOnlyFailure.falseIsNotAValidValueException());
+      return Result.failure(
+          const TrueOnlyFailure.falseIsNotAValidValueException());
     } else if (value == '1') {
-      return left(const TrueOnlyFailure.oneIsNotTrueException());
+      return Result.failure(const TrueOnlyFailure.oneIsNotTrueException());
     } else if (value == 'true') {
-      return right(value);
+      return Result.success(value);
     } else {
-      return left(const TrueOnlyFailure.booleanMalformedException());
+      return Result.failure(const TrueOnlyFailure.booleanMalformedException());
     }
   }
 }

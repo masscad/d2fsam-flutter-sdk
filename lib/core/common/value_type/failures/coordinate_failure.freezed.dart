@@ -16,20 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CoordinateFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) coordinateMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? coordinateMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        coordinateMalformedException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? coordinateMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        coordinateMalformedException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +68,7 @@ abstract class $CoordinateFailureCopyWith<$Res> {
           CoordinateFailure value, $Res Function(CoordinateFailure) then) =
       _$CoordinateFailureCopyWithImpl<$Res, CoordinateFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -81,12 +85,17 @@ class _$CoordinateFailureCopyWithImpl<$Res, $Val extends CoordinateFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -100,7 +109,7 @@ abstract class _$$CoordinateMalformedExceptionCopyWith<$Res>
       __$$CoordinateMalformedExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -117,12 +126,17 @@ class __$$CoordinateMalformedExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$CoordinateMalformedException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -130,27 +144,26 @@ class __$$CoordinateMalformedExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CoordinateMalformedException implements CoordinateMalformedException {
-  const _$CoordinateMalformedException([this.message]);
+  const _$CoordinateMalformedException(
+      [this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'CoordinateFailure.coordinateMalformedException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CoordinateMalformedException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -162,27 +175,30 @@ class _$CoordinateMalformedException implements CoordinateMalformedException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) coordinateMalformedException,
+    required TResult Function(String message, CaughtException? cause)
+        coordinateMalformedException,
   }) {
-    return coordinateMalformedException(message);
+    return coordinateMalformedException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? coordinateMalformedException,
+    TResult? Function(String message, CaughtException? cause)?
+        coordinateMalformedException,
   }) {
-    return coordinateMalformedException?.call(message);
+    return coordinateMalformedException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? coordinateMalformedException,
+    TResult Function(String message, CaughtException? cause)?
+        coordinateMalformedException,
     required TResult orElse(),
   }) {
     if (coordinateMalformedException != null) {
-      return coordinateMalformedException(message);
+      return coordinateMalformedException(message, cause);
     }
     return orElse();
   }
@@ -220,12 +236,15 @@ class _$CoordinateMalformedException implements CoordinateMalformedException {
 }
 
 abstract class CoordinateMalformedException
-    implements CoordinateFailure, Exception {
-  const factory CoordinateMalformedException([final dynamic message]) =
-      _$CoordinateMalformedException;
+    implements CoordinateFailure, ThrowableException {
+  const factory CoordinateMalformedException(
+      [final String message,
+      final CaughtException? cause]) = _$CoordinateMalformedException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$CoordinateMalformedExceptionCopyWith<_$CoordinateMalformedException>

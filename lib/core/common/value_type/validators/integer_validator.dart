@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/integer_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/integer_validator_base.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class IntegerValidator extends IntegerValidatorBase<IntegerFailure> {
   const IntegerValidator();
@@ -17,10 +18,10 @@ class IntegerValidator extends IntegerValidatorBase<IntegerFailure> {
   IntegerFailure get overflowFailure => const IntegerFailure.integerOverflow();
 
   @override
-  Either<IntegerFailure, String> validateInteger(String value) {
+  Result<String, IntegerFailure> validateInteger(String value) {
     int.parse(value);
 
     // Success
-    return right(value);
+    return Result.success(value);
   }
 }

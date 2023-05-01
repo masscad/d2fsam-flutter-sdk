@@ -1,18 +1,23 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'boolean_failure.freezed.dart';
 
 @freezed
-class BooleanFailure with _$BooleanFailure implements Exception {
-  @Implements<Exception>()
-  const factory BooleanFailure.oneIsNotTrueException([dynamic message]) =
-      OneIsNotTrueException;
+class BooleanFailure with _$BooleanFailure implements ThrowableException {
+  @Implements<ThrowableException>()
+  const factory BooleanFailure.oneIsNotTrueException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = OneIsNotTrueException;
 
-  @Implements<Exception>()
-  const factory BooleanFailure.zeroIsNotFalseException([dynamic message]) =
-      ZeroIsNotFalseException;
+  @Implements<ThrowableException>()
+  const factory BooleanFailure.zeroIsNotFalseException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = ZeroIsNotFalseException;
 
-  @Implements<Exception>()
-  const factory BooleanFailure.booleanMalformedException([dynamic message]) =
-      BooleanMalformedException;
+  @Implements<ThrowableException>()
+  const factory BooleanFailure.booleanMalformedException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = BooleanMalformedException;
 }

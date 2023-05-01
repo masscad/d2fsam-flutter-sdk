@@ -16,32 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$IntegerPositiveFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -86,7 +96,7 @@ abstract class $IntegerPositiveFailureCopyWith<$Res> {
           $Res Function(IntegerPositiveFailure) then) =
       _$IntegerPositiveFailureCopyWithImpl<$Res, IntegerPositiveFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -104,12 +114,17 @@ class _$IntegerPositiveFailureCopyWithImpl<$Res,
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -122,7 +137,7 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -137,12 +152,17 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$NumberFormatException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -150,27 +170,25 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NumberFormatException implements NumberFormatException {
-  const _$NumberFormatException([this.message]);
+  const _$NumberFormatException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'IntegerPositiveFailure.numberFormatException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NumberFormatException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -182,39 +200,48 @@ class _$NumberFormatException implements NumberFormatException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) {
-    return numberFormatException(message);
+    return numberFormatException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) {
-    return numberFormatException?.call(message);
+    return numberFormatException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) {
     if (numberFormatException != null) {
-      return numberFormatException(message);
+      return numberFormatException(message, cause);
     }
     return orElse();
   }
@@ -262,12 +289,15 @@ class _$NumberFormatException implements NumberFormatException {
 }
 
 abstract class NumberFormatException
-    implements IntegerPositiveFailure, Exception {
-  const factory NumberFormatException([final dynamic message]) =
-      _$NumberFormatException;
+    implements IntegerPositiveFailure, ThrowableException {
+  const factory NumberFormatException(
+      [final String message,
+      final CaughtException? cause]) = _$NumberFormatException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -282,7 +312,7 @@ abstract class _$$IntegerOverflowCopyWith<$Res>
       __$$IntegerOverflowCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -297,12 +327,17 @@ class __$$IntegerOverflowCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$IntegerOverflow(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -310,27 +345,25 @@ class __$$IntegerOverflowCopyWithImpl<$Res>
 /// @nodoc
 
 class _$IntegerOverflow implements IntegerOverflow {
-  const _$IntegerOverflow([this.message]);
+  const _$IntegerOverflow([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'IntegerPositiveFailure.integerOverflow(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$IntegerOverflow &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -341,39 +374,48 @@ class _$IntegerOverflow implements IntegerOverflow {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) {
-    return integerOverflow(message);
+    return integerOverflow(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) {
-    return integerOverflow?.call(message);
+    return integerOverflow?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) {
     if (integerOverflow != null) {
-      return integerOverflow(message);
+      return integerOverflow(message, cause);
     }
     return orElse();
   }
@@ -420,11 +462,15 @@ class _$IntegerOverflow implements IntegerOverflow {
   }
 }
 
-abstract class IntegerOverflow implements IntegerPositiveFailure, Exception {
-  const factory IntegerOverflow([final dynamic message]) = _$IntegerOverflow;
+abstract class IntegerOverflow
+    implements IntegerPositiveFailure, ThrowableException {
+  const factory IntegerOverflow(
+      [final String message, final CaughtException? cause]) = _$IntegerOverflow;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$IntegerOverflowCopyWith<_$IntegerOverflow> get copyWith =>
@@ -439,7 +485,7 @@ abstract class _$$ValueIsZeroCopyWith<$Res>
       __$$ValueIsZeroCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -454,12 +500,17 @@ class __$$ValueIsZeroCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ValueIsZero(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -467,27 +518,25 @@ class __$$ValueIsZeroCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ValueIsZero implements ValueIsZero {
-  const _$ValueIsZero([this.message]);
+  const _$ValueIsZero([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'IntegerPositiveFailure.valueIsZero(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ValueIsZero &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -498,39 +547,48 @@ class _$ValueIsZero implements ValueIsZero {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) {
-    return valueIsZero(message);
+    return valueIsZero(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) {
-    return valueIsZero?.call(message);
+    return valueIsZero?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) {
     if (valueIsZero != null) {
-      return valueIsZero(message);
+      return valueIsZero(message, cause);
     }
     return orElse();
   }
@@ -577,11 +635,15 @@ class _$ValueIsZero implements ValueIsZero {
   }
 }
 
-abstract class ValueIsZero implements IntegerPositiveFailure, Exception {
-  const factory ValueIsZero([final dynamic message]) = _$ValueIsZero;
+abstract class ValueIsZero
+    implements IntegerPositiveFailure, ThrowableException {
+  const factory ValueIsZero(
+      [final String message, final CaughtException? cause]) = _$ValueIsZero;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ValueIsZeroCopyWith<_$ValueIsZero> get copyWith =>
@@ -596,7 +658,7 @@ abstract class _$$ValueIsNegativeCopyWith<$Res>
       __$$ValueIsNegativeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -611,12 +673,17 @@ class __$$ValueIsNegativeCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ValueIsNegative(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -624,27 +691,25 @@ class __$$ValueIsNegativeCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ValueIsNegative implements ValueIsNegative {
-  const _$ValueIsNegative([this.message]);
+  const _$ValueIsNegative([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'IntegerPositiveFailure.valueIsNegative(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ValueIsNegative &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -655,39 +720,48 @@ class _$ValueIsNegative implements ValueIsNegative {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) {
-    return valueIsNegative(message);
+    return valueIsNegative(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) {
-    return valueIsNegative?.call(message);
+    return valueIsNegative?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) {
     if (valueIsNegative != null) {
-      return valueIsNegative(message);
+      return valueIsNegative(message, cause);
     }
     return orElse();
   }
@@ -734,11 +808,15 @@ class _$ValueIsNegative implements ValueIsNegative {
   }
 }
 
-abstract class ValueIsNegative implements IntegerPositiveFailure, Exception {
-  const factory ValueIsNegative([final dynamic message]) = _$ValueIsNegative;
+abstract class ValueIsNegative
+    implements IntegerPositiveFailure, ThrowableException {
+  const factory ValueIsNegative(
+      [final String message, final CaughtException? cause]) = _$ValueIsNegative;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ValueIsNegativeCopyWith<_$ValueIsNegative> get copyWith =>
@@ -753,7 +831,7 @@ abstract class _$$LeadingZeroExceptionCopyWith<$Res>
       __$$LeadingZeroExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -768,12 +846,17 @@ class __$$LeadingZeroExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$LeadingZeroException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -781,27 +864,25 @@ class __$$LeadingZeroExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LeadingZeroException implements LeadingZeroException {
-  const _$LeadingZeroException([this.message]);
+  const _$LeadingZeroException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'IntegerPositiveFailure.leadingZeroException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LeadingZeroException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -813,39 +894,48 @@ class _$LeadingZeroException implements LeadingZeroException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) integerOverflow,
-    required TResult Function(dynamic message) valueIsZero,
-    required TResult Function(dynamic message) valueIsNegative,
-    required TResult Function(dynamic message) leadingZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        integerOverflow,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsZero,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        leadingZeroException,
   }) {
-    return leadingZeroException(message);
+    return leadingZeroException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? integerOverflow,
-    TResult? Function(dynamic message)? valueIsZero,
-    TResult? Function(dynamic message)? valueIsNegative,
-    TResult? Function(dynamic message)? leadingZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)? integerOverflow,
+    TResult? Function(String message, CaughtException? cause)? valueIsZero,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        leadingZeroException,
   }) {
-    return leadingZeroException?.call(message);
+    return leadingZeroException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? integerOverflow,
-    TResult Function(dynamic message)? valueIsZero,
-    TResult Function(dynamic message)? valueIsNegative,
-    TResult Function(dynamic message)? leadingZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)? integerOverflow,
+    TResult Function(String message, CaughtException? cause)? valueIsZero,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        leadingZeroException,
     required TResult orElse(),
   }) {
     if (leadingZeroException != null) {
-      return leadingZeroException(message);
+      return leadingZeroException(message, cause);
     }
     return orElse();
   }
@@ -893,12 +983,15 @@ class _$LeadingZeroException implements LeadingZeroException {
 }
 
 abstract class LeadingZeroException
-    implements IntegerPositiveFailure, Exception {
-  const factory LeadingZeroException([final dynamic message]) =
-      _$LeadingZeroException;
+    implements IntegerPositiveFailure, ThrowableException {
+  const factory LeadingZeroException(
+      [final String message,
+      final CaughtException? cause]) = _$LeadingZeroException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$LeadingZeroExceptionCopyWith<_$LeadingZeroException> get copyWith =>

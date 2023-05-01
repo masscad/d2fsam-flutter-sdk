@@ -16,20 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UrlFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedUrlException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedUrlException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedUrlException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUrlException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +66,7 @@ abstract class $UrlFailureCopyWith<$Res> {
           UrlFailure value, $Res Function(UrlFailure) then) =
       _$UrlFailureCopyWithImpl<$Res, UrlFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -79,12 +83,17 @@ class _$UrlFailureCopyWithImpl<$Res, $Val extends UrlFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -97,7 +106,7 @@ abstract class _$$MalformedUrlExceptionCopyWith<$Res>
       __$$MalformedUrlExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -112,12 +121,17 @@ class __$$MalformedUrlExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MalformedUrlException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -125,27 +139,25 @@ class __$$MalformedUrlExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MalformedUrlException implements MalformedUrlException {
-  const _$MalformedUrlException([this.message]);
+  const _$MalformedUrlException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UrlFailure.malformedUrlException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MalformedUrlException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -157,27 +169,30 @@ class _$MalformedUrlException implements MalformedUrlException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedUrlException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedUrlException,
   }) {
-    return malformedUrlException(message);
+    return malformedUrlException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedUrlException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedUrlException,
   }) {
-    return malformedUrlException?.call(message);
+    return malformedUrlException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedUrlException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedUrlException,
     required TResult orElse(),
   }) {
     if (malformedUrlException != null) {
-      return malformedUrlException(message);
+      return malformedUrlException(message, cause);
     }
     return orElse();
   }
@@ -212,12 +227,15 @@ class _$MalformedUrlException implements MalformedUrlException {
   }
 }
 
-abstract class MalformedUrlException implements UrlFailure, Exception {
-  const factory MalformedUrlException([final dynamic message]) =
-      _$MalformedUrlException;
+abstract class MalformedUrlException implements UrlFailure, ThrowableException {
+  const factory MalformedUrlException(
+      [final String message,
+      final CaughtException? cause]) = _$MalformedUrlException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MalformedUrlExceptionCopyWith<_$MalformedUrlException> get copyWith =>

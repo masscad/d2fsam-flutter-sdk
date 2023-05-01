@@ -1,24 +1,30 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'unit_interval_failure.freezed.dart';
 
 @freezed
 class UnitIntervalFailure
     with _$UnitIntervalFailure
-    implements Exception {
-  @Implements<Exception>()
+    implements ThrowableException {
+  @Implements<ThrowableException>()
   const factory UnitIntervalFailure.scientificNotationException(
-      [dynamic message]) = ScientificNotationException;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = ScientificNotationException;
 
-  @Implements<Exception>()
-  const factory UnitIntervalFailure.numberFormatException([dynamic message]) =
-      NumberFormatException;
+  @Implements<ThrowableException>()
+  const factory UnitIntervalFailure.numberFormatException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = NumberFormatException;
 
-  @Implements<Exception>()
-  const factory UnitIntervalFailure.greaterThanOneException([dynamic message]) =
-      GreaterThanOneException;
+  @Implements<ThrowableException>()
+  const factory UnitIntervalFailure.greaterThanOneException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = GreaterThanOneException;
 
-  @Implements<Exception>()
+  @Implements<ThrowableException>()
   const factory UnitIntervalFailure.smallerThanZeroException(
-      [dynamic message]) = SmallerThanZeroException;
+      [@Default('Exception') String message,
+      CaughtException? cause]) = SmallerThanZeroException;
 }

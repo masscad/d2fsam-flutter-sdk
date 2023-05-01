@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/integer_negative_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/integer_validator_base.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class IntegerNegativeValidator
     extends IntegerValidatorBase<IntegerNegativeFailure> {
@@ -19,16 +20,16 @@ class IntegerNegativeValidator
       const IntegerNegativeFailure.integerOverflow();
 
   @override
-  Either<IntegerNegativeFailure, String> validateInteger(String value) {
+  Result<String, IntegerNegativeFailure> validateInteger(String value) {
     int convertedValue = int.parse(value);
     if (convertedValue == 0) {
       // Failure
-      return left(const IntegerNegativeFailure.valueIsZero());
+      return Result.failure(const IntegerNegativeFailure.valueIsZero());
     } else if (convertedValue > 0) {
-      return left(const IntegerNegativeFailure.valueIsPositive());
+      return Result.failure(const IntegerNegativeFailure.valueIsPositive());
     } else {
       // Success
-      return right(value);
+      return Result.success(value);
     }
   }
 }

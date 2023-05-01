@@ -16,26 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LetterFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) stringIsNotALetterException,
-    required TResult Function(dynamic message) moreThanOneLetterException,
-    required TResult Function(dynamic message) emptyStringException,
+    required TResult Function(String message, CaughtException? cause)
+        stringIsNotALetterException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanOneLetterException,
+    required TResult Function(String message, CaughtException? cause)
+        emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? stringIsNotALetterException,
-    TResult? Function(dynamic message)? moreThanOneLetterException,
-    TResult? Function(dynamic message)? emptyStringException,
+    TResult? Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? stringIsNotALetterException,
-    TResult Function(dynamic message)? moreThanOneLetterException,
-    TResult Function(dynamic message)? emptyStringException,
+    TResult Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult Function(String message, CaughtException? cause)?
+        emptyStringException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,7 +89,7 @@ abstract class $LetterFailureCopyWith<$Res> {
           LetterFailure value, $Res Function(LetterFailure) then) =
       _$LetterFailureCopyWithImpl<$Res, LetterFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -96,12 +106,17 @@ class _$LetterFailureCopyWithImpl<$Res, $Val extends LetterFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -115,7 +130,7 @@ abstract class _$$StringIsNotALetterExceptionCopyWith<$Res>
       __$$StringIsNotALetterExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -131,12 +146,17 @@ class __$$StringIsNotALetterExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$StringIsNotALetterException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -144,27 +164,25 @@ class __$$StringIsNotALetterExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$StringIsNotALetterException implements StringIsNotALetterException {
-  const _$StringIsNotALetterException([this.message]);
+  const _$StringIsNotALetterException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'LetterFailure.stringIsNotALetterException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StringIsNotALetterException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -176,33 +194,42 @@ class _$StringIsNotALetterException implements StringIsNotALetterException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) stringIsNotALetterException,
-    required TResult Function(dynamic message) moreThanOneLetterException,
-    required TResult Function(dynamic message) emptyStringException,
+    required TResult Function(String message, CaughtException? cause)
+        stringIsNotALetterException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanOneLetterException,
+    required TResult Function(String message, CaughtException? cause)
+        emptyStringException,
   }) {
-    return stringIsNotALetterException(message);
+    return stringIsNotALetterException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? stringIsNotALetterException,
-    TResult? Function(dynamic message)? moreThanOneLetterException,
-    TResult? Function(dynamic message)? emptyStringException,
+    TResult? Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        emptyStringException,
   }) {
-    return stringIsNotALetterException?.call(message);
+    return stringIsNotALetterException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? stringIsNotALetterException,
-    TResult Function(dynamic message)? moreThanOneLetterException,
-    TResult Function(dynamic message)? emptyStringException,
+    TResult Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult Function(String message, CaughtException? cause)?
+        emptyStringException,
     required TResult orElse(),
   }) {
     if (stringIsNotALetterException != null) {
-      return stringIsNotALetterException(message);
+      return stringIsNotALetterException(message, cause);
     }
     return orElse();
   }
@@ -248,12 +275,16 @@ class _$StringIsNotALetterException implements StringIsNotALetterException {
   }
 }
 
-abstract class StringIsNotALetterException implements LetterFailure, Exception {
-  const factory StringIsNotALetterException([final dynamic message]) =
-      _$StringIsNotALetterException;
+abstract class StringIsNotALetterException
+    implements LetterFailure, ThrowableException {
+  const factory StringIsNotALetterException(
+      [final String message,
+      final CaughtException? cause]) = _$StringIsNotALetterException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$StringIsNotALetterExceptionCopyWith<_$StringIsNotALetterException>
@@ -269,7 +300,7 @@ abstract class _$$MoreThanOneLetterExceptionCopyWith<$Res>
       __$$MoreThanOneLetterExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -285,12 +316,17 @@ class __$$MoreThanOneLetterExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MoreThanOneLetterException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -298,27 +334,25 @@ class __$$MoreThanOneLetterExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MoreThanOneLetterException implements MoreThanOneLetterException {
-  const _$MoreThanOneLetterException([this.message]);
+  const _$MoreThanOneLetterException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'LetterFailure.moreThanOneLetterException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MoreThanOneLetterException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -330,33 +364,42 @@ class _$MoreThanOneLetterException implements MoreThanOneLetterException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) stringIsNotALetterException,
-    required TResult Function(dynamic message) moreThanOneLetterException,
-    required TResult Function(dynamic message) emptyStringException,
+    required TResult Function(String message, CaughtException? cause)
+        stringIsNotALetterException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanOneLetterException,
+    required TResult Function(String message, CaughtException? cause)
+        emptyStringException,
   }) {
-    return moreThanOneLetterException(message);
+    return moreThanOneLetterException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? stringIsNotALetterException,
-    TResult? Function(dynamic message)? moreThanOneLetterException,
-    TResult? Function(dynamic message)? emptyStringException,
+    TResult? Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        emptyStringException,
   }) {
-    return moreThanOneLetterException?.call(message);
+    return moreThanOneLetterException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? stringIsNotALetterException,
-    TResult Function(dynamic message)? moreThanOneLetterException,
-    TResult Function(dynamic message)? emptyStringException,
+    TResult Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult Function(String message, CaughtException? cause)?
+        emptyStringException,
     required TResult orElse(),
   }) {
     if (moreThanOneLetterException != null) {
-      return moreThanOneLetterException(message);
+      return moreThanOneLetterException(message, cause);
     }
     return orElse();
   }
@@ -402,12 +445,16 @@ class _$MoreThanOneLetterException implements MoreThanOneLetterException {
   }
 }
 
-abstract class MoreThanOneLetterException implements LetterFailure, Exception {
-  const factory MoreThanOneLetterException([final dynamic message]) =
-      _$MoreThanOneLetterException;
+abstract class MoreThanOneLetterException
+    implements LetterFailure, ThrowableException {
+  const factory MoreThanOneLetterException(
+      [final String message,
+      final CaughtException? cause]) = _$MoreThanOneLetterException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MoreThanOneLetterExceptionCopyWith<_$MoreThanOneLetterException>
@@ -422,7 +469,7 @@ abstract class _$$EmptyStringExceptionCopyWith<$Res>
       __$$EmptyStringExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -437,12 +484,17 @@ class __$$EmptyStringExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$EmptyStringException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -450,27 +502,25 @@ class __$$EmptyStringExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$EmptyStringException implements EmptyStringException {
-  const _$EmptyStringException([this.message]);
+  const _$EmptyStringException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'LetterFailure.emptyStringException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmptyStringException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -482,33 +532,42 @@ class _$EmptyStringException implements EmptyStringException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) stringIsNotALetterException,
-    required TResult Function(dynamic message) moreThanOneLetterException,
-    required TResult Function(dynamic message) emptyStringException,
+    required TResult Function(String message, CaughtException? cause)
+        stringIsNotALetterException,
+    required TResult Function(String message, CaughtException? cause)
+        moreThanOneLetterException,
+    required TResult Function(String message, CaughtException? cause)
+        emptyStringException,
   }) {
-    return emptyStringException(message);
+    return emptyStringException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? stringIsNotALetterException,
-    TResult? Function(dynamic message)? moreThanOneLetterException,
-    TResult? Function(dynamic message)? emptyStringException,
+    TResult? Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult? Function(String message, CaughtException? cause)?
+        emptyStringException,
   }) {
-    return emptyStringException?.call(message);
+    return emptyStringException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? stringIsNotALetterException,
-    TResult Function(dynamic message)? moreThanOneLetterException,
-    TResult Function(dynamic message)? emptyStringException,
+    TResult Function(String message, CaughtException? cause)?
+        stringIsNotALetterException,
+    TResult Function(String message, CaughtException? cause)?
+        moreThanOneLetterException,
+    TResult Function(String message, CaughtException? cause)?
+        emptyStringException,
     required TResult orElse(),
   }) {
     if (emptyStringException != null) {
-      return emptyStringException(message);
+      return emptyStringException(message, cause);
     }
     return orElse();
   }
@@ -554,12 +613,16 @@ class _$EmptyStringException implements EmptyStringException {
   }
 }
 
-abstract class EmptyStringException implements LetterFailure, Exception {
-  const factory EmptyStringException([final dynamic message]) =
-      _$EmptyStringException;
+abstract class EmptyStringException
+    implements LetterFailure, ThrowableException {
+  const factory EmptyStringException(
+      [final String message,
+      final CaughtException? cause]) = _$EmptyStringException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$EmptyStringExceptionCopyWith<_$EmptyStringException> get copyWith =>

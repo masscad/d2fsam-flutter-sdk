@@ -1,24 +1,26 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
-abstract class NumberValidatorBase<T extends Exception>
+import '../../../mp/helpers/result.dart';
+import '../../exception/exception.dart';
+
+abstract class NumberValidatorBase<T extends ThrowableException>
     extends ValueTypeValidator<T> {
   const NumberValidatorBase();
 
   static const String HAS_LEADING_ZERO_REGEX = r'^[+\\-]?(0+[0-9]).*$';
 
   @override
-  Either<T, String> validate(String value) {
+  Result<String, T> validate(String value) {
     try {
       if (RegExp(HAS_LEADING_ZERO_REGEX).hasMatch(value)) {
         // Failure
-        return left(leadingZeroException);
+        return Result.failure(leadingZeroException);
       } else {
         return internalValidate(value);
       }
     } on FormatException {
       // Failure
-      return left(formatFailure);
+      return Result.failure(formatFailure);
     }
   }
 
@@ -26,5 +28,5 @@ abstract class NumberValidatorBase<T extends Exception>
 
   T get formatFailure;
 
-  Either<T, String> internalValidate(String value);
+  Result<String, T> internalValidate(String value);
 }

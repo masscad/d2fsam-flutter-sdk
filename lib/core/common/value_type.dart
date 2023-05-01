@@ -1,5 +1,7 @@
 import 'package:d2_remote/core/common/value_type/validators/validators.dart';
 
+import 'exception/exception.dart';
+
 enum ValueType {
   TEXT(TextValidator()),
   LONG_TEXT(LongTextValidator()),
@@ -31,9 +33,9 @@ enum ValueType {
 
   const ValueType(this._validator);
 
-  final ValueTypeValidator<Exception> _validator;
+  final ValueTypeValidator<ThrowableException> _validator;
 
-  ValueTypeValidator<Exception> get validator => _validator;
+  ValueTypeValidator<ThrowableException> get validator => _validator;
 
   static List<ValueType> get INTEGER_TYPES =>
       [INTEGER, INTEGER_POSITIVE, INTEGER_NEGATIVE, INTEGER_ZERO_OR_POSITIVE];

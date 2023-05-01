@@ -1,18 +1,23 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../exception/exception.dart';
+
 part 'uid_failure.freezed.dart';
 
 @freezed
-class UidFailure with _$UidFailure implements Exception {
-  @Implements<Exception>()
-  const factory UidFailure.moreThanElevenCharsException([dynamic message]) =
-      MoreThanElevenCharsException;
+class UidFailure with _$UidFailure implements ThrowableException {
+  @Implements<ThrowableException>()
+  const factory UidFailure.moreThanElevenCharsException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = MoreThanElevenCharsException;
 
-  @Implements<Exception>()
-  const factory UidFailure.lessThanElevenCharsException([dynamic message]) =
-      LessThanElevenCharsException;
+  @Implements<ThrowableException>()
+  const factory UidFailure.lessThanElevenCharsException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = LessThanElevenCharsException;
 
-  @Implements<Exception>()
-  const factory UidFailure.malformedUidException([dynamic message]) =
-      MalformedUidException;
+  @Implements<ThrowableException>()
+  const factory UidFailure.malformedUidException(
+      [@Default('Exception') String message,
+      CaughtException? cause]) = MalformedUidException;
 }

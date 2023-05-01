@@ -1,21 +1,21 @@
-import 'package:dartz/dartz.dart';
+import 'package:d2_remote/core/common/value_type/failures/boolean_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
 
-import 'package:d2_remote/core/common/value_type/failures/boolean_failure.dart';
+import '../../../mp/helpers/result.dart';
 
 class BooleanValidator extends ValueTypeValidator<BooleanFailure> {
   const BooleanValidator();
 
   @override
-  Either<BooleanFailure, String> validate(String value) {
+  Result<String, BooleanFailure> validate(String value) {
     if (value == '0') {
-      return left(const BooleanFailure.zeroIsNotFalseException());
+      return Result.failure(const BooleanFailure.zeroIsNotFalseException());
     } else if (value == '1') {
-      return left(const BooleanFailure.oneIsNotTrueException());
+      return Result.failure(const BooleanFailure.oneIsNotTrueException());
     } else if (value == 'true' || value == 'false') {
-      return right(value);
+      return Result.success(value);
     } else {
-      return left(const BooleanFailure.booleanMalformedException());
+      return Result.failure(const BooleanFailure.booleanMalformedException());
     }
   }
 }

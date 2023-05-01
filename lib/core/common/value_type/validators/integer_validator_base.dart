@@ -1,7 +1,9 @@
-import 'package:dartz/dartz.dart';
+import 'package:d2_remote/core/common/exception/exception.dart';
 import 'package:d2_remote/core/common/value_type/validators/number_validator_base.dart';
 
-abstract class IntegerValidatorBase<T extends Exception>
+import '../../../mp/helpers/result.dart';
+
+abstract class IntegerValidatorBase<T extends ThrowableException>
     extends NumberValidatorBase<T> {
   const IntegerValidatorBase();
 
@@ -9,7 +11,7 @@ abstract class IntegerValidatorBase<T extends Exception>
   static const int MIN_VALUE = -2147483648;
 
   @override
-  Either<T, String> internalValidate(String value) {
+  Result<String, T> internalValidate(String value) {
     try {
       return validateInteger(value);
     } on FormatException {
@@ -17,18 +19,18 @@ abstract class IntegerValidatorBase<T extends Exception>
       try {
         int convertedValue = int.parse(value);
         if (convertedValue > MAX_VALUE || convertedValue < MIN_VALUE) {
-          return left(overflowFailure);
+          return Result.failure(overflowFailure);
         }
         // Failure
-        return left(formatFailure);
+        return Result.failure(formatFailure);
       } on FormatException {
         // Failure
-        return left(formatFailure);
+        return Result.failure(formatFailure);
       }
     }
   }
 
-  Either<T, String> validateInteger(String value);
+  Result<String, T> validateInteger(String value);
 
   T get overflowFailure;
 }

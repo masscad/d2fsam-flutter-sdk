@@ -16,29 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UnitIntervalFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) scientificNotationException,
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) greaterThanOneException,
-    required TResult Function(dynamic message) smallerThanZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        scientificNotationException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        greaterThanOneException,
+    required TResult Function(String message, CaughtException? cause)
+        smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? scientificNotationException,
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? greaterThanOneException,
-    TResult? Function(dynamic message)? smallerThanZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult? Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? scientificNotationException,
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? greaterThanOneException,
-    TResult Function(dynamic message)? smallerThanZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -85,7 +98,7 @@ abstract class $UnitIntervalFailureCopyWith<$Res> {
           UnitIntervalFailure value, $Res Function(UnitIntervalFailure) then) =
       _$UnitIntervalFailureCopyWithImpl<$Res, UnitIntervalFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -102,12 +115,17 @@ class _$UnitIntervalFailureCopyWithImpl<$Res, $Val extends UnitIntervalFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -121,7 +139,7 @@ abstract class _$$ScientificNotationExceptionCopyWith<$Res>
       __$$ScientificNotationExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -138,12 +156,17 @@ class __$$ScientificNotationExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ScientificNotationException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -151,27 +174,25 @@ class __$$ScientificNotationExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ScientificNotationException implements ScientificNotationException {
-  const _$ScientificNotationException([this.message]);
+  const _$ScientificNotationException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UnitIntervalFailure.scientificNotationException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ScientificNotationException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -183,36 +204,48 @@ class _$ScientificNotationException implements ScientificNotationException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) scientificNotationException,
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) greaterThanOneException,
-    required TResult Function(dynamic message) smallerThanZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        scientificNotationException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        greaterThanOneException,
+    required TResult Function(String message, CaughtException? cause)
+        smallerThanZeroException,
   }) {
-    return scientificNotationException(message);
+    return scientificNotationException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? scientificNotationException,
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? greaterThanOneException,
-    TResult? Function(dynamic message)? smallerThanZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult? Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
   }) {
-    return scientificNotationException?.call(message);
+    return scientificNotationException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? scientificNotationException,
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? greaterThanOneException,
-    TResult Function(dynamic message)? smallerThanZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
     required TResult orElse(),
   }) {
     if (scientificNotationException != null) {
-      return scientificNotationException(message);
+      return scientificNotationException(message, cause);
     }
     return orElse();
   }
@@ -262,12 +295,15 @@ class _$ScientificNotationException implements ScientificNotationException {
 }
 
 abstract class ScientificNotationException
-    implements UnitIntervalFailure, Exception {
-  const factory ScientificNotationException([final dynamic message]) =
-      _$ScientificNotationException;
+    implements UnitIntervalFailure, ThrowableException {
+  const factory ScientificNotationException(
+      [final String message,
+      final CaughtException? cause]) = _$ScientificNotationException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ScientificNotationExceptionCopyWith<_$ScientificNotationException>
@@ -282,7 +318,7 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -297,12 +333,17 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$NumberFormatException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -310,27 +351,25 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NumberFormatException implements NumberFormatException {
-  const _$NumberFormatException([this.message]);
+  const _$NumberFormatException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UnitIntervalFailure.numberFormatException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NumberFormatException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -342,36 +381,48 @@ class _$NumberFormatException implements NumberFormatException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) scientificNotationException,
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) greaterThanOneException,
-    required TResult Function(dynamic message) smallerThanZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        scientificNotationException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        greaterThanOneException,
+    required TResult Function(String message, CaughtException? cause)
+        smallerThanZeroException,
   }) {
-    return numberFormatException(message);
+    return numberFormatException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? scientificNotationException,
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? greaterThanOneException,
-    TResult? Function(dynamic message)? smallerThanZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult? Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
   }) {
-    return numberFormatException?.call(message);
+    return numberFormatException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? scientificNotationException,
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? greaterThanOneException,
-    TResult Function(dynamic message)? smallerThanZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
     required TResult orElse(),
   }) {
     if (numberFormatException != null) {
-      return numberFormatException(message);
+      return numberFormatException(message, cause);
     }
     return orElse();
   }
@@ -420,12 +471,16 @@ class _$NumberFormatException implements NumberFormatException {
   }
 }
 
-abstract class NumberFormatException implements UnitIntervalFailure, Exception {
-  const factory NumberFormatException([final dynamic message]) =
-      _$NumberFormatException;
+abstract class NumberFormatException
+    implements UnitIntervalFailure, ThrowableException {
+  const factory NumberFormatException(
+      [final String message,
+      final CaughtException? cause]) = _$NumberFormatException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -440,7 +495,7 @@ abstract class _$$GreaterThanOneExceptionCopyWith<$Res>
       __$$GreaterThanOneExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -455,12 +510,17 @@ class __$$GreaterThanOneExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$GreaterThanOneException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -468,27 +528,25 @@ class __$$GreaterThanOneExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GreaterThanOneException implements GreaterThanOneException {
-  const _$GreaterThanOneException([this.message]);
+  const _$GreaterThanOneException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UnitIntervalFailure.greaterThanOneException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GreaterThanOneException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -500,36 +558,48 @@ class _$GreaterThanOneException implements GreaterThanOneException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) scientificNotationException,
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) greaterThanOneException,
-    required TResult Function(dynamic message) smallerThanZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        scientificNotationException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        greaterThanOneException,
+    required TResult Function(String message, CaughtException? cause)
+        smallerThanZeroException,
   }) {
-    return greaterThanOneException(message);
+    return greaterThanOneException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? scientificNotationException,
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? greaterThanOneException,
-    TResult? Function(dynamic message)? smallerThanZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult? Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
   }) {
-    return greaterThanOneException?.call(message);
+    return greaterThanOneException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? scientificNotationException,
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? greaterThanOneException,
-    TResult Function(dynamic message)? smallerThanZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
     required TResult orElse(),
   }) {
     if (greaterThanOneException != null) {
-      return greaterThanOneException(message);
+      return greaterThanOneException(message, cause);
     }
     return orElse();
   }
@@ -579,12 +649,15 @@ class _$GreaterThanOneException implements GreaterThanOneException {
 }
 
 abstract class GreaterThanOneException
-    implements UnitIntervalFailure, Exception {
-  const factory GreaterThanOneException([final dynamic message]) =
-      _$GreaterThanOneException;
+    implements UnitIntervalFailure, ThrowableException {
+  const factory GreaterThanOneException(
+      [final String message,
+      final CaughtException? cause]) = _$GreaterThanOneException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$GreaterThanOneExceptionCopyWith<_$GreaterThanOneException> get copyWith =>
@@ -599,7 +672,7 @@ abstract class _$$SmallerThanZeroExceptionCopyWith<$Res>
       __$$SmallerThanZeroExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -614,12 +687,17 @@ class __$$SmallerThanZeroExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$SmallerThanZeroException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -627,27 +705,25 @@ class __$$SmallerThanZeroExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SmallerThanZeroException implements SmallerThanZeroException {
-  const _$SmallerThanZeroException([this.message]);
+  const _$SmallerThanZeroException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'UnitIntervalFailure.smallerThanZeroException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SmallerThanZeroException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -660,36 +736,48 @@ class _$SmallerThanZeroException implements SmallerThanZeroException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) scientificNotationException,
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) greaterThanOneException,
-    required TResult Function(dynamic message) smallerThanZeroException,
+    required TResult Function(String message, CaughtException? cause)
+        scientificNotationException,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        greaterThanOneException,
+    required TResult Function(String message, CaughtException? cause)
+        smallerThanZeroException,
   }) {
-    return smallerThanZeroException(message);
+    return smallerThanZeroException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? scientificNotationException,
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? greaterThanOneException,
-    TResult? Function(dynamic message)? smallerThanZeroException,
+    TResult? Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult? Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
   }) {
-    return smallerThanZeroException?.call(message);
+    return smallerThanZeroException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? scientificNotationException,
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? greaterThanOneException,
-    TResult Function(dynamic message)? smallerThanZeroException,
+    TResult Function(String message, CaughtException? cause)?
+        scientificNotationException,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        greaterThanOneException,
+    TResult Function(String message, CaughtException? cause)?
+        smallerThanZeroException,
     required TResult orElse(),
   }) {
     if (smallerThanZeroException != null) {
-      return smallerThanZeroException(message);
+      return smallerThanZeroException(message, cause);
     }
     return orElse();
   }
@@ -739,12 +827,15 @@ class _$SmallerThanZeroException implements SmallerThanZeroException {
 }
 
 abstract class SmallerThanZeroException
-    implements UnitIntervalFailure, Exception {
-  const factory SmallerThanZeroException([final dynamic message]) =
-      _$SmallerThanZeroException;
+    implements UnitIntervalFailure, ThrowableException {
+  const factory SmallerThanZeroException(
+      [final String message,
+      final CaughtException? cause]) = _$SmallerThanZeroException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$SmallerThanZeroExceptionCopyWith<_$SmallerThanZeroException>

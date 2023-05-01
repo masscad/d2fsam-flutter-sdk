@@ -16,20 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TextFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) tooLargeTextException,
+    required TResult Function(String message, CaughtException? cause)
+        tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? tooLargeTextException,
+    TResult? Function(String message, CaughtException? cause)?
+        tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? tooLargeTextException,
+    TResult Function(String message, CaughtException? cause)?
+        tooLargeTextException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +66,7 @@ abstract class $TextFailureCopyWith<$Res> {
           TextFailure value, $Res Function(TextFailure) then) =
       _$TextFailureCopyWithImpl<$Res, TextFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -79,12 +83,17 @@ class _$TextFailureCopyWithImpl<$Res, $Val extends TextFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -97,7 +106,7 @@ abstract class _$$TooLargeTextExceptionCopyWith<$Res>
       __$$TooLargeTextExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -112,12 +121,17 @@ class __$$TooLargeTextExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$TooLargeTextException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -125,27 +139,25 @@ class __$$TooLargeTextExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TooLargeTextException implements TooLargeTextException {
-  const _$TooLargeTextException([this.message]);
+  const _$TooLargeTextException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'TextFailure.tooLargeTextException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TooLargeTextException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -157,27 +169,30 @@ class _$TooLargeTextException implements TooLargeTextException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) tooLargeTextException,
+    required TResult Function(String message, CaughtException? cause)
+        tooLargeTextException,
   }) {
-    return tooLargeTextException(message);
+    return tooLargeTextException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? tooLargeTextException,
+    TResult? Function(String message, CaughtException? cause)?
+        tooLargeTextException,
   }) {
-    return tooLargeTextException?.call(message);
+    return tooLargeTextException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? tooLargeTextException,
+    TResult Function(String message, CaughtException? cause)?
+        tooLargeTextException,
     required TResult orElse(),
   }) {
     if (tooLargeTextException != null) {
-      return tooLargeTextException(message);
+      return tooLargeTextException(message, cause);
     }
     return orElse();
   }
@@ -212,12 +227,16 @@ class _$TooLargeTextException implements TooLargeTextException {
   }
 }
 
-abstract class TooLargeTextException implements TextFailure, Exception {
-  const factory TooLargeTextException([final dynamic message]) =
-      _$TooLargeTextException;
+abstract class TooLargeTextException
+    implements TextFailure, ThrowableException {
+  const factory TooLargeTextException(
+      [final String message,
+      final CaughtException? cause]) = _$TooLargeTextException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$TooLargeTextExceptionCopyWith<_$TooLargeTextException> get copyWith =>

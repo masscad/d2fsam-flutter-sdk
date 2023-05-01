@@ -16,26 +16,34 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PercentageFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) valueGreaterThan100,
-    required TResult Function(dynamic message) valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        valueGreaterThan100,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? valueGreaterThan100,
-    TResult? Function(dynamic message)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? valueGreaterThan100,
-    TResult Function(dynamic message)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +82,7 @@ abstract class $PercentageFailureCopyWith<$Res> {
           PercentageFailure value, $Res Function(PercentageFailure) then) =
       _$PercentageFailureCopyWithImpl<$Res, PercentageFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -91,12 +99,17 @@ class _$PercentageFailureCopyWithImpl<$Res, $Val extends PercentageFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -109,7 +122,7 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -124,12 +137,17 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$NumberFormatException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -137,27 +155,25 @@ class __$$NumberFormatExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$NumberFormatException implements NumberFormatException {
-  const _$NumberFormatException([this.message]);
+  const _$NumberFormatException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'PercentageFailure.numberFormatException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NumberFormatException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -169,33 +185,40 @@ class _$NumberFormatException implements NumberFormatException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) valueGreaterThan100,
-    required TResult Function(dynamic message) valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        valueGreaterThan100,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
   }) {
-    return numberFormatException(message);
+    return numberFormatException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? valueGreaterThan100,
-    TResult? Function(dynamic message)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
   }) {
-    return numberFormatException?.call(message);
+    return numberFormatException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? valueGreaterThan100,
-    TResult Function(dynamic message)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
     required TResult orElse(),
   }) {
     if (numberFormatException != null) {
-      return numberFormatException(message);
+      return numberFormatException(message, cause);
     }
     return orElse();
   }
@@ -236,12 +259,16 @@ class _$NumberFormatException implements NumberFormatException {
   }
 }
 
-abstract class NumberFormatException implements PercentageFailure, Exception {
-  const factory NumberFormatException([final dynamic message]) =
-      _$NumberFormatException;
+abstract class NumberFormatException
+    implements PercentageFailure, ThrowableException {
+  const factory NumberFormatException(
+      [final String message,
+      final CaughtException? cause]) = _$NumberFormatException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -256,7 +283,7 @@ abstract class _$$ValueGreaterThan100CopyWith<$Res>
       __$$ValueGreaterThan100CopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -271,12 +298,17 @@ class __$$ValueGreaterThan100CopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ValueGreaterThan100(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -284,27 +316,25 @@ class __$$ValueGreaterThan100CopyWithImpl<$Res>
 /// @nodoc
 
 class _$ValueGreaterThan100 implements ValueGreaterThan100 {
-  const _$ValueGreaterThan100([this.message]);
+  const _$ValueGreaterThan100([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'PercentageFailure.valueGreaterThan100(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ValueGreaterThan100 &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -316,33 +346,40 @@ class _$ValueGreaterThan100 implements ValueGreaterThan100 {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) valueGreaterThan100,
-    required TResult Function(dynamic message) valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        valueGreaterThan100,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
   }) {
-    return valueGreaterThan100(message);
+    return valueGreaterThan100(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? valueGreaterThan100,
-    TResult? Function(dynamic message)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
   }) {
-    return valueGreaterThan100?.call(message);
+    return valueGreaterThan100?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? valueGreaterThan100,
-    TResult Function(dynamic message)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
     required TResult orElse(),
   }) {
     if (valueGreaterThan100 != null) {
-      return valueGreaterThan100(message);
+      return valueGreaterThan100(message, cause);
     }
     return orElse();
   }
@@ -383,12 +420,16 @@ class _$ValueGreaterThan100 implements ValueGreaterThan100 {
   }
 }
 
-abstract class ValueGreaterThan100 implements PercentageFailure, Exception {
-  const factory ValueGreaterThan100([final dynamic message]) =
-      _$ValueGreaterThan100;
+abstract class ValueGreaterThan100
+    implements PercentageFailure, ThrowableException {
+  const factory ValueGreaterThan100(
+      [final String message,
+      final CaughtException? cause]) = _$ValueGreaterThan100;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ValueGreaterThan100CopyWith<_$ValueGreaterThan100> get copyWith =>
@@ -403,7 +444,7 @@ abstract class _$$ValueIsNegativeCopyWith<$Res>
       __$$ValueIsNegativeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -418,12 +459,17 @@ class __$$ValueIsNegativeCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ValueIsNegative(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -431,27 +477,25 @@ class __$$ValueIsNegativeCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ValueIsNegative implements ValueIsNegative {
-  const _$ValueIsNegative([this.message]);
+  const _$ValueIsNegative([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'PercentageFailure.valueIsNegative(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ValueIsNegative &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -462,33 +506,40 @@ class _$ValueIsNegative implements ValueIsNegative {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) numberFormatException,
-    required TResult Function(dynamic message) valueGreaterThan100,
-    required TResult Function(dynamic message) valueIsNegative,
+    required TResult Function(String message, CaughtException? cause)
+        numberFormatException,
+    required TResult Function(String message, CaughtException? cause)
+        valueGreaterThan100,
+    required TResult Function(String message, CaughtException? cause)
+        valueIsNegative,
   }) {
-    return valueIsNegative(message);
+    return valueIsNegative(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? numberFormatException,
-    TResult? Function(dynamic message)? valueGreaterThan100,
-    TResult? Function(dynamic message)? valueIsNegative,
+    TResult? Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult? Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult? Function(String message, CaughtException? cause)? valueIsNegative,
   }) {
-    return valueIsNegative?.call(message);
+    return valueIsNegative?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? numberFormatException,
-    TResult Function(dynamic message)? valueGreaterThan100,
-    TResult Function(dynamic message)? valueIsNegative,
+    TResult Function(String message, CaughtException? cause)?
+        numberFormatException,
+    TResult Function(String message, CaughtException? cause)?
+        valueGreaterThan100,
+    TResult Function(String message, CaughtException? cause)? valueIsNegative,
     required TResult orElse(),
   }) {
     if (valueIsNegative != null) {
-      return valueIsNegative(message);
+      return valueIsNegative(message, cause);
     }
     return orElse();
   }
@@ -529,11 +580,15 @@ class _$ValueIsNegative implements ValueIsNegative {
   }
 }
 
-abstract class ValueIsNegative implements PercentageFailure, Exception {
-  const factory ValueIsNegative([final dynamic message]) = _$ValueIsNegative;
+abstract class ValueIsNegative
+    implements PercentageFailure, ThrowableException {
+  const factory ValueIsNegative(
+      [final String message, final CaughtException? cause]) = _$ValueIsNegative;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ValueIsNegativeCopyWith<_$ValueIsNegative> get copyWith =>

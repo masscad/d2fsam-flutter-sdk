@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/url_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class UrlValidator extends ValueTypeValidator<UrlFailure> {
   const UrlValidator();
@@ -9,11 +10,11 @@ class UrlValidator extends ValueTypeValidator<UrlFailure> {
       r'^(http|https):\/\/[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,6}(:[0-9]{1,5})?(\/.*)?$';
 
   @override
-  Either<UrlFailure, String> validate(String value) {
+  Result<String, UrlFailure> validate(String value) {
     if (RegExp(URL_PATTERN).hasMatch(value)) {
-      return right(value);
+      return Result.success(value);
     } else {
-      return left(const UrlFailure.malformedUrlException());
+      return Result.failure(const UrlFailure.malformedUrlException());
     }
   }
 }

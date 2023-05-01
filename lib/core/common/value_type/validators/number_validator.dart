@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/number_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/number_validator_base.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class NumberValidator extends NumberValidatorBase<NumberFailure> {
   const NumberValidator();
@@ -19,16 +20,16 @@ class NumberValidator extends NumberValidatorBase<NumberFailure> {
       const NumberFailure.leadingZeroException();
 
   @override
-  Either<NumberFailure, String> internalValidate(String value) {
+  Result<String, NumberFailure> internalValidate(String value) {
     double.parse(value);
     if (RegExp(SCIENTIFIC_NOTATION_PATTERN).hasMatch(value)) {
       // Failure
-      return left(const NumberFailure.scientificNotationException());
+      return Result.failure(const NumberFailure.scientificNotationException());
     } else if (RegExp(STARTS_WITH_DOT).hasMatch(value)) {
-      return left(formatFailure);
+      return Result.failure(formatFailure);
     } else {
       // Success
-      return right(value);
+      return Result.success(value);
     }
   }
 }

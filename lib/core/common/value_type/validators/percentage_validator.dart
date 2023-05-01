@@ -1,6 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:d2_remote/core/common/value_type/failures/percentage_failure.dart';
 import 'package:d2_remote/core/common/value_type/validators/value_type_validator.dart';
+
+import '../../../mp/helpers/result.dart';
 
 class PercentageValidator extends ValueTypeValidator<PercentageFailure> {
   const PercentageValidator();
@@ -9,22 +10,22 @@ class PercentageValidator extends ValueTypeValidator<PercentageFailure> {
   static const int ZERO_PERCENT = 0;
 
   @override
-  Either<PercentageFailure, String> validate(String value) {
+  Result<String, PercentageFailure> validate(String value) {
     try {
       int convertedValue = int.parse(value);
       if (convertedValue > ONE_HUNDRED_PERCENT) {
         // Failure
-        return left(const PercentageFailure.valueGreaterThan100());
+        return Result.failure(const PercentageFailure.valueGreaterThan100());
       } else if (convertedValue < ZERO_PERCENT) {
         // Failure
-        return left(const PercentageFailure.valueIsNegative());
+        return Result.failure(const PercentageFailure.valueIsNegative());
       } else {
         // Success
-        return right(value);
+        return Result.success(value);
       }
     } on FormatException {
       // Failure
-      return left(const PercentageFailure.numberFormatException());
+      return Result.failure(const PercentageFailure.numberFormatException());
     }
   }
 }

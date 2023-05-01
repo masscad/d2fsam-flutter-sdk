@@ -16,20 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$EmailFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedEmailException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedEmailException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedEmailException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedEmailException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedEmailException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedEmailException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +66,7 @@ abstract class $EmailFailureCopyWith<$Res> {
           EmailFailure value, $Res Function(EmailFailure) then) =
       _$EmailFailureCopyWithImpl<$Res, EmailFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -79,12 +83,17 @@ class _$EmailFailureCopyWithImpl<$Res, $Val extends EmailFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -97,7 +106,7 @@ abstract class _$$MalformedEmailExceptionCopyWith<$Res>
       __$$MalformedEmailExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -112,12 +121,17 @@ class __$$MalformedEmailExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$MalformedEmailException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -125,27 +139,25 @@ class __$$MalformedEmailExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MalformedEmailException implements MalformedEmailException {
-  const _$MalformedEmailException([this.message]);
+  const _$MalformedEmailException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'EmailFailure.malformedEmailException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MalformedEmailException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -157,27 +169,30 @@ class _$MalformedEmailException implements MalformedEmailException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) malformedEmailException,
+    required TResult Function(String message, CaughtException? cause)
+        malformedEmailException,
   }) {
-    return malformedEmailException(message);
+    return malformedEmailException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? malformedEmailException,
+    TResult? Function(String message, CaughtException? cause)?
+        malformedEmailException,
   }) {
-    return malformedEmailException?.call(message);
+    return malformedEmailException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? malformedEmailException,
+    TResult Function(String message, CaughtException? cause)?
+        malformedEmailException,
     required TResult orElse(),
   }) {
     if (malformedEmailException != null) {
-      return malformedEmailException(message);
+      return malformedEmailException(message, cause);
     }
     return orElse();
   }
@@ -212,12 +227,16 @@ class _$MalformedEmailException implements MalformedEmailException {
   }
 }
 
-abstract class MalformedEmailException implements EmailFailure, Exception {
-  const factory MalformedEmailException([final dynamic message]) =
-      _$MalformedEmailException;
+abstract class MalformedEmailException
+    implements EmailFailure, ThrowableException {
+  const factory MalformedEmailException(
+      [final String message,
+      final CaughtException? cause]) = _$MalformedEmailException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$MalformedEmailExceptionCopyWith<_$MalformedEmailException> get copyWith =>

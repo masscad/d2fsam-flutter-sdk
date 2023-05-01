@@ -16,20 +16,22 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DateFailure {
-  dynamic get message => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  CaughtException? get cause => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) parseException,
+    required TResult Function(String message, CaughtException? cause)
+        parseException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? parseException,
+    TResult? Function(String message, CaughtException? cause)? parseException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? parseException,
+    TResult Function(String message, CaughtException? cause)? parseException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +63,7 @@ abstract class $DateFailureCopyWith<$Res> {
           DateFailure value, $Res Function(DateFailure) then) =
       _$DateFailureCopyWithImpl<$Res, DateFailure>;
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -78,12 +80,17 @@ class _$DateFailureCopyWithImpl<$Res, $Val extends DateFailure>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      cause: freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ) as $Val);
   }
 }
@@ -96,7 +103,7 @@ abstract class _$$ParseExceptionCopyWith<$Res>
       __$$ParseExceptionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic message});
+  $Res call({String message, CaughtException? cause});
 }
 
 /// @nodoc
@@ -111,12 +118,17 @@ class __$$ParseExceptionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? cause = freezed,
   }) {
     return _then(_$ParseException(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
+      freezed == cause
+          ? _value.cause
+          : cause // ignore: cast_nullable_to_non_nullable
+              as CaughtException?,
     ));
   }
 }
@@ -124,27 +136,25 @@ class __$$ParseExceptionCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ParseException implements ParseException {
-  const _$ParseException([this.message]);
+  const _$ParseException([this.message = 'Exception', this.cause]);
 
   @override
-  final dynamic message;
-
+  @JsonKey()
+  final String message;
   @override
-  String toString() {
-    return 'DateFailure.parseException(message: $message)';
-  }
+  final CaughtException? cause;
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ParseException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.cause, cause) || other.cause == cause));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message, cause);
 
   @JsonKey(ignore: true)
   @override
@@ -155,27 +165,28 @@ class _$ParseException implements ParseException {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(dynamic message) parseException,
+    required TResult Function(String message, CaughtException? cause)
+        parseException,
   }) {
-    return parseException(message);
+    return parseException(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(dynamic message)? parseException,
+    TResult? Function(String message, CaughtException? cause)? parseException,
   }) {
-    return parseException?.call(message);
+    return parseException?.call(message, cause);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(dynamic message)? parseException,
+    TResult Function(String message, CaughtException? cause)? parseException,
     required TResult orElse(),
   }) {
     if (parseException != null) {
-      return parseException(message);
+      return parseException(message, cause);
     }
     return orElse();
   }
@@ -209,11 +220,14 @@ class _$ParseException implements ParseException {
   }
 }
 
-abstract class ParseException implements DateFailure, Exception {
-  const factory ParseException([final dynamic message]) = _$ParseException;
+abstract class ParseException implements DateFailure, ThrowableException {
+  const factory ParseException(
+      [final String message, final CaughtException? cause]) = _$ParseException;
 
   @override
-  dynamic get message;
+  String get message;
+  @override
+  CaughtException? get cause;
   @override
   @JsonKey(ignore: true)
   _$$ParseExceptionCopyWith<_$ParseException> get copyWith =>
