@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'url_failure.dart';
 
@@ -17,23 +17,19 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UrlFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
         malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
         malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -41,20 +37,17 @@ mixin _$UrlFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MalformedUrlException value)
         malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MalformedUrlException value)? malformedUrlException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MalformedUrlException value)? malformedUrlException,
@@ -72,7 +65,6 @@ abstract class $UrlFailureCopyWith<$Res> {
   factory $UrlFailureCopyWith(
           UrlFailure value, $Res Function(UrlFailure) then) =
       _$UrlFailureCopyWithImpl<$Res, UrlFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -84,7 +76,6 @@ class _$UrlFailureCopyWithImpl<$Res, $Val extends UrlFailure>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -113,7 +104,6 @@ abstract class _$$MalformedUrlExceptionCopyWith<$Res>
   factory _$$MalformedUrlExceptionCopyWith(_$MalformedUrlException value,
           $Res Function(_$MalformedUrlException) then) =
       __$$MalformedUrlExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -244,10 +234,8 @@ abstract class MalformedUrlException implements UrlFailure, ThrowableException {
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$MalformedUrlExceptionCopyWith<_$MalformedUrlException> get copyWith =>

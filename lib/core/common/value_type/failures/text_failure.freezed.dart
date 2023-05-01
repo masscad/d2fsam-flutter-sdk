@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'text_failure.dart';
 
@@ -17,23 +17,19 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TextFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
         tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
         tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -41,20 +37,17 @@ mixin _$TextFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TooLargeTextException value)
         tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TooLargeTextException value)? tooLargeTextException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TooLargeTextException value)? tooLargeTextException,
@@ -72,7 +65,6 @@ abstract class $TextFailureCopyWith<$Res> {
   factory $TextFailureCopyWith(
           TextFailure value, $Res Function(TextFailure) then) =
       _$TextFailureCopyWithImpl<$Res, TextFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -84,7 +76,6 @@ class _$TextFailureCopyWithImpl<$Res, $Val extends TextFailure>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -113,7 +104,6 @@ abstract class _$$TooLargeTextExceptionCopyWith<$Res>
   factory _$$TooLargeTextExceptionCopyWith(_$TooLargeTextException value,
           $Res Function(_$TooLargeTextException) then) =
       __$$TooLargeTextExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -245,10 +235,8 @@ abstract class TooLargeTextException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$TooLargeTextExceptionCopyWith<_$TooLargeTextException> get copyWith =>

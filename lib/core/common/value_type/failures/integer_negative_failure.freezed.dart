@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'integer_negative_failure.dart';
 
@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$IntegerNegativeFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -34,7 +32,6 @@ mixin _$IntegerNegativeFailure {
         leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -46,7 +43,6 @@ mixin _$IntegerNegativeFailure {
         leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -59,7 +55,6 @@ mixin _$IntegerNegativeFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NumberFormatException value)
@@ -70,7 +65,6 @@ mixin _$IntegerNegativeFailure {
     required TResult Function(LeadingZeroException value) leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NumberFormatException value)? numberFormatException,
@@ -80,7 +74,6 @@ mixin _$IntegerNegativeFailure {
     TResult? Function(LeadingZeroException value)? leadingZeroException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NumberFormatException value)? numberFormatException,
@@ -102,7 +95,6 @@ abstract class $IntegerNegativeFailureCopyWith<$Res> {
   factory $IntegerNegativeFailureCopyWith(IntegerNegativeFailure value,
           $Res Function(IntegerNegativeFailure) then) =
       _$IntegerNegativeFailureCopyWithImpl<$Res, IntegerNegativeFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -115,7 +107,6 @@ class _$IntegerNegativeFailureCopyWithImpl<$Res,
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -144,7 +135,6 @@ abstract class _$$NumberFormatExceptionCopyWith<$Res>
   factory _$$NumberFormatExceptionCopyWith(_$NumberFormatException value,
           $Res Function(_$NumberFormatException) then) =
       __$$NumberFormatExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -306,10 +296,8 @@ abstract class NumberFormatException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$NumberFormatExceptionCopyWith<_$NumberFormatException> get copyWith =>
@@ -322,7 +310,6 @@ abstract class _$$IntegerOverflowCopyWith<$Res>
   factory _$$IntegerOverflowCopyWith(
           _$IntegerOverflow value, $Res Function(_$IntegerOverflow) then) =
       __$$IntegerOverflowCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -482,10 +469,8 @@ abstract class IntegerOverflow
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$IntegerOverflowCopyWith<_$IntegerOverflow> get copyWith =>
@@ -498,7 +483,6 @@ abstract class _$$ValueIsZeroCopyWith<$Res>
   factory _$$ValueIsZeroCopyWith(
           _$ValueIsZero value, $Res Function(_$ValueIsZero) then) =
       __$$ValueIsZeroCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -658,10 +642,8 @@ abstract class ValueIsZero
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$ValueIsZeroCopyWith<_$ValueIsZero> get copyWith =>
@@ -674,7 +656,6 @@ abstract class _$$ValueIsPositiveCopyWith<$Res>
   factory _$$ValueIsPositiveCopyWith(
           _$ValueIsPositive value, $Res Function(_$ValueIsPositive) then) =
       __$$ValueIsPositiveCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -834,10 +815,8 @@ abstract class ValueIsPositive
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$ValueIsPositiveCopyWith<_$ValueIsPositive> get copyWith =>
@@ -850,7 +829,6 @@ abstract class _$$LeadingZeroExceptionCopyWith<$Res>
   factory _$$LeadingZeroExceptionCopyWith(_$LeadingZeroException value,
           $Res Function(_$LeadingZeroException) then) =
       __$$LeadingZeroExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -1012,10 +990,8 @@ abstract class LeadingZeroException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$LeadingZeroExceptionCopyWith<_$LeadingZeroException> get copyWith =>

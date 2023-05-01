@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'uid_failure.dart';
 
@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UidFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -30,7 +28,6 @@ mixin _$UidFailure {
         malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -41,7 +38,6 @@ mixin _$UidFailure {
         malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -53,7 +49,6 @@ mixin _$UidFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(MoreThanElevenCharsException value)
@@ -64,7 +59,6 @@ mixin _$UidFailure {
         malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(MoreThanElevenCharsException value)?
@@ -74,7 +68,6 @@ mixin _$UidFailure {
     TResult? Function(MalformedUidException value)? malformedUidException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(MoreThanElevenCharsException value)?
@@ -96,7 +89,6 @@ abstract class $UidFailureCopyWith<$Res> {
   factory $UidFailureCopyWith(
           UidFailure value, $Res Function(UidFailure) then) =
       _$UidFailureCopyWithImpl<$Res, UidFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -108,7 +100,6 @@ class _$UidFailureCopyWithImpl<$Res, $Val extends UidFailure>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -138,7 +129,6 @@ abstract class _$$MoreThanElevenCharsExceptionCopyWith<$Res>
           _$MoreThanElevenCharsException value,
           $Res Function(_$MoreThanElevenCharsException) then) =
       __$$MoreThanElevenCharsExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -296,10 +286,8 @@ abstract class MoreThanElevenCharsException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$MoreThanElevenCharsExceptionCopyWith<_$MoreThanElevenCharsException>
@@ -313,7 +301,6 @@ abstract class _$$LessThanElevenCharsExceptionCopyWith<$Res>
           _$LessThanElevenCharsException value,
           $Res Function(_$LessThanElevenCharsException) then) =
       __$$LessThanElevenCharsExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -471,10 +458,8 @@ abstract class LessThanElevenCharsException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$LessThanElevenCharsExceptionCopyWith<_$LessThanElevenCharsException>
@@ -487,7 +472,6 @@ abstract class _$$MalformedUidExceptionCopyWith<$Res>
   factory _$$MalformedUidExceptionCopyWith(_$MalformedUidException value,
           $Res Function(_$MalformedUidException) then) =
       __$$MalformedUidExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -642,10 +626,8 @@ abstract class MalformedUidException implements UidFailure, ThrowableException {
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$MalformedUidExceptionCopyWith<_$MalformedUidException> get copyWith =>

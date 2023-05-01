@@ -40,11 +40,11 @@ class CaughtException implements Exception {
   final String? message;
 
   /// The stack trace associated with the exception.
-  StackTrace stackTrace;
+  StackTrace? stackTrace;
 
   /// Initialize a newly created caught exception to have the given [exception]
   /// and [stackTrace].
-  CaughtException(Object exception, StackTrace stackTrace)
+  CaughtException(Object exception, StackTrace? stackTrace)
       : this.withMessage(null, exception, stackTrace);
 
   /// Initialize a newly created caught exception to have the given [exception],

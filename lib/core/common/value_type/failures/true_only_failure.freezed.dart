@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'true_only_failure.dart';
 
@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TrueOnlyFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -30,7 +28,6 @@ mixin _$TrueOnlyFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -41,7 +38,6 @@ mixin _$TrueOnlyFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -53,7 +49,6 @@ mixin _$TrueOnlyFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(OneIsNotTrueException value)
@@ -64,7 +59,6 @@ mixin _$TrueOnlyFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(OneIsNotTrueException value)? oneIsNotTrueException,
@@ -74,7 +68,6 @@ mixin _$TrueOnlyFailure {
         booleanMalformedException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(OneIsNotTrueException value)? oneIsNotTrueException,
@@ -96,7 +89,6 @@ abstract class $TrueOnlyFailureCopyWith<$Res> {
   factory $TrueOnlyFailureCopyWith(
           TrueOnlyFailure value, $Res Function(TrueOnlyFailure) then) =
       _$TrueOnlyFailureCopyWithImpl<$Res, TrueOnlyFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -108,7 +100,6 @@ class _$TrueOnlyFailureCopyWithImpl<$Res, $Val extends TrueOnlyFailure>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -137,7 +128,6 @@ abstract class _$$OneIsNotTrueExceptionCopyWith<$Res>
   factory _$$OneIsNotTrueExceptionCopyWith(_$OneIsNotTrueException value,
           $Res Function(_$OneIsNotTrueException) then) =
       __$$OneIsNotTrueExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -293,10 +283,8 @@ abstract class OneIsNotTrueException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$OneIsNotTrueExceptionCopyWith<_$OneIsNotTrueException> get copyWith =>
@@ -310,7 +298,6 @@ abstract class _$$FalseIsNotAValidValueExceptionCopyWith<$Res>
           _$FalseIsNotAValidValueException value,
           $Res Function(_$FalseIsNotAValidValueException) then) =
       __$$FalseIsNotAValidValueExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -470,10 +457,8 @@ abstract class FalseIsNotAValidValueException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$FalseIsNotAValidValueExceptionCopyWith<_$FalseIsNotAValidValueException>
@@ -487,7 +472,6 @@ abstract class _$$BooleanMalformedExceptionCopyWith<$Res>
           _$BooleanMalformedException value,
           $Res Function(_$BooleanMalformedException) then) =
       __$$BooleanMalformedExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -643,10 +627,8 @@ abstract class BooleanMalformedException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$BooleanMalformedExceptionCopyWith<_$BooleanMalformedException>

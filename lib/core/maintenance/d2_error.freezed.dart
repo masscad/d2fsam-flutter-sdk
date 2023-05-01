@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'd2_error.dart';
 
@@ -21,7 +21,7 @@ mixin _$D2Error {
   D2ErrorCode get errorCode => throw _privateConstructorUsedError;
   String get errorDescription => throw _privateConstructorUsedError;
   int? get httpErrorCode => throw _privateConstructorUsedError;
-  dynamic get originalException => throw _privateConstructorUsedError;
+  Exception? get originalException => throw _privateConstructorUsedError;
   DateTime? get created => throw _privateConstructorUsedError;
   StackTrace? get stackTrace => throw _privateConstructorUsedError;
 
@@ -40,7 +40,7 @@ abstract class $D2ErrorCopyWith<$Res> {
       D2ErrorCode errorCode,
       String errorDescription,
       int? httpErrorCode,
-      dynamic originalException,
+      Exception? originalException,
       DateTime? created,
       StackTrace? stackTrace});
 }
@@ -63,7 +63,7 @@ class _$D2ErrorCopyWithImpl<$Res, $Val extends D2Error>
     Object? errorCode = null,
     Object? errorDescription = null,
     Object? httpErrorCode = freezed,
-    Object? originalException = null,
+    Object? originalException = freezed,
     Object? created = freezed,
     Object? stackTrace = freezed,
   }) {
@@ -88,10 +88,10 @@ class _$D2ErrorCopyWithImpl<$Res, $Val extends D2Error>
           ? _value.httpErrorCode
           : httpErrorCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      originalException: null == originalException
+      originalException: freezed == originalException
           ? _value.originalException
           : originalException // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as Exception?,
       created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -117,7 +117,7 @@ abstract class _$$_D2ErrorCopyWith<$Res> implements $D2ErrorCopyWith<$Res> {
       D2ErrorCode errorCode,
       String errorDescription,
       int? httpErrorCode,
-      dynamic originalException,
+      Exception? originalException,
       DateTime? created,
       StackTrace? stackTrace});
 }
@@ -137,7 +137,7 @@ class __$$_D2ErrorCopyWithImpl<$Res>
     Object? errorCode = null,
     Object? errorDescription = null,
     Object? httpErrorCode = freezed,
-    Object? originalException = null,
+    Object? originalException = freezed,
     Object? created = freezed,
     Object? stackTrace = freezed,
   }) {
@@ -162,10 +162,10 @@ class __$$_D2ErrorCopyWithImpl<$Res>
           ? _value.httpErrorCode
           : httpErrorCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      originalException: null == originalException
+      originalException: freezed == originalException
           ? _value.originalException
           : originalException // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as Exception?,
       created: freezed == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -203,16 +203,11 @@ class _$_D2Error extends _D2Error {
   @override
   final int? httpErrorCode;
   @override
-  final dynamic originalException;
+  final Exception? originalException;
   @override
   final DateTime? created;
   @override
   final StackTrace? stackTrace;
-
-  @override
-  String toString() {
-    return 'D2Error(url: $url, errorComponent: $errorComponent, errorCode: $errorCode, errorDescription: $errorDescription, httpErrorCode: $httpErrorCode, originalException: $originalException, created: $created, stackTrace: $stackTrace)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -228,24 +223,16 @@ class _$_D2Error extends _D2Error {
                 other.errorDescription == errorDescription) &&
             (identical(other.httpErrorCode, httpErrorCode) ||
                 other.httpErrorCode == httpErrorCode) &&
-            const DeepCollectionEquality()
-                .equals(other.originalException, originalException) &&
+            (identical(other.originalException, originalException) ||
+                other.originalException == originalException) &&
             (identical(other.created, created) || other.created == created) &&
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      url,
-      errorComponent,
-      errorCode,
-      errorDescription,
-      httpErrorCode,
-      const DeepCollectionEquality().hash(originalException),
-      created,
-      stackTrace);
+  int get hashCode => Object.hash(runtimeType, url, errorComponent, errorCode,
+      errorDescription, httpErrorCode, originalException, created, stackTrace);
 
   @JsonKey(ignore: true)
   @override
@@ -261,7 +248,7 @@ abstract class _D2Error extends D2Error {
       required final D2ErrorCode errorCode,
       required final String errorDescription,
       final int? httpErrorCode,
-      final dynamic originalException,
+      final Exception? originalException,
       final DateTime? created,
       final StackTrace? stackTrace}) = _$_D2Error;
   const _D2Error._() : super._();
@@ -277,7 +264,7 @@ abstract class _D2Error extends D2Error {
   @override
   int? get httpErrorCode;
   @override
-  dynamic get originalException;
+  Exception? get originalException;
   @override
   DateTime? get created;
   @override

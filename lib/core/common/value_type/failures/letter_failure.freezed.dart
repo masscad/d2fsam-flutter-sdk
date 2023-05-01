@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'letter_failure.dart';
 
@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$LetterFailure {
   String get message => throw _privateConstructorUsedError;
-
   CaughtException? get cause => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message, CaughtException? cause)
@@ -30,7 +28,6 @@ mixin _$LetterFailure {
         emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String message, CaughtException? cause)?
@@ -41,7 +38,6 @@ mixin _$LetterFailure {
         emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message, CaughtException? cause)?
@@ -53,7 +49,6 @@ mixin _$LetterFailure {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(StringIsNotALetterException value)
@@ -63,7 +58,6 @@ mixin _$LetterFailure {
     required TResult Function(EmptyStringException value) emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(StringIsNotALetterException value)?
@@ -73,7 +67,6 @@ mixin _$LetterFailure {
     TResult? Function(EmptyStringException value)? emptyStringException,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(StringIsNotALetterException value)?
@@ -95,7 +88,6 @@ abstract class $LetterFailureCopyWith<$Res> {
   factory $LetterFailureCopyWith(
           LetterFailure value, $Res Function(LetterFailure) then) =
       _$LetterFailureCopyWithImpl<$Res, LetterFailure>;
-
   @useResult
   $Res call({String message, CaughtException? cause});
 }
@@ -107,7 +99,6 @@ class _$LetterFailureCopyWithImpl<$Res, $Val extends LetterFailure>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -137,7 +128,6 @@ abstract class _$$StringIsNotALetterExceptionCopyWith<$Res>
           _$StringIsNotALetterException value,
           $Res Function(_$StringIsNotALetterException) then) =
       __$$StringIsNotALetterExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -293,10 +283,8 @@ abstract class StringIsNotALetterException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$StringIsNotALetterExceptionCopyWith<_$StringIsNotALetterException>
@@ -310,7 +298,6 @@ abstract class _$$MoreThanOneLetterExceptionCopyWith<$Res>
           _$MoreThanOneLetterException value,
           $Res Function(_$MoreThanOneLetterException) then) =
       __$$MoreThanOneLetterExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -466,10 +453,8 @@ abstract class MoreThanOneLetterException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$MoreThanOneLetterExceptionCopyWith<_$MoreThanOneLetterException>
@@ -482,7 +467,6 @@ abstract class _$$EmptyStringExceptionCopyWith<$Res>
   factory _$$EmptyStringExceptionCopyWith(_$EmptyStringException value,
           $Res Function(_$EmptyStringException) then) =
       __$$EmptyStringExceptionCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String message, CaughtException? cause});
@@ -637,10 +621,8 @@ abstract class EmptyStringException
 
   @override
   String get message;
-
   @override
   CaughtException? get cause;
-
   @override
   @JsonKey(ignore: true)
   _$$EmptyStringExceptionCopyWith<_$EmptyStringException> get copyWith =>
