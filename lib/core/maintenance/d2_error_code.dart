@@ -1,4 +1,6 @@
 enum D2ErrorCode {
+  // NMC
+  SERVER_ERROR,
   ALREADY_AUTHENTICATED,
   @deprecated
   ALREADY_EXECUTED,
