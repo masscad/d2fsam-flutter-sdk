@@ -2,10 +2,8 @@ import 'package:d2_remote/modules/metadata/program/entities/tracked_entity_type_
 import 'package:d2_remote/shared/queries/base.query.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../../../../core/annotations/index.dart';
-
-@AnnotationReflectable
-@Query(type: QueryType.METADATA)
+// @AnnotationReflectable
+// @Query(type: QueryType.METADATA)
 class TrackedEntityTypeAttributeQuery
     extends BaseQuery<TrackedEntityTypeAttribute> {
   TrackedEntityTypeAttributeQuery({Database? database})
