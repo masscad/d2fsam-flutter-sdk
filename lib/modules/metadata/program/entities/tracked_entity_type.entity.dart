@@ -2,7 +2,7 @@ import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
 @AnnotationReflectable
-@Entity(tableName: 'trackedentitytype', apiResourceName: 'trackedEntityType')
+@Entity(tableName: 'trackedentitytype', apiResourceName: 'trackedEntityTypes')
 class TrackedEntityType extends IdentifiableEntity {
   @Column(type: ColumnType.TEXT, nullable: true)
   String? description;

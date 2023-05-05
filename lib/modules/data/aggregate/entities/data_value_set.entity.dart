@@ -83,7 +83,7 @@ class DataValueSet extends IdentifiableEntity {
         syncFailed: json['syncFailed'],
         lastSyncSummary: lastSyncSummary,
         lastSyncDate: json['lastSyncDate'],
-        period: json['period'],
+        period: json['period'] ?? '',
         orgUnit: json['orgUnit'],
         dataSet: json['dataSet'],
         dataValues: dataValues is List<DataValue>

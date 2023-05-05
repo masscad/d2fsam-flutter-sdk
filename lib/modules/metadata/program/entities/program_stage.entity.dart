@@ -151,7 +151,7 @@ class ProgramStage extends IdentifiableEntity {
               }))
           .toList(),
       repeatable: jsonData['repeatable'],
-      sortOrder: jsonData['sortOrder'],
+      sortOrder: jsonData['sortOrder'] ?? 0,
       reportDateToUse: jsonData['reportDateToUse'] ?? 'incidentDate',
       periodType: jsonData['periodType'],
       openAfterEnrollment: jsonData['openAfterEnrollment'],
