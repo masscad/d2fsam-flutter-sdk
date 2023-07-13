@@ -6,3 +6,5 @@
 - Add Filtering Assignments by Team and Activity
 - Add MANAGE_TEAM_AUTHORITY
 - Add inactive flag to Team
+
+- 'TrackedEntityInstanceQuery' We need to go through downloaded programs and download TrackedEntityInstances one by one for each downloaded program
