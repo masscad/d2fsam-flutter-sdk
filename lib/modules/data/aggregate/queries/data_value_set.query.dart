@@ -13,7 +13,7 @@ import 'package:reflectable/reflectable.dart';
 import 'package:sqflite/sqflite.dart';
 
 @AnnotationReflectable
-@Query(type: QueryType.METADATA)
+@Query(type: QueryType.DATA, aut: false)
 class DataValueSetQuery extends BaseQuery<DataValueSet> {
   String? orgUnit;
   String? dataSet;
@@ -103,7 +103,6 @@ class DataValueSetQuery extends BaseQuery<DataValueSet> {
 
     final data = response.body;
 
-
     callback(
         RequestProgress(
             resourceName: this.apiResourceName as String,
@@ -172,12 +171,9 @@ class DataValueSetQuery extends BaseQuery<DataValueSet> {
   uploadOne(DataValueSet dataValueSet, {Dio? dioTestClient}) async {
     final uploadFormat = DataValueSet.toUpload(dataValueSet);
 
-
     final response = await HttpClient.post(
         this.apiResourceName as String, uploadFormat,
         database: this.database, dioTestClient: dioTestClient);
-
-
 
     final importSummary = response.body;
     final syncFailed = importSummary['status'] == 'ERROR';

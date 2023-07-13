@@ -29,7 +29,7 @@ import 'package:reflectable/mirrors.dart';
 import 'package:sqflite/sqflite.dart';
 
 @AnnotationReflectable
-@Query(type: QueryType.DATA)
+@Query(type: QueryType.DATA, aut: false)
 class TrackedEntityInstanceQuery extends BaseQuery<TrackedEntityInstance> {
   String? activity;
   String? orgUnit;
