@@ -50,6 +50,13 @@ class DataElement extends IdentifiableEntity {
             dirty: dirty);
 
   factory DataElement.fromJson(Map<String, dynamic> json) {
+    final optionSet = json['optionSet'] != null
+        ? json['optionSet'] is String
+        ? json['optionSet']
+        : json['optionSet']['id'] ??
+        json['optionSet']
+        : null;
+
     return DataElement(
         id: json['id'],
         name: json['name'],
@@ -61,7 +68,7 @@ class DataElement extends IdentifiableEntity {
         aggregationType: json['aggregationType'],
         description: json['description'],
         formName: json['formName'],
-        optionSet: json['optionSet']?['id'],
+        optionSet: optionSet,
         fieldMask: json['fieldMask'],
         dirty: json['dirty']);
   }
