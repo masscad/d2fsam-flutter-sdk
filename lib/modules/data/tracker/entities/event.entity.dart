@@ -151,7 +151,8 @@ class Event extends IdentifiableEntity {
         id: json['event'],
         name: json['event'],
         event: json['event'],
-        activity: json['activity'],
+        // TODO: NMC delete tempo
+        activity: json['activity'] ?? 'ActLwhy5VDY',
         orgUnit: json['orgUnit'],
         status: json['status'],
         eventDate: json['eventDate'],
