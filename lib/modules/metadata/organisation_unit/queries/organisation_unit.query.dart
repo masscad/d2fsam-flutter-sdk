@@ -1,3 +1,5 @@
+import 'package:d2_remote/core/annotations/nmc/query.annotation.dart';
+import 'package:d2_remote/core/annotations/reflectable.annotation.dart';
 import 'package:d2_remote/modules/auth/user/entities/user_organisation_unit.entity.dart';
 import 'package:d2_remote/modules/auth/user/queries/user_organisation_unit.query.dart';
 import 'package:d2_remote/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
@@ -8,6 +10,8 @@ import 'package:d2_remote/shared/utilities/query_filter.util.dart';
 import 'package:dio/dio.dart';
 import 'package:sqflite/sqflite.dart';
 
+@AnnotationReflectable
+@Query(type: QueryType.METADATA)
 class OrganisationUnitQuery extends BaseQuery<OrganisationUnit> {
   OrganisationUnitQuery({Database? database}) : super(database: database);
 
