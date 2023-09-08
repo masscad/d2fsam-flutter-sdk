@@ -23,7 +23,7 @@ module.exports = {
           position: "left",
         },
         {
-          href: "https://github.com/Hamza-ye/d2-remote/tree/develop/docs/",
+          href: "https://github.com/Hamza-ye/d2fsam-flutter-sdk/tree/develop/docs/",
           label: "GitHub",
           position: "right",
         },
@@ -42,7 +42,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            "https://github.com/Hamza-ye/d2-remote/edit/develop/docs/",
+            "https://github.com/Hamza-ye/d2fsam-flutter-sdk/edit/develop/docs/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
