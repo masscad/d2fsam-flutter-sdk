@@ -1,0 +1,38 @@
+Index: lib/core/database/database.util.dart
+===================================================================
+diff --git a/lib/core/database/database.util.dart b/lib/core/database/database.util.dart
+deleted file mode 100644
+--- a/lib/core/database/database.util.dart	(revision ef42b97438e058c6f3dda5fb83570181cf2bb4bd)
++++ /dev/null	(revision ef42b97438e058c6f3dda5fb83570181cf2bb4bd)
+@@ -1,31 +0,0 @@
+-import 'package:flutter/cupertino.dart';
+-import 'package:shared_preferences/shared_preferences.dart';
+-
+-class DatabaseUtil {
+-  /**
+-   * Get database name form shared preferences
+-   */
+-  static Future<String?> getDatabaseName(
+-      {Future<SharedPreferences>? sharedPreferenceInstance}) async {
+-    WidgetsFlutterBinding.ensureInitialized();
+-    SharedPreferences prefs =
+-        await (sharedPreferenceInstance ?? SharedPreferences.getInstance());
+-    return prefs.getString('databaseName');
+-  }
+-
+-/**
+- * Set database name into the shared preferences
+- */
+-  static Future<bool> setDatabaseName(
+-      {required String databaseName,
+-      required SharedPreferences sharedPreferenceInstance}) async {
+-    return sharedPreferenceInstance.setString('databaseName', databaseName);
+-  }
+-
+-  static Future<void> removeDatabaseName(
+-      {Future<SharedPreferences>? sharedPreferenceInstance}) async {
+-    SharedPreferences prefs =
+-        await (sharedPreferenceInstance ?? SharedPreferences.getInstance());
+-    await prefs.remove('databaseName');
+-  }
+-}

@@ -136,7 +136,7 @@ class Enrollment extends IdentifiableEntity {
         activity: json['activity'],
         orgUnit: json['orgUnit'],
         program: json['program'],
-        status: json['status'],
+        status: json['status'] ?? 'ACTIVE',
         synced: json['synced'],
         syncFailed: json['syncFailed'],
         lastSyncSummary: lastSyncSummary,
@@ -199,6 +199,7 @@ class Enrollment extends IdentifiableEntity {
     // NMCP
     Map<String, dynamic> enrollmentToUpload = {
       "enrollment": enrollment.enrollment,
+      "status": enrollment.status ?? 'ACTIVE',
       "trackedEntityInstance": enrollment.trackedEntityInstance,
       "geometry":
           enrollment.geometry != null ? enrollment.geometry?.toJson() : null,

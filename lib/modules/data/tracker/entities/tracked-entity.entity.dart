@@ -43,6 +43,11 @@ class TrackedEntityInstance extends IdentifiableEntity {
   @Column(nullable: true)
   String? lastSyncDate;
 
+  /// A value that detects whether the user has marked the entity has saved or not.
+  /// This is useful for when you want to sync specific data to remote server and leave others.
+  @Column()
+  bool? saved;
+
   @OneToMany(table: TrackedEntityAttributeValue)
   List<TrackedEntityAttributeValue>? attributes;
 
@@ -66,14 +71,18 @@ class TrackedEntityInstance extends IdentifiableEntity {
       this.inactive,
       this.enrollments,
       this.attributes,
-      this.transfer})
+      this.transfer,
+      this.saved,
+      bool? skipDateUpdate})
       : super(
             id: id,
             name: name,
             created: created,
             lastUpdated: lastUpdated,
+            skipDateUpdate: skipDateUpdate,
             dirty: dirty) {
     this.trackedEntityInstance = this.trackedEntityInstance ?? this.id;
+    this.saved = this.saved ?? false;
   }
 
   transferOrgUnit(String orgUnit) {
@@ -99,6 +108,7 @@ class TrackedEntityInstance extends IdentifiableEntity {
         trackedEntityType: json['trackedEntityType'],
         deleted: json['deleted'],
         synced: json['synced'],
+        saved: json['saved'],
         transfer: json['transfer'],
         syncFailed: json['syncFailed'],
         lastSyncSummary: lastSyncSummary,
@@ -122,6 +132,7 @@ class TrackedEntityInstance extends IdentifiableEntity {
                   'dirty': attribute['dirty'] ?? false
                 }))
             .toList(),
+        skipDateUpdate: json['skipDateUpdate'],
         dirty: json['dirty']);
   }
 
@@ -145,6 +156,7 @@ class TrackedEntityInstance extends IdentifiableEntity {
     data['enrollments'] = this.enrollments;
     data['attributes'] = this.attributes;
     data['dirty'] = this.dirty;
+    data['saved'] = this.saved;
     data['created'] = this.created;
     data['lastUpdated'] = this.lastUpdated;
     data['transfer'] = this.transfer;
@@ -160,9 +172,26 @@ class TrackedEntityInstance extends IdentifiableEntity {
       "attributes": (trackedEntityInstance.attributes ?? [])
           .map((attribute) => TrackedEntityAttributeValue.toUpload(attribute))
           .toList(),
-      "enrollments": (trackedEntityInstance.enrollments ?? [])
-          .map((enrollment) => Enrollment.toUpload(enrollment, events))
-          .toList()
+      "enrollments": toUploadEnrollment(trackedEntityInstance, events),
     };
+  }
+
+  static toUploadWithoutEnrollment(
+      TrackedEntityInstance trackedEntityInstance, List<Event>? events) {
+    return {
+      "trackedEntityType": trackedEntityInstance.trackedEntityType,
+      "orgUnit": trackedEntityInstance.orgUnit,
+      "trackedEntityInstance": trackedEntityInstance.trackedEntityInstance,
+      "attributes": (trackedEntityInstance.attributes ?? [])
+          .map((attribute) => TrackedEntityAttributeValue.toUpload(attribute))
+          .toList(),
+    };
+  }
+
+  static toUploadEnrollment(
+      TrackedEntityInstance trackedEntityInstance, List<Event>? events) {
+    return (trackedEntityInstance.enrollments ?? [])
+        .map((enrollment) => Enrollment.toUpload(enrollment, events))
+        .toList();
   }
 }

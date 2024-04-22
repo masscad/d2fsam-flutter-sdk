@@ -17,7 +17,7 @@ class TeamQuery extends BaseQuery<Team> {
   TeamQuery({Database? database}) : super(database: database);
 
   TeamQuery withAssignments() {
-    final assignment = Repository<Assignment>();
+    final assignment = Repository<Assignment>(database: database as Database);
     final Column? relationColumn = assignment.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName == this.tableName);
 

@@ -10,6 +10,9 @@ class UserOrganisationUnit extends IdentifiableEntity {
   @Column()
   final String orgUnit;
 
+  @Column(nullable: true)
+  final String? parent;
+
   @Column()
   final String type;
 
@@ -20,6 +23,7 @@ class UserOrganisationUnit extends IdentifiableEntity {
       {required String id,
       required String name,
       required this.orgUnit,
+      this.parent,
       required this.user,
       required this.type,
       required bool dirty})
@@ -30,6 +34,7 @@ class UserOrganisationUnit extends IdentifiableEntity {
         id: json['id'],
         name: json['id'],
         orgUnit: json['orgUnit'],
+        parent: json['parent'],
         user: json['user'],
         type: json['type'],
         dirty: json['dirty']);
@@ -40,6 +45,7 @@ class UserOrganisationUnit extends IdentifiableEntity {
     data['id'] = this.id;
     data['name'] = this.name;
     data['orgUnit'] = this.orgUnit;
+    data['parent'] = this.parent;
     data['type'] = this.type;
     data['user'] = this.user;
     data['dirty'] = this.dirty;

@@ -13,7 +13,7 @@ class OptionGroupQuery extends BaseQuery<OptionGroup> {
   OptionGroupQuery({Database? database}) : super(database: database);
 
   OptionGroupQuery withOptions() {
-    final optionGroupOption = Repository<OptionGroupOption>();
+    final optionGroupOption = Repository<OptionGroupOption>(database: database as Database);
     final Column? relationColumn = optionGroupOption.columns.firstWhere(
         (column) =>
             column.relation?.referencedEntity?.tableName == this.tableName);

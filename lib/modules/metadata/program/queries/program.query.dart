@@ -16,7 +16,7 @@ class ProgramQuery extends BaseQuery<Program> {
   ProgramQuery({Database? database}) : super(database: database);
 
   ProgramQuery withProgramStages() {
-    final programStage = Repository<ProgramStage>();
+    final programStage = Repository<ProgramStage>(database: database as Database);
     final Column? relationColumn = programStage.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName == this.tableName);
 
@@ -38,7 +38,7 @@ class ProgramQuery extends BaseQuery<Program> {
   }
 
   ProgramQuery withAttributes() {
-    final programAttribute = Repository<ProgramTrackedEntityAttribute>();
+    final programAttribute = Repository<ProgramTrackedEntityAttribute>(database: database as Database);
     final Column? relationColumn = programAttribute.columns.firstWhere(
         (column) =>
             column.relation?.referencedEntity?.tableName == this.tableName);
@@ -63,7 +63,7 @@ class ProgramQuery extends BaseQuery<Program> {
   }
 
   ProgramQuery withProgramRuleVariables() {
-    final programRuleVariable = Repository<ProgramRuleVariable>();
+    final programRuleVariable = Repository<ProgramRuleVariable>(database: database as Database);
     final Column? relationColumn = programRuleVariable.columns.firstWhere(
         (column) =>
             column.relation?.referencedEntity?.tableName == this.tableName);
@@ -88,7 +88,7 @@ class ProgramQuery extends BaseQuery<Program> {
   }
 
   ProgramQuery withSections() {
-    final programSection = Repository<ProgramSection>();
+    final programSection = Repository<ProgramSection>(database: database as Database);
     final Column? relationColumn = programSection.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName == this.tableName);
 

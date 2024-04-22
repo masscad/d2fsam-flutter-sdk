@@ -1,4 +1,6 @@
 import 'package:d2_remote/core/annotations/index.dart';
+import 'package:d2_remote/modules/auth/entities/user_group.entity.dart';
+import 'package:d2_remote/modules/auth/entities/user_group_user.entity.dart';
 import 'package:d2_remote/modules/auth/user/entities/user_authority.entity.dart';
 import 'package:d2_remote/modules/auth/user/entities/user_organisation_unit.entity.dart';
 import 'package:d2_remote/modules/auth/user/entities/user_role.entity.dart';
@@ -68,6 +70,15 @@ class User extends IdentifiableEntity {
   @Column()
   bool isLoggedIn;
 
+  @Column(nullable: true)
+  final String? gender;
+
+  @Column()
+  String? jobTitle;
+
+  @OneToMany(table: UserGroupUser)
+  List<UserGroup>? userGroups;
+
   User(
       {required String id,
       this.username,
@@ -76,6 +87,8 @@ class User extends IdentifiableEntity {
       required this.surname,
       required String name,
       required this.baseUrl,
+      this.gender,
+      this.jobTitle,
       String? shortName,
       String? displayName,
       String? code,
@@ -95,6 +108,7 @@ class User extends IdentifiableEntity {
       this.tokenExpiry,
       this.authType,
       this.phoneNumber,
+      this.userGroups,
       required this.isLoggedIn,
       required bool dirty})
       : super(
@@ -107,6 +121,8 @@ class User extends IdentifiableEntity {
   factory User.fromJson(Map<String, dynamic> jsonData) {
     return User(
         id: jsonData['id'],
+        gender: jsonData['gender'] ?? '',
+        jobTitle: jsonData['jobTitle'] ?? '',
         username: jsonData['username'],
         password: jsonData['password'],
         firstName: jsonData['firstName'],
@@ -144,12 +160,15 @@ class User extends IdentifiableEntity {
         programs: jsonData['programs'].toString(),
         dataSets: jsonData['datasets'].toString(),
         isLoggedIn: jsonData['isLoggedIn'],
+        userGroups: jsonData['userGroups'],
         dirty: jsonData['dirty']);
   }
 
   factory User.fromApi(Map<String, dynamic> jsonData) {
     return User(
         id: jsonData['id'],
+        gender: jsonData['gender'] ?? '',
+        jobTitle: jsonData['jobTitle'] ?? '',
         username: jsonData['username'],
         password: jsonData['password'],
         firstName: jsonData['firstName'],
@@ -171,6 +190,8 @@ class User extends IdentifiableEntity {
                 id: '${jsonData['id']}_${orgUnit['id']}',
                 name: '${jsonData['id']}_${orgUnit['id']}',
                 orgUnit: orgUnit['id'],
+                parent:
+                    orgUnit['parent'] != null ? orgUnit['parent']['id'] : null,
                 user: jsonData['id'],
                 type: 'DATA_VIEW',
                 dirty: jsonData['dirty'] ?? false))
@@ -210,10 +231,40 @@ class User extends IdentifiableEntity {
         dirty: jsonData['dirty'] ?? false);
   }
 
+  static List<UserAuthority> getAuthorities(Map<String, dynamic> jsonData) {
+    List<UserAuthority> authorities = (jsonData['authorities'] ?? [])
+        .map<UserAuthority>((authority) => UserAuthority(
+            id: '${jsonData['id']}_$authority',
+            name: '${jsonData['id']}_$authority',
+            authority: authority,
+            user: jsonData['id'],
+            dirty: jsonData['dirty'] ?? false))
+        .toList();
+
+    if (jsonData['userCredentials']?['userRoles'] != null) {
+      for (Map<String, dynamic> role in jsonData['userCredentials']
+          ?['userRoles']) {
+        List<UserAuthority> roleAuthorities = (role['authorities'] ?? [])
+            .map<UserAuthority>((authority) => UserAuthority(
+                id: '${jsonData['id']}_$authority',
+                name: '${jsonData['id']}_$authority',
+                authority: authority,
+                user: jsonData['id'],
+                dirty: jsonData['dirty'] ?? false))
+            .toList();
+        authorities = [...authorities, ...roleAuthorities];
+      }
+    }
+
+    return authorities;
+  }
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
 
     data['id'] = this.id;
+    data['gender'] = this.gender;
+    data['jobTitle'] = this.jobTitle;
     data['name'] = this.name;
     data['firstName'] = this.firstName;
     data['surname'] = this.surname;
@@ -238,6 +289,7 @@ class User extends IdentifiableEntity {
     data['isLoggedIn'] = this.isLoggedIn;
     data['baseUrl'] = this.baseUrl;
     data['dirty'] = this.dirty;
+    data['userGroups'] = this.userGroups;
 
     return data;
   }

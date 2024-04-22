@@ -4,6 +4,7 @@ import 'package:d2_remote/core/annotations/index.dart';
 import 'package:d2_remote/modules/activity_management/activity/entities/activity.entity.dart';
 import 'package:d2_remote/modules/data/tracker/models/event_import_summary.dart';
 import 'package:d2_remote/modules/data/tracker/models/geometry.dart';
+import 'package:d2_remote/modules/metadata/organisation_unit/entities/organisation_unit.entity.dart';
 import 'package:d2_remote/modules/metadata/program/entities/program_stage.entity.dart';
 import 'package:d2_remote/shared/entities/identifiable.entity.dart';
 
@@ -15,9 +16,6 @@ import 'event_data_value.entity.dart';
 class Event extends IdentifiableEntity {
   @Column()
   String? event;
-
-  @Column()
-  String orgUnit;
 
   @Column()
   String status;
@@ -61,13 +59,22 @@ class Event extends IdentifiableEntity {
   @Column(nullable: true)
   String? notes;
 
+  /// A value that detects whether the user has marked the entity has saved or not.
+  /// This is useful for when you want to sync specific data to remote server and leave others.
+  @Column()
+  bool? saved;
+
   @Column(nullable: true)
   String? eventType;
 
   @ManyToOne(joinColumnName: 'programStage', table: ProgramStage)
   dynamic programStage;
 
-  @ManyToOne(joinColumnName: 'enrollment', table: Enrollment)
+  @ManyToOne(joinColumnName: 'orgUnit', table: OrganisationUnit)
+  String orgUnit;
+
+  // @ManyToOne(joinColumnName: 'enrollment', table: Enrollment)
+  @Column(nullable: true)
   dynamic enrollment;
 
   @OneToMany(table: EventDataValue)
@@ -116,6 +123,7 @@ class Event extends IdentifiableEntity {
       this.attributeCategoryOptions,
       this.attributeOptionCombo,
       this.notes,
+      this.saved,
       this.eventType,
       required this.programStage,
       this.enrollment,
@@ -134,6 +142,7 @@ class Event extends IdentifiableEntity {
             dirty: dirty) {
     this.event = this.event ?? this.id;
     this.name = this.name ?? this.event;
+    this.saved = this.saved ?? false;
   }
 
   factory Event.fromJson(Map<String, dynamic> json) {
@@ -158,6 +167,7 @@ class Event extends IdentifiableEntity {
         dueDate: json['dueDate'],
         deleted: json['deleted'],
         synced: json['synced'],
+        saved: json['saved'],
         syncFailed: json['syncFailed'],
         lastSyncSummary: lastSyncSummary,
         lastSyncDate: json['lastSyncDate'],
@@ -198,6 +208,7 @@ class Event extends IdentifiableEntity {
     data['dueDate'] = this.dueDate;
     data['deleted'] = this.deleted;
     data['synced'] = this.synced;
+    data['saved'] = this.saved;
     data['syncFailed'] = this.syncFailed;
     data['lastSyncSummary'] = this.lastSyncSummary != null
         ? jsonEncode(
@@ -233,9 +244,11 @@ class Event extends IdentifiableEntity {
       "activity": event.activity,
       "orgUnit": event.orgUnit,
       "eventDate": event.eventDate,
+      "occurredAt": event.eventDate,
       "status": event.status,
       "storedBy": event.storedBy,
       "coordinate": event.coordinate,
+      "enrollment": event.enrollment,
       "dataValues": (event.dataValues ?? [])
           .map((event) => EventDataValue.toUpload(event))
           .toList(),

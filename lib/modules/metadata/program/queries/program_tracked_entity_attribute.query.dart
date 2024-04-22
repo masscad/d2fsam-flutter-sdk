@@ -25,7 +25,7 @@ class ProgramTrackedEntityAttributeQuery
   }
 
   ProgramTrackedEntityAttributeQuery withOptions() {
-    final attributeOption = Repository<AttributeOption>();
+    final attributeOption = Repository<AttributeOption>(database: database as Database);
 
     final Column? relationColumn = attributeOption.columns.firstWhere(
         (column) =>

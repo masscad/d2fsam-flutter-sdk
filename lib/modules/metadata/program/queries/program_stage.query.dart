@@ -18,7 +18,7 @@ class ProgramStageQuery extends BaseQuery<ProgramStage> {
   }
 
   ProgramStageQuery withProgram() {
-    final program = Repository<Program>();
+    final program = Repository<Program>(database: database as Database);
     final Column relationColumn = this.repository.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName ==
         program.entity.tableName);
@@ -28,7 +28,7 @@ class ProgramStageQuery extends BaseQuery<ProgramStage> {
   }
 
   ProgramStageQuery withDataElements() {
-    final dataElement = Repository<ProgramStageDataElement>();
+    final dataElement = Repository<ProgramStageDataElement>(database: database as Database);
     final Column? relationColumn = dataElement.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName == this.tableName);
 
@@ -52,7 +52,7 @@ class ProgramStageQuery extends BaseQuery<ProgramStage> {
   }
 
   ProgramStageQuery withSections() {
-    final programSection = Repository<ProgramStageSection>();
+    final programSection = Repository<ProgramStageSection>(database: database as Database);
     final Column? relationColumn = programSection.columns.firstWhere((column) =>
         column.relation?.referencedEntity?.tableName == this.tableName);
 

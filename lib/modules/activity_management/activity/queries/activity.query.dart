@@ -13,7 +13,7 @@ class ActivityQuery extends BaseQuery<Activity> {
   ActivityQuery({Database? database}) : super(database: database);
 
   ActivityQuery withAssignments() {
-    final assignment = Repository<Assignment>();
+    final assignment = Repository<Assignment>(database: database as Database);
     final Column? relationColumn = assignment.columns.firstWhere((column) =>
     column.relation?.referencedEntity?.tableName == this.tableName);
 
@@ -35,7 +35,7 @@ class ActivityQuery extends BaseQuery<Activity> {
   }
 
   ActivityQuery withTeams() {
-    final team = Repository<Team>();
+    final team = Repository<Team>(database: database as Database);
     final Column? relationColumn = team.columns.firstWhere((column) =>
     column.relation?.referencedEntity?.tableName == this.tableName);
 

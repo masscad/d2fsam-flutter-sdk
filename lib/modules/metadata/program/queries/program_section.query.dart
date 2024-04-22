@@ -16,7 +16,7 @@ class ProgramSectionQuery extends BaseQuery<ProgramSection> {
   }
 
   ProgramSectionQuery withAttributes() {
-    final programSectionAttribute = Repository<ProgramSectionAttribute>();
+    final programSectionAttribute = Repository<ProgramSectionAttribute>(database: database as Database);
     final Column? relationColumn = programSectionAttribute.columns.firstWhere(
         (column) =>
             column.relation?.referencedEntity?.tableName == this.tableName);
